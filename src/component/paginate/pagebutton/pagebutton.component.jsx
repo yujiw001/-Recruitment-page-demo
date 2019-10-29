@@ -3,6 +3,9 @@ import style from "./pagebutton.styles.scss";
 export default class Pagination extends Component{
     constructor(props){
         super(props)
+        this.state= {
+            pageCurr:1,
+        }
     }
 
     create(){
@@ -10,14 +13,25 @@ export default class Pagination extends Component{
             totalPage,
         } = this.props.config;
 
+        const {
+            pageCurr,
+        } = this.state;
+
         let pages = [];
         pages.push(<li key={0}>上一页</li>)
         for(let i = 1;i <= totalPage; i++){
-            pages.push(<li key={i}>{i}</li>)
+            // 点击页码时调用 go 方法，根据 state 判断是否应用 active 样式
+            pages.push(<li onClick = { this.go.bind(this,i) } className = { pageCurr === i ? "active": "" } key={i}>{i}</li>)
         }
         pages.push(<li key={totalPage + 1}>下一页</li>)
 
         return pages;
+    }
+
+    go(pageCurr){
+        this.setState({
+            pageCurr
+        })
     }
 
     render(){
