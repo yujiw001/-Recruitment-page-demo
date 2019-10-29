@@ -1,28 +1,27 @@
 {
   "files": {
-    "main.css": "/-Recruitment-page-demo/static/css/main.3c4617e9.chunk.css",
-    "main.js": "/-Recruitment-page-demo/static/js/main.6b60833b.chunk.js",
-    "main.js.map": "/-Recruitment-page-demo/static/js/main.6b60833b.chunk.js.map",
-    "runtime-main.js": "/-Recruitment-page-demo/static/js/runtime-main.1d5250f0.js",
-    "runtime-main.js.map": "/-Recruitment-page-demo/static/js/runtime-main.1d5250f0.js.map",
-    "static/css/2.55521911.chunk.css": "/-Recruitment-page-demo/static/css/2.55521911.chunk.css",
-    "static/js/2.0a0a321c.chunk.js": "/-Recruitment-page-demo/static/js/2.0a0a321c.chunk.js",
-    "static/js/2.0a0a321c.chunk.js.map": "/-Recruitment-page-demo/static/js/2.0a0a321c.chunk.js.map",
+    "main.css": "/-Recruitment-page-demo/static/css/main.9f969af1.chunk.css",
+    "main.js": "/-Recruitment-page-demo/static/js/main.6f48be5a.chunk.js",
+    "main.js.map": "/-Recruitment-page-demo/static/js/main.6f48be5a.chunk.js.map",
+    "runtime-main.js": "/-Recruitment-page-demo/static/js/runtime-main.62d9f4bb.js",
+    "runtime-main.js.map": "/-Recruitment-page-demo/static/js/runtime-main.62d9f4bb.js.map",
+    "static/css/2.2bb279ee.chunk.css": "/-Recruitment-page-demo/static/css/2.2bb279ee.chunk.css",
+    "static/js/2.be06f88e.chunk.js": "/-Recruitment-page-demo/static/js/2.be06f88e.chunk.js",
+    "static/js/2.be06f88e.chunk.js.map": "/-Recruitment-page-demo/static/js/2.be06f88e.chunk.js.map",
     "index.html": "/-Recruitment-page-demo/index.html",
-    "precache-manifest.ab0f96a11d35671e5c0e5294c04d0a23.js": "/-Recruitment-page-demo/precache-manifest.ab0f96a11d35671e5c0e5294c04d0a23.js",
+    "precache-manifest.0a136f62f7ea967a0f18a3f5509ba359.js": "/-Recruitment-page-demo/precache-manifest.0a136f62f7ea967a0f18a3f5509ba359.js",
     "service-worker.js": "/-Recruitment-page-demo/service-worker.js",
-    "static/css/2.55521911.chunk.css.map": "/-Recruitment-page-demo/static/css/2.55521911.chunk.css.map",
-    "static/css/main.3c4617e9.chunk.css.map": "/-Recruitment-page-demo/static/css/main.3c4617e9.chunk.css.map",
-    "static/media/logo.svg": "/-Recruitment-page-demo/static/media/logo.25bf045c.svg",
+    "static/css/2.2bb279ee.chunk.css.map": "/-Recruitment-page-demo/static/css/2.2bb279ee.chunk.css.map",
+    "static/css/main.9f969af1.chunk.css.map": "/-Recruitment-page-demo/static/css/main.9f969af1.chunk.css.map",
     "static/media/slide_2.jpg": "/-Recruitment-page-demo/static/media/slide_2.f1707450.jpg",
     "static/media/slide_3.jpg": "/-Recruitment-page-demo/static/media/slide_3.05970a4b.jpg",
     "static/media/slide_4.jpg": "/-Recruitment-page-demo/static/media/slide_4.df7306d3.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1d5250f0.js",
-    "static/css/2.55521911.chunk.css",
-    "static/js/2.0a0a321c.chunk.js",
-    "static/css/main.3c4617e9.chunk.css",
-    "static/js/main.6b60833b.chunk.js"
+    "static/js/runtime-main.62d9f4bb.js",
+    "static/css/2.2bb279ee.chunk.css",
+    "static/js/2.be06f88e.chunk.js",
+    "static/css/main.9f969af1.chunk.css",
+    "static/js/main.6f48be5a.chunk.js"
   ]
 }
