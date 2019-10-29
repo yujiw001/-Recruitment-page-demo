@@ -1,0 +1,17 @@
+.job-item {
+    width: 70%;
+    margin: auto;
+    .position{
+        width: 60%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .location{
+
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+}

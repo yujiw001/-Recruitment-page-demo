@@ -6,13 +6,16 @@ import DropDownBox from './component/dropdown_box/dropdown_box.component';
 import Header from './component/header/header.component';
 // import pageButton from './component/paginate/pagebutton/pagebutton.component';
 import Pagination from './component/paginate/pagebutton/pagebutton.component';
+import JobList from './component/paginate/jobpost/joblist.component';
 function App() {
   return (
     <div className="App">
       <Header />
       <h1>Fantuan 团建</h1>
       <Slideshow />
+      <JobList />
       <Pagination config = {{totalPage:7}}></Pagination>
+      
     </div>
   );
 }
