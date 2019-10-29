@@ -32,7 +32,7 @@ export default class Pagination extends Component{
         let {
             pageCurr,
         } = this.state;
-    
+        //当页码为1则无法前进
         if(--pageCurr === 0){
             return;
         }
