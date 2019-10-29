@@ -1,26 +1,31 @@
 import React,{ Component } from "react";
-import  "./pagebutton.styles.scss";
+import style from "./pagebutton.styles.scss";
 export default class Pagination extends Component{
     constructor(props){
         super(props)
     }
 
+    create(){
+        const {
+            totalPage,
+        } = this.props.config;
+
+        let pages = [];
+        pages.push(<li key={0}>上一页</li>)
+        for(let i = 1;i <= totalPage; i++){
+            pages.push(<li key={i}>{i}</li>)
+        }
+        pages.push(<li key={totalPage + 1}>下一页</li>)
+
+        return pages;
+    }
+
     render(){
+        const Pages = this.create.bind(this)();
         return(
             <div className = "pagination">
-                <ul className= "page">
-                    <li>上一页</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li className = "active" >4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>下一页</li>
+                <ul className = { "page" }>
+                    { Pages }
                 </ul>
             </div>
         );

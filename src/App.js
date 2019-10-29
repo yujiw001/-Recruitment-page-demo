@@ -12,7 +12,7 @@ function App() {
       <Header />
       <h1>Fantuan 团建</h1>
       <Slideshow />
-      <Pagination />
+      <Pagination config = {{totalPage:7}}></Pagination>
     </div>
   );
 }
