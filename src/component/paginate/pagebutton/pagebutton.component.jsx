@@ -18,14 +18,41 @@ export default class Pagination extends Component{
         } = this.state;
 
         let pages = [];
-        pages.push(<li key={0}>上一页</li>)
+        pages.push(<li onClick = { this.goPrev.bind(this) } className = { this.state.pageCurr === 1? "nomore":"" } key={0}>上一页</li>)
+        
         for(let i = 1;i <= totalPage; i++){
             // 点击页码时调用 go 方法，根据 state 判断是否应用 active 样式
             pages.push(<li onClick = { this.go.bind(this,i) } className = { pageCurr === i ? "active": "" } key={i}>{i}</li>)
         }
-        pages.push(<li key={totalPage + 1}>下一页</li>)
 
+        pages.push(<li onClick = { this.goNext.bind(this) } className = { this.state.pageCurr === totalPage? "nomore":"" } key={totalPage + 1}>下一页</li>)
         return pages;
+    }
+    goPrev(){
+        let {
+            pageCurr,
+        } = this.state;
+    
+        if(--pageCurr === 0){
+            return;
+        }
+    
+        this.go(pageCurr)
+    }
+
+    goNext(){
+        let {
+            pageCurr,
+        } = this.state;
+    
+        const {
+            totalPage,
+        } = this.props.config;
+    
+        if(++pageCurr > totalPage){
+            return;
+        }
+        this.go(pageCurr)
     }
 
     go(pageCurr){
