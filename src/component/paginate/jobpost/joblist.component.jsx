@@ -6,11 +6,9 @@ class JobList extends React.Component {
         super(props);
     
     this.state= {
-        collections: JOB_DATA
+        collections: JOB_DATA, //数据库
     };
     }
-
-
     render(){
         const {collections}= this.state;
         return (<div className='job-list'>

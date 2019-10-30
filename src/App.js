@@ -14,7 +14,9 @@ function App() {
       <h1>Fantuan 团建</h1>
       <Slideshow />
       <JobList />
-      <Pagination config = {{totalPage:7}}></Pagination>
+      {/* 返回标记 */}
+      {/* <Pagination config = {{totalPage:7}}></Pagination>  */}
+      <Pagination></Pagination>
       
     </div>
   );
