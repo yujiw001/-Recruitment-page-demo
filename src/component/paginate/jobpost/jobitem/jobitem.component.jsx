@@ -3,16 +3,13 @@ import './jobitem.styles.scss'
 import {Link} from 'react-router-dom';
 import {BrowserRouter} from 'react-router-dom';
 
-const JobItem = ({items}) => (
+const JobItem = (props) => (
     <div className='job-item'>
         <BrowserRouter>
-            {items.map(item =>(
-                <div>
-                    <Link className='position' key={item.id}>{item.name}</Link>
-                    <span className='location'key={item.id}>{item.price}</span>
-                </div>)
-            )}
-           
+            <div>
+                <Link className='position' key={props.id}>{props.name}</Link>
+                <span className='location'key={props.id}>{props.username}</span>
+            </div>
         </BrowserRouter>
     </div>
 );

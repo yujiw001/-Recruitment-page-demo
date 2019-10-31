@@ -25,9 +25,9 @@ export default class Pagination extends Component{
     }
     setPage(num){
         this.setState({
-            indexList:this.state.totalData.slice(num,num+this.state.pageSize) //slice(start,end) 将会返回一个indexList的array，用此array的数据来渲染页面
-        })
-    }
+            indexList:this.state.totalData.slice((num-1)*(this.state.pageSize),(num-1)*(this.state.pageSize)+this.state.pageSize) //slice(start,end) 将会返回一个indexList的array，用此array的数据来渲染页面
+        },()=>console.log(this.state.indexList))
+        }
     create(){
         // 返回标记 如欲返回与app.jss解开注释
         // const {
@@ -37,10 +37,6 @@ export default class Pagination extends Component{
         // const {
         //     totalPage,
         // } = this.state.totalPage;
-
-        const {
-            pageCurr,
-        } = this.state.pageCurr;
 
         let pages = [];
         pages.push(<li onClick = { this.goPrev.bind(this) } className = { this.state.pageCurr === 1? "nomore":"" } key={0}>上一页</li>)
@@ -57,29 +53,33 @@ export default class Pagination extends Component{
         if(--this.state.pageCurr === 0){
             return;
         }
-    
-        this.go(this.state.pageCurr)
+        this.go(this.state.pageCurr);
     }
 
     goNext(){
         if(++this.state.pageCurr > this.state.totalPage){
             return;
         }
-        this.go(this.state.pageCurr)
+        this.go(this.state.pageCurr);
     }
-
-    go(pageCurr){
+    //重要！react是异步更新的，所以这边setState之后不会立刻更新数据 setpage读的还会是旧的数据， 解决异步用callback()
+    go(newCurr){
         this.setState({
-            pageCurr
-        })
+            pageCurr:newCurr,
+        },()=>{this.setPage(this.state.pageCurr)});
+        // this.setPage(this.state.pageCurr);
     }
 
     render(){
         const Pages = this.create.bind(this)();
-        const {collections}= this.state.indexList;
+        // const {collections}= this.state.totalData;
         return(
-            // <Job_Item />
             <div className = "pagination">
+                {
+                        this.state.indexList.map(({id,...otherCollectionProps}) => (
+                        <Job_Item key={id} {...otherCollectionProps} />
+                    ))
+                }
                 <ul className = { "page" }>
                     { Pages }
                 </ul>
