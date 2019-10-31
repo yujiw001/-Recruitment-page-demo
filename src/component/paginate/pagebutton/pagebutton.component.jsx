@@ -11,7 +11,7 @@ export default class Pagination extends Component{
             indexList:[], //当前渲染的页面数据
             totalData:job_data,//我的数据
             pageCurr:1, //当前页码
-            pageSize:6,//每页显示的条数
+            pageSize:3,//每页显示的条数
             goValue:0, //要去的条数index
             totalPage:0,//总页数
         };
@@ -20,13 +20,14 @@ export default class Pagination extends Component{
         //设置总页数
         this.setState({
             totalPage:Math.ceil( this.state.totalData.length/this.state.pageSize),
+            indexList:this.state.totalData.slice(0,this.state.pageSize)
         })
         
     }
     setPage(num){
         this.setState({
             indexList:this.state.totalData.slice((num-1)*(this.state.pageSize),(num-1)*(this.state.pageSize)+this.state.pageSize) //slice(start,end) 将会返回一个indexList的array，用此array的数据来渲染页面
-        },()=>console.log(this.state.indexList))
+        },() => console.log(this.state.indexList))
         }
     create(){
         // 返回标记 如欲返回与app.jss解开注释
@@ -50,17 +51,17 @@ export default class Pagination extends Component{
     }
     goPrev(){
         //当页码为1则无法前进
-        if(--this.state.pageCurr === 0){
+        if(this.state.pageCurr === 1){
             return;
         }
-        this.go(this.state.pageCurr);
+        this.go(--this.state.pageCurr);
     }
 
     goNext(){
-        if(++this.state.pageCurr > this.state.totalPage){
+        if(this.state.pageCurr === this.state.totalPage){
             return;
         }
-        this.go(this.state.pageCurr);
+        this.go(++this.state.pageCurr);
     }
     //重要！react是异步更新的，所以这边setState之后不会立刻更新数据 setpage读的还会是旧的数据， 解决异步用callback()
     go(newCurr){

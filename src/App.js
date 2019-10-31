@@ -7,6 +7,7 @@ import Header from './component/header/header.component';
 // import pageButton from './component/paginate/pagebutton/pagebutton.component';
 import Pagination from './component/paginate/pagebutton/pagebutton.component';
 import JobList from './component/paginate/jobpost/joblist.component';
+import Fantuan_value from './component/FanTuanValue/FanTuanValue.component';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <JobList />
       {/* 返回标记 */}
       {/* <Pagination config = {{totalPage:7}}></Pagination>  */}
+      <Fantuan_value />
       <Pagination></Pagination>
       
     </div>
