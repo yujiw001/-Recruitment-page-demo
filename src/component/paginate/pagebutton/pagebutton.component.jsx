@@ -3,6 +3,7 @@ import style from "./pagebutton.styles.scss";
 import Job_Data from "../jobpost/jobitem/job.data";
 import MONSTER_DATA from "./monster.data.js";
 import Job_Item from "../jobpost/jobitem/jobitem.component";
+
 const job_data = MONSTER_DATA;
 export default class Pagination extends Component{
     constructor(props){
@@ -70,13 +71,18 @@ export default class Pagination extends Component{
         },()=>{this.setPage(this.state.pageCurr)});
         // this.setPage(this.state.pageCurr);
     }
-
     render(){
         const Pages = this.create.bind(this)();
+        let Total = this.state.totalData.length;
         // const {collections}= this.state.totalData;
         return(
             <div className = "pagination">
+                <div className = "JobHead">
+                    <h3>Find open roles</h3> 
+                    <span>{Total}open roles</span>
+                </div>
                 {
+                        
                         this.state.indexList.map(({id,...otherCollectionProps}) => (
                         <Job_Item key={id} {...otherCollectionProps} />
                     ))
