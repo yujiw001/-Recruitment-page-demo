@@ -25,13 +25,13 @@ class Header extends React.Component {
                     this.state.hidden ? null: <DropDownBox />
                 }
                 <div className='options'>
-                    <BrowserRouter>
-                        <Link className='option'>首页</Link>
+                    
+                        <Link className='option' to="/">首页</Link>
                         <Link className='option'>关于饭团</Link>
                         <Link className='option'>媒体新闻</Link>
-                        <Link className='option'>招聘频道</Link>
+                        <Link className='option' to="/Recruitment">招聘频道</Link>
                         <span className='option'>中文</span>
-                    </BrowserRouter>
+                    
                     
                 </div>
             </div>

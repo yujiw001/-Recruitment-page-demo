@@ -1,3 +1,6 @@
+//@author Yuji Wang
+//@date 2019 Nov 30rd
+
 import React from 'react';
 import './dropdown_box.styles.css';
 import {BrowserRouter} from 'react-router-dom';
