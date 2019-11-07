@@ -1,18 +1,19 @@
 import React,{ Component } from "react";
-import style from "./pagebutton.styles.scss";
+import style from "./pagebutton_card.styles.scss";
 // import Job_Data from "../jobpost/jobitem/job.data";
-import MONSTER_DATA from "./monster.data.js";
-import Job_Item from "../jobpost/jobitem/jobitem.component";
 
-const job_data = MONSTER_DATA;
-export default class Pagination extends Component{
+import Card from "../../card/card.component";
+import IntroducionData from "../../pages/introduction_data";
+
+const data= IntroducionData;
+export default class PaginationCard extends Component{
     constructor(props){
         super(props)
         this.state= {
             indexList:[], //当前渲染的页面数据
-            totalData:job_data,//我的数据
+            totalData:data,//我的数据
             pageCurr:1, //当前页码
-            pageSize:3,//每页显示的条数
+            pageSize:2,//每页显示的条数
             goValue:0, //要去的条数index
             totalPage:0,//总页数
         };
@@ -84,7 +85,7 @@ export default class Pagination extends Component{
                 {
                         
                         this.state.indexList.map(({id,...otherCollectionProps}) => (
-                        <Job_Item key={id} {...otherCollectionProps} />
+                        <Card key={id} {...otherCollectionProps} />
                     ))
                 }
                 <ul className = { "page" }>
@@ -95,53 +96,3 @@ export default class Pagination extends Component{
         );
     }
 }
-
-// import React from 'react';
-
-// class pageButton extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.setNext=this.setNext.bind(this);
-//         this.setUp=this.setUp.bind(this);
-//         this.state={
-//             num: 0,
-//             pagenum:this.props.current
-//         }
-//     }
-
-//     //下一页
-//     setNext(){
-//         if(this.state.pagenum < this.props.totalPage){
-//             this.setState({
-//                 num:this.state.num + this.props.pageSize,
-//                 pagenum:this.state.pagenum + 1
-//             },function () {
-//                 console.log(this.state)
-//                 this.props.pageNext(this.state.num)
-//             })
-//         }
-//     }
-
-//     //上一页
-//     setUp(){
-//         if(this.state.pagenum > 1){
-//             this.setState({
-//                 num:this.state.num - this.props.pageSize,
-//                 pagenum:this.state.pagenum - 1
-//             },function () {
-//                 console.log(this.state)
-//                 this.props.pageNext(this.state.num)
-//             })
-//         }
-//     }
-
-//     render() {
-//         return (
-//             <div className="change_page">
-//                 <span onClick={ this.setUp } >上一页</span>
-//                 <span>{ this.state.pagenum }页/ { this.props.totalPage }页</span>
-//                 <span onClick={ this.setNext }>下一页</span>
-//             </div>
-//         );
-//     }
-// }
