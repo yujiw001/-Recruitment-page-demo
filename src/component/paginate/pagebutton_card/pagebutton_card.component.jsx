@@ -10,7 +10,7 @@ export default class PaginationCard extends Component{
         super(props)
         this.state= {
             indexList:[], //当前渲染的页面数据
-            totalData:data,//我的数据
+            totalData:props.renderData,//我的数据
             pageCurr:1, //当前页码
             pageSize:2,//每页显示的条数
             goValue:0, //要去的条数index

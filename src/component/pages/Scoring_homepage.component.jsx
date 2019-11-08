@@ -15,7 +15,7 @@ class ScoringHomepage extends Component {
       this.closeModal = this.closeModal.bind(this)
       this.state = {
         visible: false,
-        introData:IntroducionData
+        renderData:IntroducionData,
       }
     }
   
@@ -40,7 +40,7 @@ class ScoringHomepage extends Component {
         </div>
         <button onClick={this.showModal}>开始使用</button>
         <Popup visible={visible} title="这是自定义title" confirm={this.confirm} onClose={this.closeModal} />
-        <CardList {...this.state}/>
+        {/* <CardList {...this.state}/> */}
         <Pagination {...this.state} ItemComponent={singleCard}/>
         <PaginationCard {...this.state} ItemComponent={singleCard}/>
     </div>

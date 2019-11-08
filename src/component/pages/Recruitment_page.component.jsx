@@ -12,11 +12,13 @@ import Fantuan_value from '../../component/FanTuanValue/FanTuanValue.component';
 import Footer from '../../component/footer/footer.component';
 import IntroducionData from './introduction_data.js';
 import CardList  from '../cardList/card_list.component';
+import PaginationCard from '../paginate/pagebutton_card/pagebutton_card.component';
+import MONSTER_DATA from '../paginate/pagebutton/monster.data';
 class RecruitmentPage extends Component  {
   constructor(props){
     super(props)
     this.state={
-      introData:IntroducionData,
+      renderData:MONSTER_DATA,
     };
   }
   render (){
@@ -27,7 +29,7 @@ class RecruitmentPage extends Component  {
           <Slideshow />
           {/* <JobList /> */}
           <Fantuan_value />
-          <Pagination ItemComponent={Job_Item}/>
+          <PaginationCard {...this.state} ItemComponent={Job_Item}/>
           <Footer />
           <CardList {...this.state}/>
         </div>
