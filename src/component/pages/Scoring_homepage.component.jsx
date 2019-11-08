@@ -3,6 +3,7 @@ import ScoringHeader from '../scoring_header/scoring_header';
 import Popup from '../pop_up/pop_up.component';
 import QRcode from '../../images/timg.jpg';
 import CardList from '../cardList/card_list.component';
+import singleCard from '../card/single_card.component';
 import IntroducionData from './introduction_data';
 import PaginationCard from '../paginate/pagebutton_card/pagebutton_card.component';
 class ScoringHomepage extends Component {
@@ -39,7 +40,7 @@ class ScoringHomepage extends Component {
         <button onClick={this.showModal}>开始使用</button>
         <Popup visible={visible} title="这是自定义title" confirm={this.confirm} onClose={this.closeModal} />
         <CardList {...this.state}/>
-        <PaginationCard {...this.state} />
+        <PaginationCard {...this.state} ItemComponent={singleCard}/>
     </div>
     }
   }

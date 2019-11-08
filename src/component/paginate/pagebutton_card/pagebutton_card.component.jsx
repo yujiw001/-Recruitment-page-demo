@@ -4,7 +4,6 @@ import style from "./pagebutton_card.styles.scss";
 
 import Card from "../../card/card.component";
 import IntroducionData from "../../pages/introduction_data";
-
 const data= IntroducionData;
 export default class PaginationCard extends Component{
     constructor(props){
@@ -18,6 +17,7 @@ export default class PaginationCard extends Component{
             totalPage:0,//总页数
         };
     }
+    
     componentWillMount(){
         //设置总页数
         this.setState({
@@ -75,6 +75,7 @@ export default class PaginationCard extends Component{
     render(){
         const Pages = this.create.bind(this)();
         let Total = this.state.totalData.length;
+        const ItemComponent = this.props.ItemComponent;
         // const {collections}= this.state.totalData;
         return(
             <div className = "pagination">
@@ -83,9 +84,8 @@ export default class PaginationCard extends Component{
                     <span>{Total}open roles</span>
                 </div>
                 {
-                        
                         this.state.indexList.map(({id,...otherCollectionProps}) => (
-                        <Card key={id} {...otherCollectionProps} />
+                        <ItemComponent key={id} {...otherCollectionProps} />
                     ))
                 }
                 <ul className = { "page" }>
