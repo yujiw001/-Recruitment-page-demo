@@ -2,17 +2,17 @@ import React,{ Component } from "react";
 import style from "./pagebutton.styles.scss";
 // import Job_Data from "../jobpost/jobitem/job.data";
 import MONSTER_DATA from "./monster.data.js";
-import Job_Item from "../jobpost/jobitem/jobitem.component";
+import IntroducionData from "../../pages/introduction_data";
+const data= IntroducionData;
 
-const job_data = MONSTER_DATA;
 export default class Pagination extends Component{
     constructor(props){
         super(props)
         this.state= {
             indexList:[], //当前渲染的页面数据
-            totalData:job_data,//我的数据
+            totalData:data,//我的数据
             pageCurr:1, //当前页码
-            pageSize:3,//每页显示的条数
+            pageSize:2,//每页显示的条数
             goValue:0, //要去的条数index
             totalPage:0,//总页数
         };
@@ -74,6 +74,7 @@ export default class Pagination extends Component{
     render(){
         const Pages = this.create.bind(this)();
         let Total = this.state.totalData.length;
+        let ItemComponent = this.props.ItemComponent;
         // const {collections}= this.state.totalData;
         return(
             <div className = "pagination">
@@ -84,7 +85,7 @@ export default class Pagination extends Component{
                 {
                         
                         this.state.indexList.map(({id,...otherCollectionProps}) => (
-                        <Job_Item key={id} {...otherCollectionProps} />
+                        <ItemComponent key={id} {...otherCollectionProps} />
                     ))
                 }
                 <ul className = { "page" }>

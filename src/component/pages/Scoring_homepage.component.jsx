@@ -5,6 +5,7 @@ import QRcode from '../../images/timg.jpg';
 import CardList from '../cardList/card_list.component';
 import singleCard from '../card/single_card.component';
 import IntroducionData from './introduction_data';
+import Pagination from '../paginate/pagebutton/pagebutton.component';
 import PaginationCard from '../paginate/pagebutton_card/pagebutton_card.component';
 class ScoringHomepage extends Component {
     constructor(props) {
@@ -40,6 +41,7 @@ class ScoringHomepage extends Component {
         <button onClick={this.showModal}>开始使用</button>
         <Popup visible={visible} title="这是自定义title" confirm={this.confirm} onClose={this.closeModal} />
         <CardList {...this.state}/>
+        <Pagination {...this.state} ItemComponent={singleCard}/>
         <PaginationCard {...this.state} ItemComponent={singleCard}/>
     </div>
     }
