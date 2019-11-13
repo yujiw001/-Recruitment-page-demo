@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './pop_up.styles.scss';
+import './modal.styles.scss';
 import QRcode from '../../images/timg.jpg';
-class Popup extends Component {
+class Modal extends Component {
     constructor(props) {
       super(props)
       this.confirm = this.confirm.bind(this)
@@ -77,7 +77,7 @@ class Popup extends Component {
       </div>
     }
   }
-  export default Popup;
+  export default Modal;
   
 
 

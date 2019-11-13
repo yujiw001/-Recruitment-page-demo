@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import ScoringHeader from '../scoring_header/scoring_header';
-import Popup from '../pop_up/pop_up.component';
+import Modal from '../modal/modal.component';
 import QRcode from '../../images/timg.jpg';
 import CardList from '../cardList/card_list.component';
 import singleCard from '../card/single_card.component';
 import IntroducionData from './introduction_data';
 import Pagination from '../paginate/pagebutton/pagebutton.component';
 import FormInput from '../JoinUs/JoinUs.component';
+import JoinUs from '../JoinUs/JoinUs.component';
 class ScoringHomepage extends Component {
     constructor(props) {
       super(props)
@@ -39,10 +40,11 @@ class ScoringHomepage extends Component {
             <h1>不知吃啥？上饭团点评查一查</h1>
         </div>
         <button onClick={this.showModal}>开始使用</button>
-        <Popup visible={visible} title="这是自定义title" confirm={this.confirm} onClose={this.closeModal} />
+        <Modal visible={visible} title="这是自定义title" confirm={this.confirm} onClose={this.closeModal} />
         <CardList {...this.state}/>
         <Pagination {...this.state} ItemComponent={singleCard}/>
-        <FormInput />
+        {/* <FormInput /> */}
+        <JoinUs />
     </div>
     }
   }
