@@ -40,7 +40,7 @@ import Button from 'react-bootstrap/Button';
 
 // export default Collapse;
 
-function Example() {
+function QACollapse() {
     const [open, setOpen] = useState(false);
   
     return (
@@ -63,5 +63,5 @@ function Example() {
     );
   }
 
-  export default Example;
+  export default QACollapse;
 

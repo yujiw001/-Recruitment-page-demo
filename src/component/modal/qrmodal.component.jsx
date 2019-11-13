@@ -1,9 +1,9 @@
 import React, { Component,useState } from 'react';
-import './modal.styles.scss';
+import './qrmodal.styles.scss';
 import QRcode from '../../images/timg.jpg';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-function QR_modal() {
+function QRmodal() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -19,7 +19,7 @@ function QR_modal() {
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body><img src={QRcode} alt="broken picture" height="80" width="80" /></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -32,7 +32,7 @@ function QR_modal() {
     </>
   );
 }
-export default QR_modal;
+export default QRmodal;
 
 
 // class Modal extends Component {
