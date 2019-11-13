@@ -6,8 +6,8 @@ import CardList from '../cardList/card_list.component';
 import singleCard from '../card/single_card.component';
 import IntroducionData from './introduction_data';
 import Pagination from '../paginate/pagebutton/pagebutton.component';
-import FormInput from '../JoinUs/JoinUs.component';
 import JoinUs from '../JoinUs/JoinUs.component';
+import Example from '../collapse/collapse.component';
 class ScoringHomepage extends Component {
     constructor(props) {
       super(props)
@@ -45,6 +45,7 @@ class ScoringHomepage extends Component {
         <Pagination {...this.state} ItemComponent={singleCard}/>
         {/* <FormInput /> */}
         <JoinUs />
+        <Example />
     </div>
     }
   }
