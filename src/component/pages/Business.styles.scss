@@ -1,5 +1,8 @@
 .Cooperationpage{
     .Performance{
-        display: 'flex';
+        .header{
+            display: flex;
+            color: aqua;
+        }
     }
 }

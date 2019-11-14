@@ -5,6 +5,7 @@ import SingleCard from '../card/single_card.component';
 import CardList from '../cardList/card_list.component';
 import IntroducionData from '../pages/introduction_data';
 import "./Business.styles.scss";
+import Slideshow from '../slideshow/slideshow.component';
 const CooperationPage = () =>{
     const title='Increase sales by up to 30%'
     const content="Life can be complicated but ordering food doesn't have to be. Let us take care of the details while you focus on what really matters"
@@ -20,11 +21,23 @@ const CooperationPage = () =>{
                 <p>Life can be complicated but ordering food doesn't have to be. Let us take care of the details while you focus on what really matters</p>
                 <Formodal />
             </div>
-            <div className="Performance" >
+            <div className="Performance_upper" style={divStyle} >
+                    <SingleCard />
+                    <SingleCard />
+            </div>
+            <div className="Performance_lower" >
+                    <SingleCard />
+                    <SingleCard />
+            </div>
+
+            <div className="Overview" >
                     <SingleCard />
                     <SingleCard />
                     <SingleCard />
                     <SingleCard />
+            </div>
+            <div className="Carousel">
+                    <Slideshow />
             </div>
 
         </div>

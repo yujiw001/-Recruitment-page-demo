@@ -1,5 +1,5 @@
 import React from 'react';
-import './card.styles.scss'
+import './card.styles.scss';
 const Card = (props) => (
     <div className='card-container'>
         <h2>{props.introduction.title}</h2>

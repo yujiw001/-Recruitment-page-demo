@@ -1,5 +1,5 @@
 import React from 'react';
-import './single_card.styles.scss'
+// import './single_card.styles.scss'
 //卡片目前有两种 一种是将被cardlist嵌套 根据数据多少生成的卡片 静态卡片
 //第二种就是需要可以被后台编辑的动态卡片
 const SingleCard = (props) => (

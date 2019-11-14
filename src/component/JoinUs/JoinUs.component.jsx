@@ -1,6 +1,7 @@
 import React from 'react';
 import FormInput from '../form_input/formInput.component';
 import PostBlob from '../postblob/postblob.component';
+
 class JoinUs extends React.Component  {
     constructor(){
         super();
