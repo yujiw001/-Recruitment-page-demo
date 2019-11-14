@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ScoringHeader from '../scoring_header/scoring_header';
-import QRModal from '../modal/qrmodal.component';
-import QRcode from '../../images/timg.jpg';
 import CardList from '../cardList/card_list.component';
 import singleCard from '../card/single_card.component';
 import IntroducionData from './introduction_data';
@@ -10,6 +8,7 @@ import JoinUs from '../JoinUs/JoinUs.component';
 import QACollapse from '../collapse/collapse.component';
 import QRmodal from '../modal/qrmodal.component';
 import Formodal from '../modal/formmodal.component';
+import PostBlob from '../postblob/postblob.component';
 class ScoringHomepage extends Component {
     constructor(props) {
       super(props)
@@ -51,6 +50,7 @@ class ScoringHomepage extends Component {
         <QACollapse />
         {/* <JoinUs /> */}
         <Formodal />
+        <PostBlob />
     </div>
     }
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import FormInput from '../form_input/formInput.component';
-
+import PostBlob from '../postblob/postblob.component';
 class JoinUs extends React.Component  {
     constructor(){
         super();
@@ -69,6 +69,7 @@ class JoinUs extends React.Component  {
                         <label><input type="checkbox" name="availableTime" value="sunday_5_11"
                                       onChange={this.handleChange}/>周日 5am - 11pm</label><br/>
                     </div>
+                        <PostBlob>上传简历</PostBlob>
                         <button type='submit'>SUBMIT</button>
                 </form>
             </div>
