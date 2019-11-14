@@ -9,7 +9,7 @@ const ScoringHeader = () => {
                     <Logo className='logo' />
                 </Link>
                 <div className='options'>
-                    <Link className='option' >
+                    <Link className='option' to='/scoring/cooperation'>
                             商家合作
                     </Link>
                     <Link className='option' >

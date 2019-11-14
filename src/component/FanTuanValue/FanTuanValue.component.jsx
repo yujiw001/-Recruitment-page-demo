@@ -1,5 +1,6 @@
 import React from 'react';
-import "./FanTuanValue.styles.scss"
+// import "./FanTuanValue.styles.scss"
+import "./FanTuanValue.styles.scss";
 const Fantuan_value = () => {
     return (
         <div className="core_value">
