@@ -4,11 +4,12 @@ import CardList from '../cardList/card_list.component';
 import singleCard from '../card/single_card.component';
 import IntroducionData from './introduction_data';
 import Pagination from '../paginate/pagebutton/pagebutton.component';
-import JoinUs from '../JoinUs/JoinUs.component';
 import QACollapse from '../collapse/collapse.component';
 import QRmodal from '../modal/qrmodal.component';
 import Formodal from '../modal/formmodal.component';
 import PostBlob from '../postblob/postblob.component';
+import UniversalModule from '../universal_module/universal_module';
+import pic from '../../images/dianpinglogo.svg'
 class ScoringHomepage extends Component {
     constructor(props) {
       super(props)
@@ -48,9 +49,9 @@ class ScoringHomepage extends Component {
         {/* <FormInput /> */}
         {/* <JoinUs /> */}
         <QACollapse />
-        {/* <JoinUs /> */}
         <Formodal />
         <PostBlob />
+        <UniversalModule title="ABC" content="abcabc" img={pic} ItemComponent={QRmodal} />
     </div>
     }
   }
