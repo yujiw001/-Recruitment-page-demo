@@ -51,7 +51,7 @@ class ScoringHomepage extends Component {
         <QACollapse />
         <Formodal />
         <PostBlob />
-        <UniversalModule title="ABC" content="abcabc" img={pic} ItemComponent={QRmodal} />
+        {/* <UniversalModule title="ABC" content="abcabc" img={pic} ItemComponent={QRmodal} /> */}
     </div>
     }
   }
