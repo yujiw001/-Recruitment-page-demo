@@ -2,8 +2,6 @@ import React from 'react';
 import ScoringHeader from '../scoring_header/scoring_header';
 import Formodal from '../modal/formmodal.component';
 import SingleCard from '../card/single_card.component';
-import CardList from '../cardList/card_list.component';
-import IntroducionData from '../pages/introduction_data';
 import "./Business.styles.scss";
 import Slideshow from '../slideshow/slideshow.component';
 const CooperationPage = () =>{
