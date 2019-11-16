@@ -1,0 +1,22 @@
+h2 {
+    text-align: center;
+    color: #979797;
+    font-size: 40px;
+}
+
+p {
+    text-align: center;
+    color: #666666;
+    font-size: 18px;
+    padding-bottom: 75px;
+}
+
+.block {
+    padding-top: 72px;
+    padding-bottom: 75px;
+}
+
+.card-col{
+    padding-left: 24px;
+    padding-right: 24px;
+}
