@@ -30,6 +30,7 @@ class RecruitmentPage extends Component  {
           {/* <JobList /> */}
           <Fantuan_value />
           <Pagination {...this.state} ItemComponent={Job_Item}/>
+          
           <Footer />
           {/* <CardList {...this.state}/> */}
         </div>

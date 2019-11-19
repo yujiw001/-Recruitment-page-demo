@@ -1,0 +1,33 @@
+.container {
+    padding-left: 180px;
+    padding-right: 180px;
+}
+
+.Foot {
+    height: 266px;
+    background: #666666;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Left_section {
+    color: #cccccc;
+    text-align: left;
+    display: flex;
+}
+
+.option {
+    color: #cccccc;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Middle_section {
+    color: #cccccc;
+    
+}
+
+.Right_section {
+    color: #cccccc;
+}
