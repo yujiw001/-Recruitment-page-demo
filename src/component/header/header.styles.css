@@ -1,4 +1,4 @@
-.navbar {
+.header {
   height: 74px;
   font-size: 20px;
   color: #CCCCCC;
@@ -39,11 +39,6 @@
   color: #CCCCCC;
   padding: 10px 15px;
   cursor: pointer;
-}
-
-.container {
-  padding-left: 180px;
-  padding-right: 180px;
 }
 
 
