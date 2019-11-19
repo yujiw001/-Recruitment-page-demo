@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@axetroy/react-codebox@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@axetroy/react-codebox/-/react-codebox-0.1.0.tgz#cd80187bb8bbeaceeba80f873820607eadf1101b"
+  integrity sha512-+vSUUnZWAiKSrZWO3J4CtppQ2/Zfx03WYM80hsVP2l89FPTinTw+crc24UL1QNytGaYQLo9d9t9jHpnjLa9tsA==
+
 "@babel/code-frame@7.5.5", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"

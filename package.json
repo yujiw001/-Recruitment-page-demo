@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://yujiw001.github.io/-Recruitment-page-demo",
   "dependencies": {
+    "@axetroy/react-codebox": "^0.1.0",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "cors": "^2.8.5",

@@ -1,9 +1,10 @@
 import React from 'react';
 import FormInput from '../form_input/formInput.component';
 import PostBlob from '../postblob/postblob.component';
-import VCode from '../Vcode/Vcode.component';
 import ReactCodeInput from 'react-verification-code-input';
 import Verificode from '../vertification/vertication.component';
+import Vcodebox from '../codeBox/codeBox.component';
+import Codebox from '../codeBox/codeBox.component';
 class JoinUs extends React.Component  {
     constructor(){
         super();
@@ -18,14 +19,14 @@ class JoinUs extends React.Component  {
             Mobile:'',
             WorkType:'',
             AvailableTime:[],
-            code:[]
+            code:[] //this variable is used to store the vertification code
         }
     }
     refreshCode(){
         this.GetVerifiCode();
     }
     GetVerifiCode(){
-       this.setState({
+        this.setState({
         code:this.genRandomString(4)
        });
     }
@@ -106,6 +107,7 @@ class JoinUs extends React.Component  {
                         <PostBlob>上传简历</PostBlob>
                         <div style={{width:'200px',height:'35px'}}>
                             <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
+                            <Codebox />
                         </div>
                         <button type='submit'>SUBMIT</button>
                 </form>

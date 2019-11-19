@@ -64,7 +64,7 @@ class Verificode extends Component {
               ctx.moveTo(this.getRandom(0,canvas.width), this.getRandom(0,canvas.height));
               ctx.lineTo(this.getRandom(0,canvas.width), this.getRandom(0,canvas.height));
               ctx.stroke();
-          }
+            }
           /**绘制干扰点**/
             for(let i = 0; i < canvas.width/4; i++) {
                 ctx.fillStyle = this.getRandom(0, 255);
