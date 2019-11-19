@@ -10,15 +10,36 @@ const HomePage = () => {
         <div className="Homepage">
 
             <Header />
+            <div style={{'padding':'108px'}}></div>
 
-            <div className="Card_container">
-                <h1>The Best Asian Food Delivery</h1>
-                <CustomButton name='饭团外卖' address=''/>
+            <div className='container'>
+            <div className='row'>
+                <div>
+                    <h1 style={{'text-align':'left', 'font-size':'70px'}}> 
+                        The Best 
+                        <br />
+                        Asian Food 
+                        <br />
+                        Delivery
+                    </h1>
+                    <CustomButton name='饭团外卖' address=''/>
+                </div>
+                <div style={{'padding-right':'450px'}}></div>
+                <div>
+                    <h1 style={{'text-align':'right','font-size':'70px'}}>
+                        The Best 
+                        <br />
+                        Asian Food 
+                        <br />
+                        Delivery
+                    </h1>
+                    <CustomButton name='饭团点评' address='/Scoring'/>
+                </div>
             </div>
-            <div className="Card_container">
-                <h1>The Best Asian Food Delivery</h1>
-                <CustomButton name='饭团点评' address='/Scoring'/>
             </div>
+
+            <div style={{padding:'108px'}}></div>
+
             <Footer />
         </div>
     );
