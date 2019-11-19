@@ -7,6 +7,7 @@ import RequirementData from './requirement_data';
 import ResponsibilityData from './responsibility_data';
 import Formodal from '../modal/formmodal.component';
 import List from '../list/list.component';
+import { O_CREAT } from 'constants';
 class RecruitmentDetail extends Component  {
     constructor(props){
         super(props)
