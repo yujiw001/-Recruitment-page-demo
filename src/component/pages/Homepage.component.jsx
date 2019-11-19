@@ -10,7 +10,6 @@ const HomePage = () => {
         <div className="Homepage">
 
             <Header />
-
             <div style={{'padding':'108px'}}></div>
 
             <div className='container'>
