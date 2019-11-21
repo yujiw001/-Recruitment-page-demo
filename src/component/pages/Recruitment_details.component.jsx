@@ -15,7 +15,7 @@ class RecruitmentDetail extends Component  {
           jobdata:JobData,
           requirementData:RequirementData,
           responsibilityData:ResponsibilityData,
-          current_id:1
+          current_id:2
         };
     }
     render(){

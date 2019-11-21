@@ -1,5 +1,4 @@
-//@author Yuji Wang
-//@date 2019 Nov 1st
+//created by Yuji Wang on 10/28/2019
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {BrowserRouter} from 'react-router-dom';
@@ -34,3 +33,4 @@ const Footer = ()=>{
 }
 
 export default Footer;
+

@@ -1,3 +1,4 @@
+//created by Yuji Wang on 10/25/2019
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import slide_2 from '../../images/slide_2.jpg';
