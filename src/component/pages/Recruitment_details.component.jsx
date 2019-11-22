@@ -15,7 +15,7 @@ class RecruitmentDetail extends Component  {
           jobdata:JobData,
           requirementData:RequirementData,
           responsibilityData:ResponsibilityData,
-          current_id:2
+          current_id:1
         };
     }
     render(){
@@ -31,8 +31,11 @@ class RecruitmentDetail extends Component  {
                     <Link className='option' to="/Recruitment/details">招聘详情</Link>
                 </div>
                 <div className="discription">
-                    <UniversalModule title="ABC" content="abcabc"  ItemComponent={Formodal} />
-                    {/* 为了使得组件可以适应general的情况，这边需要用到destructure */}
+                {
+                    jobdata.map(({id,...otherCollectionProps}) =>
+                        <UniversalModule key={id} value={3} {...otherCollectionProps}/>
+                    )
+                }
                 </div>
                 <div className="responsibility">
                     <List data={responsibilityData} {...responsibilityrest} />
