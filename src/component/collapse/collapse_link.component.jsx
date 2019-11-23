@@ -19,8 +19,8 @@ function PositionCollapse(props) {
       <Collapse in={open}>
         <div id="example-collapse-text">
           {
-            restList.slice(6).map(({id,...otherCollectionProps}) => (
-              <Job_Item key={id} {...otherCollectionProps} />
+            restList.slice(6).map(({...otherCollectionProps}) => (
+              <Job_Item  {...otherCollectionProps} />
           ))
           }
         </div>

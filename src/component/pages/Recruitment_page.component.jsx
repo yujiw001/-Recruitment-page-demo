@@ -8,7 +8,7 @@ import Fantuan_value from '../../component/FanTuanValue/FanTuanValue.component';
 import Footer from '../../component/footer/footer.component';
 import JobData from '../pages/position_data';
 import Viewmore from '../collapse/viewmore.component';
-import LOLCollapse from '../collapse/collapse_link.component';
+
 class RecruitmentPage extends Component  {
   constructor(props){
     super(props)

@@ -7,7 +7,6 @@ import RequirementData from './requirement_data';
 import ResponsibilityData from './responsibility_data';
 import Formodal from '../modal/formmodal.component';
 import List from '../list/list.component';
-import { O_CREAT } from 'constants';
 class RecruitmentDetail extends Component  {
     constructor(props){
         super(props)
@@ -15,10 +14,12 @@ class RecruitmentDetail extends Component  {
           jobdata:JobData,
           requirementData:RequirementData,
           responsibilityData:ResponsibilityData,
-          current_id:4
+          current_id:this.props.match.params.jobpost
         };
     }
     render(){
+        console.log(this.props);
+        // const {current_id} = this.props.params.article;
         const { jobdata } = this.state;
         const { requirementData,...requirementrest} = this.state;
         const { responsibilityData,...responsibilityrest}=this.state;
@@ -29,7 +30,7 @@ class RecruitmentDetail extends Component  {
                     <ScoringHeader /> 
                     <Link className='option' to="/">首页</Link>
                     <Link className='option' to="/Recruitment">招聘频道</Link>
-                    <Link className='option' to="/Recruitment/details">招聘详情</Link>
+                    <Link className='option' to="/Recruitment/details/">招聘详情</Link>
                 </div>
                 <div className="discription">
                 {

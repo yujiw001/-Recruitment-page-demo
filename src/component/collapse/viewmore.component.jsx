@@ -11,7 +11,8 @@ export default class Viewmore extends Component{
         this.state= {
             indexList:[], //当前渲染的页面数据
             // totalData:props.renderData,//我的数据
-            totalData:JobData
+            totalData:JobData,
+            
         };
     }
 
@@ -32,8 +33,8 @@ export default class Viewmore extends Component{
         return (
             <div className="viewmore">
                 {
-                    this.state.indexList.slice(0,6).map(({id,...otherCollectionProps}) => (
-                        <Job_Item key={id} {...otherCollectionProps} />
+                    this.state.indexList.slice(0,6).map(({...otherCollectionProps}) => (
+                        <Job_Item  {...otherCollectionProps} />
                     ))
                 }
                 <PositionCollapse {...this.state} />
