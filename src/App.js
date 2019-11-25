@@ -16,16 +16,15 @@ function App() {
         
         {/* <HomePage /> */}
         {/* <RecruitmentPage /> */}
-        {/* <BrowserRouter> */}
+        
         <Switch>
             <Route exact path='/' component = {HomePage}/>
             <Route exact path="/Recruitment" component = {RecruitmentPage} />
             <Route exact path="/Scoring" component={ScoringHomepage} />
             <Route exact path="/Scoring/Cooperation" component={CooperationPage} />
             <Route exact path="/QandA" component={QandApage} />
-            <Route exact path="/Recruitment/details" component={RecruitmentDetail} />
+            <Route exact path="/Recruitment/details/:jobpost" component={RecruitmentDetail} />
         </Switch>
-        {/* </BrowserRouter> */}
       </div>
     </BrowserRouter>
   );

@@ -14,29 +14,35 @@ class RecruitmentDetail extends Component  {
           jobdata:JobData,
           requirementData:RequirementData,
           responsibilityData:ResponsibilityData,
-          current_id:1
+          current_id:this.props.match.params.jobpost
         };
     }
     render(){
-        const { jobdata, ...jobrest} = this.state;
+        console.log(this.props);
+        // const {current_id} = this.props.params.article;
+        const { jobdata } = this.state;
         const { requirementData,...requirementrest} = this.state;
         const { responsibilityData,...responsibilityrest}=this.state;
+        const target_position = jobdata.find(data => data.id==this.state.current_id);
         return(
             <div>
                 <div className="path">
-                    <ScoringHeader />
+                    <ScoringHeader /> 
                     <Link className='option' to="/">首页</Link>
                     <Link className='option' to="/Recruitment">招聘频道</Link>
-                    <Link className='option' to="/Recruitment/details">招聘详情</Link>
+                    <Link className='option' to="/Recruitment/details/">招聘详情</Link>
                 </div>
                 <div className="discription">
-                    <UniversalModule title="ABC" content="abcabc"  ItemComponent={Formodal} />
-                    {/* 为了使得组件可以适应general的情况，这边需要用到destructure */}
+                {
+                    <UniversalModule title={target_position.position} content={target_position.brief} ItemComponent={Formodal}/>
+                }
                 </div>
                 <div className="responsibility">
+                    <h2>Responsibility</h2>
                     <List data={responsibilityData} {...responsibilityrest} />
                 </div>
                 <div className= "requirement">
+                    <h2>Requirement</h2>
                     <List data={requirementData} {...requirementrest} />
                 </div>
             </div>

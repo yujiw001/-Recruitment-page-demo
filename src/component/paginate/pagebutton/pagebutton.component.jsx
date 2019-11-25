@@ -85,7 +85,7 @@ export default class Pagination extends Component{
                 {
                         
                         this.state.indexList.map(({id,...otherCollectionProps}) => (
-                        <ItemComponent key={id} {...otherCollectionProps} />
+                        <ItemComponent key={id}  {...otherCollectionProps} />
                     ))
                 }
                 <ul className = { "page" }>

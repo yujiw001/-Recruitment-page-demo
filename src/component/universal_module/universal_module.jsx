@@ -1,23 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class UniversalModule extends Component{
-    constructor(props){
-        super(props)
-        this.state={
-          containImg:true
-        };
+const UniversalModule = (props) => {
+    let ItemComponent = props.ItemComponent;
+    return(
+        <div className='position_container'>
+            <h2>{props.title}</h2>
+            <p>{props.content}</p>
+            <ItemComponent />
+        </div>
+    )
     }
-    render(){
-        let ItemComponent = this.props.ItemComponent;
-        return(
-            <div className="module-container">
-                <h2>{this.props.title}</h2>
-                <p>{this.props.content}</p>
-                <ItemComponent />
-                <img>{this.props.image}</img>
-            </div>
-        )
-    }
-}
 
 export default UniversalModule;

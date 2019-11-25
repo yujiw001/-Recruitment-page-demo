@@ -1,15 +1,19 @@
 import React from 'react';
 import './jobitem.styles.scss'
 import {Link} from 'react-router-dom';
-import {BrowserRouter} from 'react-router-dom';
 
 const JobItem = (props) => (
-    <div className='job-item'>
-            <div>
-                <Link className='position' key={props.id}>{props.name}</Link>
-                <span className='location'key={props.id}>{props.username}</span>
+    <div>
+        <div className="dropdown-divider"></div>
+        <div className='job-item'>
+            <span className='position' key={props.id}>{props.position}</span>
+            <div className='loc_view'>
+                <span className='location' key={props.id}>{props.area}</span>
+                <Link to ={`/Recruitment/details/${props.id}`} className='view'>View Detail ></Link>
             </div>
+        </div>
     </div>
+
 );
 
 export default JobItem;
