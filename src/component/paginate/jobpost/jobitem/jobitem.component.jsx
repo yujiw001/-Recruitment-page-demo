@@ -6,6 +6,9 @@ const JobItem = (props) => (
     <div className='job-item'>
             <div>
                 <Link to ={`/Recruitment/details/${props.id}`} className='position' key={props.id}>{props.position}</Link>
+                {
+                    props.Expedited ? <span className="hotLabel">hot</span> : null
+                }
                 <span className='location'key={props.id}>{props.area}</span>
             </div>
     </div>

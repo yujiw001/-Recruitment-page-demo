@@ -21,7 +21,7 @@ const JobData=[
         "position": "Accountant",
         "initialRegistration":"Feb 19 2019",
         "brief": "The Key Account Manager is the primary relationship owner between our Key Accounts and the Canteen business. The Key Account Manager will develop and execute growth initiatives by effectively utilizing a combination of face-to-face sales calls, telephone and email communication. This position is responsible for profitable sales growth by managing, retaining and cross-selling within current customer accounts.",
-        "Expedited": false
+        "Expedited": true
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@ const JobData=[
         "position": "Product manager",
         "initialRegistration":"Feb 21 2019",
         "brief": "At Boast.AI, we are building the future of tax credit recovery with artificial intelligence. We are looking for a highly motivated Technical Project Manager to join our rapidly expanding team in Vancouver.",
-        "Expedited": false
+        "Expedited": true
     },
     {
         "id": 6,

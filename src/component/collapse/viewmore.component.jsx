@@ -25,22 +25,35 @@ export default class Viewmore extends Component{
     //思路：首先用find把有加急标签的元素给挑出来，然后用filter把这些元素去除掉后进行时间排序，然后再把挑出来的元素append到数列头部？？
     //可以用传统loop来完成上述操作吗？？？
     
-    noticeSorting(){
-        return(
-            this.state.totalData.sort(function(a,b){
-            return new Date(b.initialRegistration) - new Date(a.initialRegistration);
-        }
-        ))
-    }
     // noticeSorting(){
     //     return(
-            
-    //         this.state.totalData.find(data => data.id==this.state.current_id);
     //         this.state.totalData.sort(function(a,b){
     //         return new Date(b.initialRegistration) - new Date(a.initialRegistration);
     //     }
     //     ))
     // }
+    noticeSorting(){
+        var expeditedList =[];
+        var sortedList=[];
+        var i=0;
+        while (i<this.state.totalPositions){
+            if(!(this.state.totalData[i].Expedited)){
+                sortedList.push(this.state.totalData[i])
+            }
+            else{
+                expeditedList.push(this.state.totalData[i])
+            }
+            i++;
+        }
+        
+        sortedList.sort(function(a,b){
+             return new Date(b.initialRegistration) - new Date(a.initialRegistration);
+        })
+        var finalList=expeditedList.concat(sortedList)
+        return finalList
+        
+    }
+    
     render(){
         return (
             <div className="viewmore">
