@@ -10,6 +10,7 @@ const JobItem = (props) => (
                     props.Expedited ? <span className="hotLabel">hot</span> : null
                 }
                 <span className='location'key={props.id}>{props.area}</span>
+                <Link to ={`/Recruitment/details/${props.id}`} className='viewDetail' key={props.id}>View Detail</Link>
             </div>
     </div>
 );
