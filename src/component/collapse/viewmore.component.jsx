@@ -12,7 +12,7 @@ export default class Viewmore extends Component{
             indexList:[], //当前渲染的页面数据
             // totalData:props.renderData,//我的数据
             totalData:JobData,
-            
+            totalPositions:JobData.length
         };
     }
 
@@ -22,6 +22,9 @@ export default class Viewmore extends Component{
             indexList:this.noticeSorting()
         })
     }
+    //思路：首先用find把有加急标签的元素给挑出来，然后用filter把这些元素去除掉后进行时间排序，然后再把挑出来的元素append到数列头部？？
+    //可以用传统loop来完成上述操作吗？？？
+    
     noticeSorting(){
         return(
             this.state.totalData.sort(function(a,b){
@@ -29,9 +32,20 @@ export default class Viewmore extends Component{
         }
         ))
     }
+    // noticeSorting(){
+    //     return(
+            
+    //         this.state.totalData.find(data => data.id==this.state.current_id);
+    //         this.state.totalData.sort(function(a,b){
+    //         return new Date(b.initialRegistration) - new Date(a.initialRegistration);
+    //     }
+    //     ))
+    // }
     render(){
         return (
             <div className="viewmore">
+                <h3>Find open roles</h3> 
+                <span>{this.state.totalPositions} open roles</span>
                 {
                     this.state.indexList.slice(0,6).map(({...otherCollectionProps}) => (
                         <Job_Item  {...otherCollectionProps} />

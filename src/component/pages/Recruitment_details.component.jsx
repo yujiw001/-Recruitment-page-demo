@@ -38,9 +38,11 @@ class RecruitmentDetail extends Component  {
                 }
                 </div>
                 <div className="responsibility">
+                    <h2>Responsibility</h2>
                     <List data={responsibilityData} {...responsibilityrest} />
                 </div>
                 <div className= "requirement">
+                    <h2>Requirement</h2>
                     <List data={requirementData} {...requirementrest} />
                 </div>
             </div>
