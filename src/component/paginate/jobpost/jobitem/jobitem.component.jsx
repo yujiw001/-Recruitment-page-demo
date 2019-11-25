@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const JobItem = (props) => (
     <div className='job-item'>
             <div>
-                <Link to ={`/Recruitment/details/${props.id}`} className='position' key={props.id}>{props.position}</Link>
+                <Link to ={`/Recruitment/details/${props.id}`} className={`${props.Expedited?'expedited':''} position`} key={props.id}>{props.position}</Link>
                 {
                     props.Expedited ? <span className="hotLabel">hot</span> : null
                 }
