@@ -7,6 +7,7 @@ import RequirementData from './requirement_data';
 import ResponsibilityData from './responsibility_data';
 import Formodal from '../modal/formmodal.component';
 import List from '../list/list.component';
+import Jobmodal from '../modal/jobmodal.component';
 class RecruitmentDetail extends Component  {
     constructor(props){
         super(props)
@@ -34,7 +35,7 @@ class RecruitmentDetail extends Component  {
                 </div>
                 <div className="discription">
                 {
-                    <UniversalModule title={target_position.position} content={target_position.brief} ItemComponent={Formodal}/>
+                    <UniversalModule title={target_position.position} content={target_position.brief} ItemComponent={Jobmodal}/>
                 }
                 </div>
                 <div className="responsibility">

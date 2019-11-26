@@ -2,8 +2,8 @@ import React, { Component,useState } from 'react';
 import './qrmodal.styles.scss';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import JoinUs from '../JoinUs/JoinUs.component';
-function Formodal() {
+import JobForm from '../JoinUs/jobForm.component';
+function Jobmodal() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -18,7 +18,7 @@ function Formodal() {
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
-        <Modal.Body><JoinUs /></Modal.Body>
+        <Modal.Body><JobForm /></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -31,4 +31,4 @@ function Formodal() {
     </>
   );
 }
-export default Formodal;
+export default Jobmodal;
