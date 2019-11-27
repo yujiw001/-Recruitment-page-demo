@@ -33,3 +33,21 @@
 .fh_rec_title {
     display: flex;
 }
+
+.fh_view_more {
+    padding: 0px 0 129px 0;
+}
+
+.fh_view_more_button {
+    width:135px;
+    height:36px;
+    background:rgba(6,34,54,1) !important;
+    border-radius:18px !important;
+    border: none !important;
+
+    font-size:16px;
+    font-family:OpenSans-Semibold,OpenSans;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+    line-height:22px;
+}

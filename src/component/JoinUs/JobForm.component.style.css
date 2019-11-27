@@ -1,0 +1,32 @@
+.fh_rec_det_apply_container {
+    width: 500px;
+    align-items: center;
+}
+
+.fh_rec_det_apply_name {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.fh_rec_det_apply_last_name {
+    display: flex;
+    align-items: flex-end;
+}
+
+.fh_rec_det_apply_submit {
+    text-align: right;
+}
+.fh_rec_det_apply_submit_button {
+    width:126px;
+    height:54px !important;
+    background:rgba(6,34,54,1) !important;
+    border: none !important;
+    border-radius:5px !important;
+
+    font-size:16px !important;
+    font-family:Roboto-Bold,Roboto !important;
+    font-weight:bold !important;
+    color:rgba(255,255,255,1) !important;
+    line-height:19px !important;
+}

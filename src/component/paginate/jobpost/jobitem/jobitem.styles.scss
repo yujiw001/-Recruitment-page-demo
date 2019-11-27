@@ -4,6 +4,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 0 27px 30px;
+    .pos_hot{
+        min-width: 20%;
+        display: flex;
+        justify-content: space-between;
+    }
     .position {
         width: 100%;
         font-size:16px;
@@ -13,11 +19,27 @@
         line-height:22px;
 
         text-align: left;
-        padding: 30px 0 27px 30px;
+    }
+    .hotLabel {
+        width:40px;
+        height:19px;
+        background:rgba(248,128,26,1);
+        border-radius:2px;
+        margin: 3px 0 0 0px;
+
+        font-size:11px;
+        font-family:OpenSans-Bold,OpenSans;
+        font-weight:bold;
+        color:rgba(255,255,255,1);
+        line-height:11px;
+        align-items: center;
+        padding: 4px 7px 4px 9px;
     }
 
     .loc_view {
+        min-width: 30%;
         display: flex;
+        justify-content: space-between;
         padding: 0 30px 0 0;
     }
     
@@ -26,8 +48,6 @@
         font-family:OpenSans;
         color:rgba(102,102,102,1);
         line-height:19px;
-
-        padding: 0 80px 0 0;
     }
 
     .view {

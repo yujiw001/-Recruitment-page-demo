@@ -3,16 +3,13 @@
 import React, { Component } from 'react';
 import Header from '../../component/header/header.component';
 import Slideshow from '../../component/slideshow/slideshow.component';
-import Pagination from '../../component/paginate/pagebutton/pagebutton.component';
-import Job_Item from '../paginate/jobpost/jobitem/jobitem.component'
-import Fantuan_value from '../../component/FanTuanValue/FanTuanValue.component';
 import Footer from '../../component/footer/footer.component';
 import JobData from '../pages/position_data';
 import Viewmore from '../collapse/viewmore.component';
 
 import '../css/Recruitment_page.component.css';
 
-class RecruitmentPage extends Component  {
+class RecruitmentPage extends Component {
   constructor(props){
     super(props)
     this.state={
@@ -22,11 +19,11 @@ class RecruitmentPage extends Component  {
   }
   render (){
     return (
-        <div className="">
+        <div>
           <Header />
 
           <div className='container'>
-            <h1 className='fh_rec_career'>Career</h1>
+            <h1 className='fh_rec_career'>Careers</h1>
 
             <Slideshow />
 

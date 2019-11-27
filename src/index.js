@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+//Add outside css files
 import 'bootstrap/dist/css/bootstrap.min.css';
-//Add css files
 import 'bootstrap/dist/js/bootstrap.bundle';
-import 'react-quill/dist/quill.snow.css';
 import 'antd/dist/antd.css';
+import 'react-quill/dist/quill.snow.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

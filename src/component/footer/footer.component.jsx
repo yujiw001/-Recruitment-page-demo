@@ -8,34 +8,29 @@ import '../../images/ins.png'
 import '../../images/youtu.png'
 const Footer = ()=>{
     return(
-        <div className="Foot">
-            <div className='container' style={{'padding-top':'30px'}}>
-                <div className='row'>
-                    <div className='Left_section'>
-                        <div>  
-                            <Link className='option'>饭团外卖</Link>
-                            <Link className='option'>关于我们</Link>
-                            <Link className='option'> 媒体报道</Link>
+        <div className="fh_foot">
+            <div className='container'>
+                <div className='fh_foot_display'>
+                    <div className='fh_foot_links'>
+                        <div className='fh_foot_section'>
+                            <Link to='#' className='fh_foot_link'>Fantuan Delivery</Link>
+                            <Link to='#' className='fh_foot_link'>Fantuan Dianping</Link>
                         </div>
-                        <div>
-                            <Link className='option'>饭团点评</Link>
-                            <Link className='option'>Contack Us</Link>
-                            <Link className='option'>职位招聘</Link>
+                        <div className='fh_foot_section'>
+                            <Link to='/' className='fh_foot_link'>About Us</Link>
+                            <Link to='/News' className='fh_foot_link'>Newsroom</Link>
+                            <Link to='/Recruitment' className='fh_foot_link'>Careers</Link>
+                        </div>
+                        <div className='fh_foot_section'>
+                            <Link to='#' className='fh_foot_link'>Contact Us</Link>
+                            <Link to='#' className='fh_foot_link'>Privacy Policy</Link>
                         </div>
                     </div>
-                
-                    <div className="Middle_section">
-                        <span>© 2019 Fantuan Techn</span>
+                    <div className='fh_foot_feedback'>
+                        <p className='fh_foot_fb_advice'>如果您有任何意见或建议，请发送邮件至</p>                     
+                        <p className='fh_foot_fb_email'>feedback@fantuan.ca</p>
+                        <p className='fh_foot_fb_copyright'>Copyright © 2019 Fantuan</p>
                     </div>
-
-                    <div className="Right_section">
-                        <ul className='row'>
-                            <li><a href="http://www.facebook.com"><img src='../../images/face.png' /></a></li>
-                            <li><a href="https://www.instagram.com"><img src='../../images/ins.png'/></a></li>
-                            <li><a href="http://www.youtube.com"><img src='../../images/youtu.png' /></a></li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
         </div>
