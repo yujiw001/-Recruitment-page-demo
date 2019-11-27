@@ -69,7 +69,6 @@ class RecruitmentDetail extends Component  {
                 </div>  
 
                 <Footer/>
-
             </div>
         )
     }

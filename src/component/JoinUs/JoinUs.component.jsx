@@ -65,8 +65,8 @@ class JoinUs extends React.Component  {
         return(
             <div className='Form_input'>
                 <form className='JoinUs' onSubmit={this.handleSubmit}>
-                    <FormInput type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='姓名' required></FormInput>
-                    <FormInput type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='住址' required></FormInput>
+                    <FormInput type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></FormInput>
+                    <FormInput type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></FormInput>
                     <FormInput type='text' name='Address' value={Address} onChange={this.handleChange} label='Street Address' required></FormInput>
                     <FormInput type='text' name='City' value={City} onChange={this.handleChange} label='City' required></FormInput>
                     <FormInput type='text' name='PostalCode' value={PostalCode} onChange={this.handleChange} label='ZIP/Postal Code' required></FormInput>
