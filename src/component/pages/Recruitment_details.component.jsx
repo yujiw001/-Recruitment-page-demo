@@ -6,12 +6,9 @@ import JobData from './position_data';
 import RequirementData from './requirement_data';
 import ResponsibilityData from './responsibility_data';
 import Formodal from '../modal/formmodal.component';
-
 import JobApplication from '../modal/job_form_modal.component';
-
 import List from '../list/list.component';
 import Footer from '../footer/footer.component';
-
 import '../css/Recruitment_details.component.css';
 class RecruitmentDetail extends Component  {
     constructor(props){
