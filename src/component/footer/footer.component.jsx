@@ -1,35 +1,40 @@
 //created by Yuji Wang on 10/28/2019
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './footer.styles.css';
 import {BrowserRouter} from 'react-router-dom';
-// import '../../images/face.png'
-// import '../../images/ins.png'
-// import '../../images/youtu.png'
+import '../../images/face.png'
+import '../../images/ins.png'
+import '../../images/youtu.png'
 const Footer = ()=>{
     return(
-        <div className="Foot">
-            <BrowserRouter>
-                <div className="Left_section"> 
-                    <Link>饭团外卖</Link>
-                    <Link>关于我们</Link>
-                    <Link>媒体报道</Link>
-                    <Link>饭团点评</Link>
-                    <Link>媒体报道</Link>
-                    <Link>Contack Us</Link>
-                    <Link>职位招聘</Link>
+        <div className="fh_foot">
+            <div className='container'>
+                <div className='fh_foot_display'>
+                    <div className='fh_foot_links'>
+                        <div className='fh_foot_section'>
+                            <Link to='#' className='fh_foot_link'>Fantuan Delivery</Link>
+                            <Link to='#' className='fh_foot_link'>Fantuan Dianping</Link>
+                        </div>
+                        <div className='fh_foot_section'>
+                            <Link to='/' className='fh_foot_link'>About Us</Link>
+                            <Link to='/News' className='fh_foot_link'>Newsroom</Link>
+                            <Link to='/Recruitment' className='fh_foot_link'>Careers</Link>
+                        </div>
+                        <div className='fh_foot_section'>
+                            <Link to='#' className='fh_foot_link'>Contact Us</Link>
+                            <Link to='#' className='fh_foot_link'>Privacy Policy</Link>
+                        </div>
+                    </div>
+                    <div className='fh_foot_feedback'>
+                        <p className='fh_foot_fb_advice'>如果您有任何意见或建议，请发送邮件至</p>                     
+                        <p className='fh_foot_fb_email'>feedback@fantuan.ca</p>
+                        <p className='fh_foot_fb_copyright'>Copyright © 2019 Fantuan</p>
+                    </div>
                 </div>
-                <div className="Middle_section">
-                    <span>© 2019 Fantuan Techn</span>
-                </div>
-                <div className="Right_section">
-                    <ul class="social-icons">
-                        <li><a href="http://www.facebook.com"><img src='../../images/face.png' /></a></li>
-                        <li><a href="https://www.instagram.com"><img src='../../images/ins.png' /></a></li>
-                        <li><a href="http://www.youtube.com"><img src='../../images/youtu.png' /></a></li>
-                    </ul>
-                </div>
-            </BrowserRouter>
-        </div>)
+            </div>
+        </div>
+    );
 }
 
 export default Footer;

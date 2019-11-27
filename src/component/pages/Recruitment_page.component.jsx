@@ -1,15 +1,15 @@
 //created by Yuji Wang on 10/28/2019
 //Integrate all the required components to create the Recritment page.
 import React, { Component } from 'react';
+import Header from '../../component/header/header.component';
 import Slideshow from '../../component/slideshow/slideshow.component';
-import Pagination from '../../component/paginate/pagebutton/pagebutton.component';
-import Job_Item from '../paginate/jobpost/jobitem/jobitem.component'
-import Fantuan_value from '../../component/FanTuanValue/FanTuanValue.component';
 import Footer from '../../component/footer/footer.component';
 import JobData from '../pages/position_data';
 import Viewmore from '../collapse/viewmore.component';
 
-class RecruitmentPage extends Component  {
+import '../css/Recruitment_page.component.css';
+
+class RecruitmentPage extends Component {
   constructor(props){
     super(props)
     this.state={
@@ -19,13 +19,17 @@ class RecruitmentPage extends Component  {
   }
   render (){
     return (
-        <div className="RecruitmentPage">
-          <h1>Fantuan 团建</h1>
-          <Slideshow />
-          <Fantuan_value />
-          {/* pass diffenent components which need to be displayed as parameter into the Pagination component */}
-          {/* <Pagination {...this.state} ItemComponent={Job_Item}/> */}
-          <Viewmore />
+        <div>
+          <Header />
+
+          <div className='container'>
+            <h1 className='fh_rec_career'>Careers</h1>
+
+            <Slideshow />
+
+            <Viewmore />
+          </div>
+
           <Footer />
         </div>
       );

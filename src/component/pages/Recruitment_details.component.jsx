@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import ScoringHeader from '../scoring_header/scoring_header';
+import Header from '../header/header.component';
 import UniversalModule from '../universal_module/universal_module';
 import JobData from './position_data';
 import RequirementData from './requirement_data';
@@ -13,7 +13,9 @@ import List from '../list/list.component';
 import Footer from '../footer/footer.component';
 
 import '../css/Recruitment_details.component.css';
+
 class RecruitmentDetail extends Component  {
+
     constructor(props){
         super(props)
         this.state={
@@ -23,13 +25,16 @@ class RecruitmentDetail extends Component  {
           current_id:this.props.match.params.jobpost
         };
     }
+
     render(){
+
         console.log(this.props);
         // const {current_id} = this.props.params.article;
         const { jobdata } = this.state;
         const { requirementData,...requirementrest} = this.state;
         const { responsibilityData,...responsibilityrest}=this.state;
         const target_position = jobdata.find(data => data.id==this.state.current_id);
+
         return(
             <div>
                 <Header /> 
@@ -64,7 +69,6 @@ class RecruitmentDetail extends Component  {
                 </div>  
 
                 <Footer/>
-                
             </div>
         )
     }

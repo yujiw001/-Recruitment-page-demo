@@ -1,10 +1,10 @@
 //created by Yuji Wang on 10/28/2019
-import React from 'react';
+import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import DropDownBox from '../dropdown_box/dropdown_box.component';
-import {BrowserRouter} from 'react-router-dom';
 import './header.styles.css';
-class Header extends React.Component {
+
+class Header extends Component {
+
     constructor(props){
         super(props);
 
@@ -13,28 +13,29 @@ class Header extends React.Component {
             language: ''
         };
     }
+
     handleClick = () =>{
         this.setState(state => ({
             hidden: ! this.state.hidden
         }));
     }
+
     render() {
         return(
-            <div className='header'>
-                <span className='option'onClick={this.handleClick}>大饭团</span>
-                {
-                    this.state.hidden ? null: <DropDownBox />
-                }
-                <div className='options'>
-                    
-                        <Link className='option' to="/">首页</Link>
-                        <Link className='option'>关于饭团</Link>
-                        <Link className='option'>媒体新闻</Link>
-                        <Link className='option' to="/Recruitment">招聘频道</Link>
-                        <span className='option'>中文</span>
-                    
-                    
-                </div>
+            <div className="header"> 
+                <div className='container'>
+                    <div className='header_display'>  
+                        <div className='header_left'>
+                            <div className='header_title'>Fantuan</div>
+                            <div className='header_options'>
+                                <Link className='header_option' to='/'>About</Link>
+                                <Link className='header_option' to='/News'>Newsroom</Link>
+                                <Link className='header_option' to="/Recruitment">Careers</Link>
+                            </div>
+                        </div>
+                        <div className='header_language'>中文</div>
+                    </div>
+                </div>  
             </div>
         );
     }

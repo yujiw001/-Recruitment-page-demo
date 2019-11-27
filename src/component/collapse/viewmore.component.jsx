@@ -57,8 +57,11 @@ export default class Viewmore extends Component{
     render(){
         return (
             <div className="viewmore">
-                <h3>Find open roles</h3> 
-                <span>{this.state.totalPositions} open roles</span>
+                <div className='fh_rec_title'>
+                    <h3 className='fh_rec_find'>Find open roles</h3> 
+                    <span className='fh_rec_open'>{this.state.totalPositions} open roles</span>
+                </div>
+                <div className="dropdown-divider" ></div>
                 {
                     this.state.indexList.slice(0,6).map(({...otherCollectionProps}) => (
                         <Job_Item  {...otherCollectionProps} />

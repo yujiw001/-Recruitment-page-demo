@@ -1,0 +1,53 @@
+.fh_rec_career{
+    font-size:40px;
+    font-family:Roboto-Bold,Roboto;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    line-height:40px;
+
+    text-align: left;
+    padding: 65px 0 30px 10px;
+}
+
+.fh_rec_find {
+    font-size:40px;
+    font-family:OpenSans-Bold,OpenSans;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    line-height:50px;
+
+    text-align: left;
+    padding: 100px 0 27px 10px;
+}
+
+.fh_rec_open {
+    font-size:18px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(55,55,55,1);
+    line-height:25px;
+
+    padding: 120px 0 27px 15px;
+}
+
+.fh_rec_title {
+    display: flex;
+}
+
+.fh_view_more {
+    padding: 0px 0 129px 0;
+}
+
+.fh_view_more_button {
+    width:135px;
+    height:36px;
+    background:rgba(6,34,54,1) !important;
+    border-radius:18px !important;
+    border: none !important;
+
+    font-size:16px;
+    font-family:OpenSans-Semibold,OpenSans;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+    line-height:22px;
+}

@@ -11,9 +11,10 @@ function Formodal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        加入我们
+      <Button className='fh_rec_det_apply_button' onClick={handleShow}>
+        <span className='fh_rec_det_apply_content'>Apply for this position ></span>
       </Button>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
