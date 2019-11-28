@@ -19,7 +19,9 @@ function QRmodal() {
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
-        <Modal.Body><img src={QRcode} alt="broken picture" height="80" width="80" /></Modal.Body>
+        <Modal.Body>
+          <img src={QRcode} alt="broken picture" height="80" width="80" />
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

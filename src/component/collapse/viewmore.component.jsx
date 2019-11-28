@@ -37,7 +37,7 @@ export default class Viewmore extends Component{
         var sortedList=[];
         var i=0;
         while (i<this.state.totalPositions){
-            if(!(this.state.totalData[i].Expedited)){
+            if(!(this.state.totalData[i].expedited)){
                 sortedList.push(this.state.totalData[i])
             }
             else{
