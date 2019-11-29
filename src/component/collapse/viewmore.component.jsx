@@ -1,10 +1,8 @@
 import React, { Component,useState } from 'react';
-import Collapse from 'react-bootstrap/Collapse';
-import Button from 'react-bootstrap/Button';
 import Job_Item from '../paginate/jobpost/jobitem/jobitem.component';
 import JobData from '../pages/position_data';
-import MONSTER_DATA from '../paginate/pagebutton/monster.data';
 import PositionCollapse from '../collapse/collapse_link.component';
+
 export default class Viewmore extends Component{
     constructor(props){
         super(props)
@@ -61,7 +59,7 @@ export default class Viewmore extends Component{
                     <h3 className='fh_rec_find'>Find open roles</h3> 
                     <span className='fh_rec_open'>{this.state.totalPositions} open roles</span>
                 </div>
-                <div className="dropdown-divider" ></div>
+                <hr />
                 {
                     this.state.indexList.slice(0,6).map(({...otherCollectionProps}) => (
                         <Job_Item  {...otherCollectionProps} />

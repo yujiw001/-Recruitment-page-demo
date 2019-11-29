@@ -21,10 +21,10 @@
 
 .fh_rec_det_display {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .description {
-    max-width: 50%;
+    max-width: 514px;
     text-align: left;
 }
 .fh_rec_det_title {
@@ -74,7 +74,7 @@
 }
 
 .responsibility {
-    text-align: left;
+    max-width: 538px;
 }
 .fh_rec_det_resp_title {
     font-size:20px;
@@ -97,7 +97,7 @@
 }
 
 .requirement {
-    text-align: left;
+    max-width: 538px;
 }
 .fh_rec_det_req_title {
     font-size:20px;
@@ -108,9 +108,8 @@
 
     text-align: left;
     margin: 0;
-    padding: 0 0 0 25px;
+    padding: 0 0 0 25px; /*25*/
 }
-
 
 .fh_rec_det_apply_title {
     font-size:30px;

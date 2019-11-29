@@ -12,8 +12,9 @@ import UniversalModule from '../universal_module/universal_module';
 import pic from '../../images/dianpinglogo.svg'
 
 
-import Card_1 from '../card/card_1';
+import NewsCard from '../card/newscard.component';
 import './Scoring_homepage.component.style.css'
+import { newExpression } from '@babel/types';
 
 
 class TitleOnImage extends Component {
@@ -96,11 +97,11 @@ class ScoringHomepage extends Component {
         
           <div className="container">
           <div className="row"> 
-            <Card_1 />
+            <NewsCard />
             <div className="card-col">
-              <Card_1 />
+              <NewsCard />
             </div>
-            <Card_1 />
+            <NewsCard />
           </div>
           </div>
         </div>
@@ -115,11 +116,11 @@ class ScoringHomepage extends Component {
         
           <div className="container">
           <div className="row">
-            <Card_1 />
+            <NewsCard />
             <div className="card-col">
-              <Card_1 />
+              <NewsCard />
             </div>
-            <Card_1 />
+            <NewsCard />
           </div>
           </div>
 
@@ -127,11 +128,11 @@ class ScoringHomepage extends Component {
 
           <div className="container">
           <div className="row">
-            <Card_1 />
+            <NewsCard />
             <div className="card-col">
-              <Card_1 />
+              <NewsCard />
             </div>
-            <Card_1 />
+            <NewsCard />
           </div>
           </div>
         </div>
