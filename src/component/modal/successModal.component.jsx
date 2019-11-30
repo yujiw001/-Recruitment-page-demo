@@ -1,9 +1,9 @@
-import React, { Component,useState } from 'react';
+import React, {useState } from 'react';
 import './qrmodal.styles.scss';
+import Check from '../../images/check.jpg';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import JoinUs from '../JoinUs/JoinUs.component';
-function Formodal() {
+const SuccessModal = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,25 +11,26 @@ function Formodal() {
 
   return (
     <>
-      <Button className='fh_rec_det_apply_button' onClick={handleShow}>
-        <span className='fh_rec_det_apply_content'>Apply for this position ></span>
+      <Button variant="primary" onClick={handleShow}>
+        开始使用
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Thank You</Modal.Title>
         </Modal.Header>
-        <Modal.Body><JoinUs /></Modal.Body>
+        <Modal.Body>
+            <h2>Submit Completed</h2>
+            <img src={Check} alt="broken picture" height="130" width="130" />
+            <p>We will Contact you within 7 working days by Email</p>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
 }
-export default Formodal;
+export default SuccessModal;

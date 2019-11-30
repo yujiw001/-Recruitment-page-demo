@@ -8,7 +8,7 @@ const JobItem = (props) => (
             <div className='pos_hot'>
                 <Link to ={`/Recruitment/details/${props.id}`} className='position' key={props.id}>{props.position}</Link>
                 {
-                    props.Expedited ? <div className="hotLabel">HOT</div> : null
+                    props.expedited ? <div className="hotLabel">HOT</div> : null
                 }
             </div>
             <div className='loc_view'>
