@@ -3,7 +3,7 @@ import Header from '../header/header.component';
 import CustomButton from '../custom_button/custom_button.component'
 import Footer from '../footer/footer.component';
 import {withRouter} from 'react-router-dom';
-
+import Registration from '../sign-in/sign-in.component';
 const HomePage = () => {
     return(
         
@@ -39,7 +39,7 @@ const HomePage = () => {
             </div>
 
             <div style={{padding:'108px'}}></div>
-
+            <Registration />
             <Footer />
         </div>
     );

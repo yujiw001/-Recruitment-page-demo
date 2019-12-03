@@ -7,6 +7,7 @@ import Footer from '../../component/footer/footer.component';
 import JobData from '../pages/position_data';
 import Viewmore from '../collapse/viewmore.component';
 import SuccessModal from '../modal/successModal.component';
+import Vcode from '../Vcode/Vcode.component';
 import '../css/Recruitment_page.component.css';
 
 class RecruitmentPage extends Component {
@@ -28,6 +29,7 @@ class RecruitmentPage extends Component {
             <Slideshow />
 
             <Viewmore />
+            
             <SuccessModal />
           </div>
 
