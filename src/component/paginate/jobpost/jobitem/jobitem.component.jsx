@@ -17,7 +17,7 @@ const JobItem = (props) => (
             </div>
         </div>
 
-        <div className="dropdown-divider"></div>
+        <hr />
 
     </>
 

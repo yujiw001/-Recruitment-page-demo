@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: 'OpenSans'; 
+  src: url('./assets/fonts/OpenSans-Regular.ttf');		/*--下载的字体文件路径*/
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold'; 
+  src: url('./assets/fonts/OpenSans-Bold.ttf');		/*--下载的字体文件路径*/
+}
+
+@font-face {
+  font-family: 'OpenSans-BoldItalic'; 
+  src: url('./assets/fonts/OpenSans-BoldItalic.ttf');		/*--下载的字体文件路径*/
+}
+
+@font-face {
+  font-family: 'OpenSans-Semibold'; 
+  src: url('./assets/fonts/OpenSans-Semibold.ttf');		/*--下载的字体文件路径*/
+}
+
+@font-face {
+  font-family: 'OpenSans-Semibold'; 
+  src: url('./assets/fonts/OpenSans-Semibold.ttf');		/*--下载的字体文件路径*/
+}

@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from '../header/header.component';
-import CustomButton from '../custom_button/custom_button.component'
 import Footer from '../footer/footer.component';
 import {withRouter} from 'react-router-dom';
 import Registration from '../sign-in/sign-in.component';
 const HomePage = () => {
     return(
         
-        <div className="Homepage">
+        <div >
 
             <Header />
+<<<<<<< HEAD
             <div style={{'padding':'108px'}}></div>
 
             <div className='container'>
@@ -40,6 +40,9 @@ const HomePage = () => {
 
             <div style={{padding:'108px'}}></div>
             <Registration />
+=======
+            
+>>>>>>> a01c0e9965d51c458d47b789095a47a5d675cac7
             <Footer />
         </div>
     );

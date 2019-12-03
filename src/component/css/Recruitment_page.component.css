@@ -1,6 +1,6 @@
 .fh_rec_career{
     font-size:40px;
-    font-family:Roboto-Bold,Roboto;
+    font-family:Opensans-Bold,Roboto;
     font-weight:bold;
     color:rgba(51,51,51,1);
     line-height:40px;
@@ -22,7 +22,7 @@
 
 .fh_rec_open {
     font-size:18px;
-    font-family:PingFangSC-Medium,PingFang SC;
+    font-family:OpenSans-Semibold,OpenSans;
     font-weight:500;
     color:rgba(55,55,55,1);
     line-height:25px;

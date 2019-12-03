@@ -19,7 +19,11 @@
     "mysql": "^2.17.1",
     "node": "^13.1.0",
     "node-sass": "^4.13.0",
+<<<<<<< HEAD
     "nodemon": "^2.0.1",
+=======
+    "npm-font-open-sans": "^1.1.0",
+>>>>>>> a01c0e9965d51c458d47b789095a47a5d675cac7
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-collapsed": "^2.2.3",
@@ -32,6 +36,7 @@
     "react-verification-code-input": "^1.2.2",
     "reactstrap": "^8.1.1",
     "read-more-react": "^1.0.9",
+    "sass": "^1.23.7",
     "typescript": "^3.7.2",
     "typings": "^2.1.1"
   },
