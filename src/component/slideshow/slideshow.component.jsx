@@ -1,49 +1,101 @@
-//created by Yuji Wang on 10/25/2019
-import React from 'react';
-import { Slide } from 'react-slideshow-image';
-import slide_2 from '../../images/slide_2.jpg';
-import slide_3 from '../../images/slide_3.jpg';
-import slide_4 from '../../images/slide_4.jpg';
-import './slideshow.styles.css'
-const slideImages =[
-  slide_2,
-  slide_3,
-  slide_4
-];
+import React, { Component } from "react";
+import Slider from "react-slick";
+import {Link} from 'react-router-dom';
+import CarouselData from '../pages/carousel_data';
 
-const properties = {
-  duration: 5000,
-  transitionDuration: 500,
-  infinite: true,
-  indicators: true,
-  arrows: true,
-  onChange: (oldIndex, newIndex) => {
-    console.log(`slide transition from ${oldIndex} to ${newIndex}`);
-  }
-}
- 
-const Slideshow = () => {
-    return (
-      <div className="slide-container">
-        <Slide {...properties}>
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
-              <span>Slide 1</span>
+import './slideshow.component.style.css';
+
+class SlideShow extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state={
+            indexList: [],
+            nav1: null,
+            nav2: null,
+        }
+    }
+
+    componentWillMount() {
+        this.setState ({
+            indexList: this.timeSorting()
+        }) 
+    }
+
+    timeSorting() {
+        var sortedList = CarouselData;
+        sortedList.sort(function(a, b) {
+            return new Date(b.date) - new Date(a.date);
+        })
+        return sortedList;
+    }
+
+    componentDidMount() {
+        this.setState({
+          nav1: this.slider1,
+          nav2: this.slider2
+        });
+    }
+
+    render() {
+        const settings_1 = {
+            className: "center",
+            centerMode: true,
+            infinite: true,
+            centerPadding: "120spx",
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3500,
+            pauseOnHover: true
+          };
+      
+        const settings_2 = {
+        dots: true,
+        };
+
+        return (
+            <div>
+                <Slider
+                asNavFor={this.state.nav2}
+                ref={slider => (this.slider1 = slider)}
+                {...settings_1}
+                >
+                    {
+                        this.state.indexList.slice(0, 3).map((carousel, index) => (
+                            <Link key={index} to={`/Recruitment/news_details/${carousel.id}`}>
+                                <img key={index} src={carousel.cover} className='fh_rec_carousel_img' />
+                            </Link>
+                        )
+                        )
+                    }
+                </Slider>
+
+                <Slider
+                asNavFor={this.state.nav1}
+                ref={slider => (this.slider2 = slider)}
+                slidesToShow={1}
+                fade={true}
+                {...settings_2}
+                >
+                    {
+                        this.state.indexList.slice(0, 3).map((carousel, index) => (  
+                            <div>
+                                <h3 className='fh_rec_carousel_title' >
+                                    {carousel.title}
+                                </h3>
+                                <p className='fh_rec_carousel_content' key={index}>
+                                    {carousel.content}
+                                </p>
+                            </div> 
+                        )
+                        )
+                    }
+                </Slider>
             </div>
-          </div>
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
-              <span>Slide 2</span>
-            </div>
-          </div>
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
-              <span>Slide 3</span>
-            </div>
-          </div>
-        </Slide>
-      </div>
-    )
+        )
+    }
 }
 
-export default Slideshow;
+export default SlideShow;

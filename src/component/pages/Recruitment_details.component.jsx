@@ -7,7 +7,7 @@ import RequirementData from './requirement_data';
 import ResponsibilityData from './responsibility_data';
 import Formodal from '../modal/formmodal.component';
 
-import JobApplication from '../modal/job_form_modal.component';
+import JobFormModal from '../modal/jobformmodal.component';
 
 import List from '../list/list.component';
 import Footer from '../footer/footer.component';
@@ -49,7 +49,7 @@ class RecruitmentDetail extends Component  {
 
                     <div className='fh_rec_det_display'>
                         <div className="description">
-                            <UniversalModule title={target_position.position} area={target_position.area} content={target_position.brief} ItemComponent={JobApplication}/>
+                            <UniversalModule title={target_position.position} area={target_position.area} content={target_position.brief} ItemComponent={JobFormModal}/>
                         </div>
 
                         <div>

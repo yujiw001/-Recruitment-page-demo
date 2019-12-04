@@ -9,7 +9,6 @@ class NewsMore extends Component {
         super(props)
         this.state = {
             indexList: [],
-            //totalData: NewsData,
             totalNews: NewsData.length
         };
     }

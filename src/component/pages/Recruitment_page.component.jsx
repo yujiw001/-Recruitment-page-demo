@@ -2,7 +2,7 @@
 //Integrate all the required components to create the Recritment page.
 import React, { Component } from 'react';
 import Header from '../../component/header/header.component';
-import Slideshow from '../../component/slideshow/slideshow.component';
+import SlideShow from '../../component/slideshow/slideshow.component';
 import Footer from '../../component/footer/footer.component';
 import JobData from '../pages/position_data';
 import Viewmore from '../collapse/viewmore.component';
@@ -14,7 +14,7 @@ class RecruitmentPage extends Component {
     super(props)
     this.state={
       // the data read from the backstage database, waiting to be rendered
-      renderData:JobData,
+      renderData: JobData,
     };
   }
   render (){
@@ -25,9 +25,10 @@ class RecruitmentPage extends Component {
           <div className='container'>
             <h1 className='fh_rec_career'>Careers</h1>
 
-            <Slideshow />
+            <SlideShow />
 
             <Viewmore />
+            
             <SuccessModal />
           </div>
 
