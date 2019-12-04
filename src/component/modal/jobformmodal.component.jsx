@@ -5,7 +5,7 @@ import { Modal, Button, Form, Input } from 'antd';
 
 import UploadButton from '../Upload/Upload';
 
-import './JobForm.component.style.css';
+import './jobformmodal.component.style.css';
 
 const CollectionCreateForm = Form.create( { name: 'form_in_modal'} )(
   class extends Component {
@@ -97,7 +97,7 @@ const CollectionCreateForm = Form.create( { name: 'form_in_modal'} )(
 );
 
 
-class JobApplication extends Component {
+class JobFormModal extends Component {
   state = {
     visible: false,
   };
@@ -167,4 +167,4 @@ class JobApplication extends Component {
   }
 }
 
-export default JobApplication;
+export default JobFormModal;
