@@ -5,14 +5,16 @@ import ReactCodeInput from 'react-verification-code-input';
 import Verificode from '../vertification/vertication.component';
 import Vcodebox from '../codeBox/codeBox.component';
 import Codebox from '../codeBox/codeBox.component';
-import {Select} from 'antd';
+import { Select, Input, Form } from 'antd';
+import { Modal } from 'react-bootstrap';
+
 class JoinUs extends React.Component  {
     constructor(){
         super();
         //1
         this.refreshCode=this.refreshCode.bind(this);
         this.state ={
-            Area: '',
+            Area: 'Los Angeles',
             First_Name: '',
             Last_Name: '',
             Mobile:'',
@@ -22,18 +24,21 @@ class JoinUs extends React.Component  {
             DesiredArea:[],
             Transportation:[],
             AvailableTime:[],
-            description:'',
+            description:'at least 10 words',
             code:[] //this variable is used to store the vertification code
         }
     }
+
     refreshCode(){
         this.GetVerifiCode();
     }
+
     GetVerifiCode(){
         this.setState({
         code:this.genRandomString(4)
        });
     }
+
     genRandomString = len => {
         const text = 'abcdefghijklmnopqrstuvwxyz0123456789';
         const rdmIndex = text => Math.random() * text.length | 0;
@@ -41,24 +46,30 @@ class JoinUs extends React.Component  {
         for(; rdmString.length < len; rdmString += text.charAt(rdmIndex(text)));
         return rdmString;
     }
+
     componentDidMount()
     {
       this.GetVerifiCode();
     }
 
-
     handleSubmit = async event =>{
+        alert('Area name was submitted: ' + this.state.Area);
         event.preventDefault();
     };
 
     handleChange = event => {
         //event.target will end up being the input element itself. And we want to pull off the 'name and value'
-        const{name,value} = event.target;
-        this.setState({[name]:value});
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+          });
     };
+
     handleCheckbox = event => {
         const{name,value} = event.target;
-        if(!this.state[name].include(value)){
+        if(!this.state[name].includes(value)){
             this.setState({[name]:this.state[name].concat([value])}) }//语法:this.state[name]
         else{
             this.setState({[name]:this.state[name].filter(checkbox => (checkbox != value))})
@@ -66,7 +77,7 @@ class JoinUs extends React.Component  {
     }
 
     render() {
-        const {Area,First_Name,Last_Name,Address,City,PostalCode,Mobile,WorkType} = this.state;
+        const { Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, description } = this.state;
         const ownStyle={
             width: 'calc(100% - 10px)',
             height: '45px',
@@ -74,22 +85,31 @@ class JoinUs extends React.Component  {
             backgroundColor: '#ffffff'
         };
         const {code}=this.state;
+        
         return(
             <div className='Form_input'>
-                <Select>
-                    <Select.Option name='Area' value="LA">LA</Select.Option>
-                    <Select.Option name='Area' value="Vancouver">Vancouver</Select.Option>
-                    <Select.Option name='Area' value="Toronto">Toronto</Select.Option>
-                </Select>
+                <h1>Area</h1>
+                <select
+                    name='Area'
+                    value={Area}
+                    onChange={this.handleChange}
+                    style={{ width: '242px' }}
+                >
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Vancouver">Vancouver</option>
+                    <option value="Toronto">Toronto</option>
+                </select>
+
                 <form className='JoinUs' onSubmit={this.handleSubmit}>
-                    <FormInput type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></FormInput>
-                    <FormInput type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></FormInput>
-                    <FormInput type='text' name='Address' value={Address} onChange={this.handleChange} label='Street Address' required></FormInput>
-                    <FormInput type='text' name='City' value={City} onChange={this.handleChange} label='City' required></FormInput>
-                    <FormInput type='text' name='PostalCode' value={PostalCode} onChange={this.handleChange} label='ZIP/Postal Code' required></FormInput>
-                    <FormInput type='text' name='Mobile' value={Mobile} onChange={this.handleChange} label='手机' required></FormInput>
-                    {/* <label><input type="radio" name='WorkType' value='FullTime' onChange={this.handleChange} />全职</label>
-                    <label><input type="radio" name='WorkType' value='PartTime' onChange={this.handleChange} />兼职</label> */}
+                    <span>Name</span>
+                    <Input type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></Input>
+                    <Input type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></Input>
+                    <span>Address</span>
+                    <Input type='text' name='Address' value={Address} onChange={this.handleChange} label='Street Address' required></Input>
+                    <Input type='text' name='City' value={City} onChange={this.handleChange} label='City' required></Input>
+                    <Input type='text' name='PostalCode' value={PostalCode} onChange={this.handleChange} label='ZIP/Postal Code' required></Input>
+                    <span>Phone</span>
+                    <Input type='text' name='Mobile' value={Mobile} onChange={this.handleChange} label='手机' required></Input>
                     <div>
                         工作地点：<br/>
                         <label><input type="checkbox" name="DesiredArea" value="Burnaby"
@@ -161,14 +181,21 @@ class JoinUs extends React.Component  {
                                       onClick={this.handleCheckbox}/>周五 5am - 11pm</label><br/>
                         <label><input type="checkbox" name="AvailableTime" value="saturday_5_11"
                                       onClick={this.handleCheckbox}/>周六 5am - 11pm</label><br/>
-                        
                     </div>
-                    <div><textarea /></div>
+
+                    <div>
+                        <label>
+                            <textarea name='description' value={description} onChange={this.handleChange}/>
+                        </label>
+                    </div>
+
                         <PostBlob>上传简历</PostBlob>
+
                         <div style={{width:'200px',height:'35px'}}>
                             <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
                             <Codebox />
                         </div>
+
                         <button type='submit'>SUBMIT</button>
                 </form>
             </div>
