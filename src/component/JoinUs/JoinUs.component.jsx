@@ -1,11 +1,10 @@
 import React from 'react';
 import FormInput from '../form_input/formInput.component';
 import PostBlob from '../postblob/postblob.component';
-import ReactCodeInput from 'react-verification-code-input';
 import Verificode from '../vertification/vertication.component';
-import Vcodebox from '../codeBox/codeBox.component';
 import Codebox from '../codeBox/codeBox.component';
 import {Select} from 'antd';
+import axios from 'axios';
 class JoinUs extends React.Component  {
     constructor(){
         super();
@@ -49,16 +48,39 @@ class JoinUs extends React.Component  {
 
     handleSubmit = async event =>{
         event.preventDefault();
+        var data = {
+            First_Name: this.state.First_Name,
+            Last_Name:this.state.Last_Name,
+            Mobile:this.state.Mobile,
+            Address:this.state.Address,
+            City:this.state.City,
+            PostalCode:this.state.PostalCode,
+            description:this.state.description
+        }
+        console.log(data);
+        axios({
+           method: 'post' ,
+           url: 'http://localhost:3000/drivers/add' ,
+           data: data
+        })
+        .then(function (response) {
+            console.log(response);
+          })
+        .catch(function (error) {
+            console.log(error);
+          });
+        
     };
 
     handleChange = event => {
         //event.target will end up being the input element itself. And we want to pull off the 'name and value'
         const{name,value} = event.target;
         this.setState({[name]:value});
+        
     };
     handleCheckbox = event => {
         const{name,value} = event.target;
-        if(!this.state[name].include(value)){
+        if(!this.state[name].includes(value)){
             this.setState({[name]:this.state[name].concat([value])}) }//语法:this.state[name]
         else{
             this.setState({[name]:this.state[name].filter(checkbox => (checkbox != value))})
@@ -81,7 +103,7 @@ class JoinUs extends React.Component  {
                     <Select.Option name='Area' value="Vancouver">Vancouver</Select.Option>
                     <Select.Option name='Area' value="Toronto">Toronto</Select.Option>
                 </Select>
-                <form className='JoinUs' onSubmit={this.handleSubmit}>
+                <form className='JoinUs' onSubmit={this.handleSubmit} method="POST">
                     <FormInput type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></FormInput>
                     <FormInput type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></FormInput>
                     <FormInput type='text' name='Address' value={Address} onChange={this.handleChange} label='Street Address' required></FormInput>
@@ -169,7 +191,7 @@ class JoinUs extends React.Component  {
                             <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
                             <Codebox />
                         </div>
-                        <button type='submit'>SUBMIT</button>
+                        <button className="btn btn-uth-submit">Submit</button>
                 </form>
             </div>
         );
