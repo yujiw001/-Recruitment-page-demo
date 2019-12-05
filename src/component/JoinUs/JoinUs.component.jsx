@@ -1,13 +1,13 @@
 import React from 'react';
 import FormInput from '../form_input/formInput.component';
 import PostBlob from '../postblob/postblob.component';
-import ReactCodeInput from 'react-verification-code-input';
 import Verificode from '../vertification/vertication.component';
-import Vcodebox from '../codeBox/codeBox.component';
 import Codebox from '../codeBox/codeBox.component';
 import { Select, Input, Form } from 'antd';
 import { Modal } from 'react-bootstrap';
 
+import {Select} from 'antd';
+import axios from 'axios';
 class JoinUs extends React.Component  {
     constructor(){
         super();
@@ -55,6 +55,28 @@ class JoinUs extends React.Component  {
     handleSubmit = async event =>{
         alert('Area name was submitted: ' + this.state.Area);
         event.preventDefault();
+        var data = {
+            First_Name: this.state.First_Name,
+            Last_Name:this.state.Last_Name,
+            Mobile:this.state.Mobile,
+            Address:this.state.Address,
+            City:this.state.City,
+            PostalCode:this.state.PostalCode,
+            description:this.state.description
+        }
+        console.log(data);
+        axios({
+           method: 'post' ,
+           url: 'http://localhost:3000/drivers/add' ,
+           data: data
+        })
+        .then(function (response) {
+            console.log(response);
+          })
+        .catch(function (error) {
+            console.log(error);
+          });
+        
     };
 
     handleChange = event => {

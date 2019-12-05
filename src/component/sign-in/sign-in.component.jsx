@@ -3,6 +3,7 @@ import Validation from 'react-validation';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
 import Button from 'react-validation/build/button';
+import axios from 'axios';
 export default class Registration extends Component {
     constructor(props) {
         super(props)
@@ -21,8 +22,18 @@ export default class Registration extends Component {
             password: this.state.password
         }
         console.log(data)
-        fetch( `http://localhost:3000/users/add?username=${data.username}&password=${data.password}` )
-        .catch(err => console.error(err))
+        axios({
+            method: 'post' ,
+            url: 'http://localhost:3000/users/add' ,
+            data: data
+         })
+         .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
     }
 
 
