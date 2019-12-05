@@ -6,7 +6,6 @@ import Codebox from '../codeBox/codeBox.component';
 import { Select, Input, Form } from 'antd';
 import { Modal } from 'react-bootstrap';
 
-import {Select} from 'antd';
 import axios from 'axios';
 class JoinUs extends React.Component  {
     constructor(){
@@ -14,7 +13,7 @@ class JoinUs extends React.Component  {
         //1
         this.refreshCode=this.refreshCode.bind(this);
         this.state ={
-            Area: 'Los Angeles',
+            Area: '',
             First_Name: '',
             Last_Name: '',
             Mobile:'',

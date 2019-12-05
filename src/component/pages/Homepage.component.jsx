@@ -10,6 +10,7 @@ import JoinUsModal from '../JoinUs/JoinUsModal.component';
 
 import { Modal } from 'react-bootstrap';
 
+
 const HomePage = () => {
     return(     
         <div >
@@ -48,9 +49,6 @@ const HomePage = () => {
 
             <JoinUs />
 
-
-
-            <PAForm button='Join Now' title='Become a Partner'/>
             <Footer />
         </div>
     );

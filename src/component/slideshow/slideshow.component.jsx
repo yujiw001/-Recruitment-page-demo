@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import {Link} from 'react-router-dom';
 import CarouselData from '../pages/carousel_data';
 
+import './slideshow.component.indicator.style.scss';
 import './slideshow.component.style.css';
 
 class SlideShow extends Component {
@@ -48,12 +49,26 @@ class SlideShow extends Component {
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 3500,
-            pauseOnHover: true
+            pauseOnHover: true,
+            nextArrow: null,
+            prevArrow: null
           };
       
         const settings_2 = {
-        dots: true,
-        };
+            dots: true,
+            nextArrow: null,
+            prevArrow: null,
+            appendDots: dots => (
+                <div 
+                style={{
+                    top: '39px',
+                    'text-align': 'right'
+                }}
+                >
+                <ul> {dots} </ul>
+                </div>
+            ),
+        }; 
 
         return (
             <div>
