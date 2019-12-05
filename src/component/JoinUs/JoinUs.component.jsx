@@ -55,6 +55,7 @@ class JoinUs extends React.Component  {
         alert('Area name was submitted: ' + this.state.Area);
         event.preventDefault();
         var data = {
+            Area: this.state.Area,
             First_Name: this.state.First_Name,
             Last_Name:this.state.Last_Name,
             Mobile:this.state.Mobile,
