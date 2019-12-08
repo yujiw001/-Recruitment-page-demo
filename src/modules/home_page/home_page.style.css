@@ -1,0 +1,20 @@
+.ft_backend_hp_backgroud {
+    background: rgba(242,242,242,1);
+}
+.ft_backend_hp_content {
+    width: 1200px;
+    background:rgba(242,242,242,1);
+    margin: 36px auto;
+}
+.ft_backend_hp_title {
+    font-size:24px;
+    font-family:OpenSans;
+    color:rgba(33,33,69,1);
+    line-height:33px;
+}
+.ft_backend_hp_button_group {
+    display: flex;
+    justify-content: space-between;
+
+}
+

@@ -1,0 +1,24 @@
+.ft_backend_header {
+    display: flex;
+    justify-content: flex-end;
+
+    width: calc(100vw-357px);
+    height: 70px;
+    background: rgba(255,255,255,1);
+    box-shadow: 0px 1px 4px 0px rgba(172,172,172,0.3);
+
+    font-size:16px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:22px;
+
+    padding: 24px 42px 0 0;
+}
+
+.ft_backend_sign_out {
+    color: rgba(102,102,102,1);
+}
+.ft_backend_sign_out:hover {
+    color: blue;
+}

@@ -1,0 +1,16 @@
+.ft_backend_upload_display {
+    width: 710px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+}
+
+.ft_backend_upload_button_display {
+    display: flex;
+    width: auto;
+}
+
+.ft_backend_upload_instruction {
+    padding-left: 30px;
+    padding-top: 10px;
+}

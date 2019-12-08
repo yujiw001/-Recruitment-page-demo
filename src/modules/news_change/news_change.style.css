@@ -1,0 +1,8 @@
+.ft_backend_change_button_row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ft_backend_change_row_section {
+    display: flex;
+}

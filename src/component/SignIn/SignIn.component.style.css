@@ -1,0 +1,26 @@
+.ft_backend_SI_input_display {
+    display: flex;
+    flex-direction: column;
+    
+}
+.ft_backend_SI_input {
+    width: 286px;
+    height: 50px;
+
+    margin: 0 0 15px 0;
+}
+
+.ft_backend_SI_button {
+    width: 286px;
+    height: 50px;
+    background: rgba(19,194,194,1);
+    border-radius: 2px;
+
+    font-size: 18px;
+    font-family: OpenSans-Semibold, OpenSans;
+    font-weight: 600;
+    color: rgba(255,255,255,1);
+    line-height: 24px;
+
+    margin: 5px 0 0 0;
+}

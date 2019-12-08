@@ -1,0 +1,43 @@
+.ft_backend_si_background {
+    width: 100vw;
+    height: 100vh;
+    background: #1F263E;
+}
+
+.ft_backend_si_content {
+    padding: 35px 0 50px 100px
+}
+
+.ft_backend_si_logo {
+    font-size:52px;
+    font-family:OpenSans-Bold,OpenSans;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    line-height:71px;
+    margin: 0;
+    padding-bottom: 140px;
+}
+
+.ft_backend_si_title {
+    font-size:90px;
+    font-family:PingFangSC-Semibold,PingFang SC;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+    line-height:126px;
+    margin: 0;
+    padding: 0;
+}
+
+.ft_backend_si_input {
+    padding-top: 105px;
+}
+
+.ft_backend_si_footer {
+    font-size:12px;
+    font-family:OpenSans;
+    color:rgba(255,255,255,1);
+    line-height:17px;
+
+    position: absolute;
+    bottom: 50px;
+}
