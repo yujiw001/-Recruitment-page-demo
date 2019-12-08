@@ -5,4 +5,44 @@
 
 .ft_backend_change_row_section {
     display: flex;
+    justify-content: space-between;
+}
+
+.ft_backend_change_button {
+    width:124px;
+    height:40px;
+    background:rgba(31,38,62,1);
+    border-radius:4px;
+
+    font-size:14px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    line-height:14px;
+}
+
+.ft_backend_change_button_icon {
+    width: 14px;
+    height: 14px;
+
+    position: absolute;
+    top: 12px;
+    left: 22px;
+}
+
+.ft_backend_change_button_name {
+    padding-left: 15px;
+}
+
+.ft_backend_change_button:hover {
+    width:124px;
+    height:40px;
+    background:rgba(31,38,62,1);
+    border-radius:4px;
+
+    font-size:14px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    line-height:14px;
 }

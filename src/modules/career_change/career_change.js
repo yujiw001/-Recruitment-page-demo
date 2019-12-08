@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../component/Header/Header.component';
 import MySider from '../../component/Sider/MySider.component';
 
-import { Layout, Select } from 'antd';
+import { Layout, Select, Icon, Button } from 'antd';
 
 import './career_change.style.css';
 
@@ -21,12 +22,14 @@ class CareerChange extends Component {
                             <p className='ft_backend_title'>招聘频道</p>
  
                             <div className='ft_backend_change_button_row'>
-                                <div className='ft_backend_change_row_section'>
+                                
+                                <div className=''>
                                     <button type='submit' className='ft_backend_white_button'>编辑</button>
                                     <div style={{padding: '0 4px'}} />
                                     <button type='submit' className='ft_backend_white_button'>删除</button>
                                 </div>
-                                <div className='ft_backend_change_row_section'>
+
+                                <div className='' >
                                     <span className='ft_backend_label'>筛选：</span>
                                     <Select className='ft_backend_select' style={{margin:0}} placeholder='地区' size='large'>
                                         <Option value='Vancouver'>Vancouver</Option>
@@ -34,9 +37,13 @@ class CareerChange extends Component {
                                         <Option value='Toronto'>Toronto</Option>
                                         <Option value='Seattle'>Seattle</Option>
                                     </Select>
-                                </div>
-                            <div>
-
+                                    <div style={{padding: '0 5px'}} />
+                                    <Link to='/Fantuan_career_editor'>
+                                        <Button className='ft_backend_change_button'>
+                                            <Icon type="edit" className='ft_backend_change_button_icon' /> 
+                                            <span className='ft_backend_change_button_name'>发布职位</span>
+                                        </Button>
+                                    </Link>
                                 </div>
 
                             </div>
