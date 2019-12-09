@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 import { Modal, Button, Form, Input, Select } from 'antd';
 
 class PAForm extends Component {
@@ -35,6 +35,30 @@ class PAForm extends Component {
   handleSubmit(event) {
     alert('Area was submitted: ' + this.state.Area);
     event.preventDefault();
+    var data = {
+      Area: this.state.Area,
+      First_Name: this.state.First_Name,
+      Last_Name:this.state.Last_Name,
+      Mobile:this.state.Mobile,
+      Email:this.state.Email,
+      Bname:this.state.Bname,
+      Address:this.state.Address,
+      City:this.state.City,
+      PostalCode:this.state.PostalCode,
+      Category:this.state.Category,
+      description:this.state.Description
+    }
+    axios({
+      method: 'post' ,
+      url: 'http://localhost:3000//partner/add' ,
+      data: data
+    })
+    .then(function (response) {
+       console.log(response);
+     })
+    .catch(function (error) {
+       console.log(error);
+     });
   }
 
   render() {
@@ -61,54 +85,43 @@ class PAForm extends Component {
             </select>
           
 
-            {/* <Form.Item label={<span className=''>Name</span>} >
+            
               <Input type='text' name='First_Name' value={First_Name} onChange={this.handleChange} placeholder='First Name' />
-            </Form.Item>
             
-            <Form.Item label='' >
+            
+            
               <Input type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} placeholder='Last Name' />
-            </Form.Item>
-
-            <Form.Item label={<span className=''>Phone</span>}>
-              <Input typt='text' name='Mobile' value={Mobile} onChange={this.handleChange} placeholder='Phone Number' />
-            </Form.Item>
             
-            <Form.Item label={<span className=''>E-mail</span>}>
-              {getFieldDecorator('email', {
-                rules: [
-                  {
-                    type: 'email',
-                    message: 'The input is not valid E-mail!',
-                  },
-                  {
-                    required: true,
-                    message: 'Please input your E-mail!',
-                  },
-                ],
-              })(<Input type='text' name='Email' value={Email} onChange={this.handleChange} placeholder='Email Address' />)}
-            </Form.Item>
 
-            <Form.Item label={<span className=''>Business Name</span>}>
+            
+              <Input typt='text' name='Mobile' value={Mobile} onChange={this.handleChange} placeholder='Phone Number' />
+            
+            
+            
+              <Input type='text' name='Email' value={Email} onChange={this.handleChange} placeholder='Email Address' />)}
+            
+
+            
               <Input type='text' name='BName' value={BName} onChange={this.handleChange} placeholder='Business Name' />
-            </Form.Item>
+            
 
-            <Form.Item label={<span className=''>Business Address</span>}>
+            
               <Input type='text' name='Address' value={Address} onChange={this.handleChange} placeholder='Stree Address' />
-            </Form.Item>
-            <Form.Item label=''>
-              <Input type='text' name='Cisty' value={City} onChange={this.handleChange} placeholder='City' />
-            </Form.Item>
-            <Form.Item label=''>
+            
+            
+              <Input type='text' name='City' value={City} onChange={this.handleChange} placeholder='City' />
+            
+            
               <Input type='text' name='PostalCode' value={PostalCode} onChange={this.handleChange} placeholder='ZIP / Postal Code' allowClear={true} />
-            </Form.Item>
+            
 
-            <Form.Item label='Business Category'>
+            
               <Input type='text' name='Category' value={Category} onChange={this.handleChange} placeholder='Category' />
-            </Form.Item>
+            
 
-            <Form.Item label={<span className=''>Description</span>} >
+            
               <TextArea rows={4} name='Description' value={Description} onChange={this.handleChange} />
-            </Form.Item> */}
+            
             <button type='submit'>SUBMIT</button>
           </form>
         </>
