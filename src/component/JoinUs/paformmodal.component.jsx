@@ -1,9 +1,9 @@
 import React, { Component, useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-import JoinUs from './joinus.component';
+import PAForm from './paform.component';
 
-function JoinUsModal(props) {
+function PAFormModal(props) {
 
     const [show, setShow] = useState(false);
 
@@ -21,7 +21,7 @@ function JoinUsModal(props) {
                     <Modal.Title>{props.title}</Modal.Title>
                 </Modal.Header>
                 
-                <JoinUs />
+                <PAForm />
                 
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
@@ -36,4 +36,4 @@ function JoinUsModal(props) {
     );
 }
 
-export default JoinUsModal;
+export default PAFormModal;

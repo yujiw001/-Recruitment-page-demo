@@ -2,7 +2,7 @@ import React, { Component,useState } from 'react';
 import './qrmodal.styles.scss';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import JoinUs from '../JoinUs/JoinUs.component';
+import JoinUs from '../JoinUs/joinus.component';
 function Formodal() {
   const [show, setShow] = useState(false);
 
