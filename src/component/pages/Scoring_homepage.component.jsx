@@ -7,7 +7,7 @@ import Pagination from '../paginate/pagebutton/pagebutton.component';
 import QACollapse from '../collapse/collapse.component';
 import QRmodal from '../modal/qrmodal.component';
 import Formodal from '../modal/formmodal.component';
-import PostBlob from '../postblob/postblob.component';
+// import PostBlob from '../postblob/postblob.component';
 import UniversalModule from '../universal_module/universal_module';
 import pic from '../../images/dianpinglogo.svg'
 
@@ -143,7 +143,7 @@ class ScoringHomepage extends Component {
         {/* <JoinUs /> */}
         <QACollapse />
         <Formodal />
-        <PostBlob />
+        {/* <PostBlob /> */}
 	{/* <UniversalModule title="ABC" content="abcabc" img={pic} ItemComponent={QRmodal} /> */}
       </div>
     }

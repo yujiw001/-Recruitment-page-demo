@@ -1,6 +1,6 @@
 import React from 'react';
 import FormInput from '../form_input/formInput.component';
-import PostBlob from '../postblob/postblob.component';
+// import PostBlob from '../postblob/postblob.component';
 import Verificode from '../vertification/vertication.component';
 import Codebox from '../codeBox/codeBox.component';
 import { Select, Input, Form } from 'antd';
@@ -12,7 +12,9 @@ class JoinUs extends React.Component  {
         super();
         //1
         this.refreshCode=this.refreshCode.bind(this);
+        this.GetDriverID=this.GetDriverID.bind(this);
         this.state ={
+            DriverID: 0,
             Area: '',
             First_Name: '',
             Last_Name: '',
@@ -24,14 +26,32 @@ class JoinUs extends React.Component  {
             Transportation:[],
             AvailableTime:[],
             description:'at least 10 words',
-            code:[] //this variable is used to store the vertification code
+            code:[],//this variable is used to store the vertification code
+            selectedFile : null
         }
     }
 
     refreshCode(){
         this.GetVerifiCode();
     }
-
+    GetDriverID(){
+        var self=this;
+        axios({
+            method: 'get' ,
+            url: 'http://localhost:3000/driverid' ,
+         })
+         .then(function (response) {
+             var target=JSON.stringify(response.data);
+             var ans=JSON.parse(target)["MAX(id)"];
+             console.log(ans);
+             
+             self.setState({DriverID:ans})
+             return ans;
+           })
+         .catch(function (error) {
+             console.log(error);
+           });
+    }
     GetVerifiCode(){
         this.setState({
         code:this.genRandomString(4)
@@ -49,8 +69,10 @@ class JoinUs extends React.Component  {
     componentDidMount()
     {
       this.GetVerifiCode();
+      var test= this.GetDriverID();
+      console.log("dasdsadsafadggedgwegewgewfweffwqf================================================="+test);
     }
-
+    
     handleSubmit = async event =>{
         alert('Area name was submitted: ' + this.state.Area);
         event.preventDefault();
@@ -64,6 +86,25 @@ class JoinUs extends React.Component  {
             PostalCode:this.state.PostalCode,
             description:this.state.description
         }
+        var areadata = this.state.DesiredArea = {
+            DriverID:this.state.DriverID,
+            LAN_MARK:'E',
+            DesiredArea:this.state.DesiredArea,
+            
+        };
+        var timedata = this.state.AvailableTime = {
+            DriverID:this.state.DriverID,
+            LAN_MARK:'E',
+            AvailableTime:this.state.AvailableTime,
+        };
+        var transportationdata = this.state.Transportation = {
+            DriverID:this.state.DriverID,
+            LAN_MARK:'E',
+            Transportation:this.state.Transportation,
+        };
+        var filedata= this.state.selectedFile;
+        const formData=new FormData();
+        formData.append('file',filedata);
         console.log(data);
         axios({
            method: 'post' ,
@@ -76,10 +117,57 @@ class JoinUs extends React.Component  {
         .catch(function (error) {
             console.log(error);
           });
-        
+        axios({
+            method: 'post',
+            url:'http://localhost:3000/drivers/desiredarea',
+            data: areadata
+        })
+        .then(function (response) {
+            console.log(response);
+          })
+        .catch(function (error) {
+            console.log(error);
+          });
+        axios({
+            method: 'post',
+            url:'http://localhost:3000/drivers/availabletime',
+            data: timedata
+        })
+        .then(function (response) {
+            console.log(response);
+          })
+        .catch(function (error) {
+            console.log(error);
+          });
+        axios({
+            method: 'post',
+            url:'http://localhost:3000/drivers/transportation',
+            data: transportationdata
+        })
+        .then(function (response) {
+            console.log(response);
+          })
+        .catch(function (error) {   
+            console.log(error);
+          });
+        axios({
+            method: 'post' ,
+            url :'http://localhost:3000/uploadfile',
+            data:formData
+        })
+        .then(function(response){
+            console.log(response);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
     };
-
-    handleChange = event => {
+    onChangeHandler = event => {
+        this.setState({
+            selectedFile: event.target.files[0] 
+        })
+    }
+    handleChange = async event => {
         //event.target will end up being the input element itself. And we want to pull off the 'name and value'
         const target = event.target;
         const value = target.value;
@@ -92,9 +180,16 @@ class JoinUs extends React.Component  {
     handleCheckbox = event => {
         const{name,value} = event.target;
         if(!this.state[name].includes(value)){
-            this.setState({[name]:this.state[name].concat([value])}) }//语法:this.state[name]
+            this.setState({[name]:this.state[name].concat([value]) }, ()=>{
+                console.log(this.state.DesiredArea)
+            }) //语法:this.state[name]
+            // console.log(this.state.DesiredArea)
+        }   
         else{
-            this.setState({[name]:this.state[name].filter(checkbox => (checkbox != value))})
+            this.setState({[name]:this.state[name].filter(checkbox => (checkbox != value))} , ()=>{
+                console.log(this.state.DesiredArea)
+            })
+
         }
     }
 
@@ -135,35 +230,35 @@ class JoinUs extends React.Component  {
                     <div>
                         工作地点：<br/>
                         <label><input type="checkbox" name="DesiredArea" value="Burnaby"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Burnaby</label><br/>
+                                      onClick={this.handleCheckbox}/>Burnaby</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="West Vancouver"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>West Vancouver</label><br/>
+                                      onClick={this.handleCheckbox}/>West Vancouver</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="White Rock"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>White Rock</label><br/>
+                                      onClick={this.handleCheckbox}/>White Rock</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Richmond"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Richmond</label><br/>
+                                      onClick={this.handleCheckbox}/>Richmond</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="North Vancouver"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>North Vancouver</label><br/>
+                                      onClick={this.handleCheckbox}/>North Vancouver</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Delta"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Delta</label><br/>
+                                      onClick={this.handleCheckbox}/>Delta</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Vancouver"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Vancouver</label><br/>
+                                      onClick={this.handleCheckbox}/>Vancouver</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Port Moody"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Port Moody</label><br/>
+                                      onClick={this.handleCheckbox}/>Port Moody</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Maple Ridge"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Maple Ridge</label><br/>
+                                      onClick={this.handleCheckbox}/>Maple Ridge</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Coquitlam"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Coquitlam</label><br/>
+                                      onClick={this.handleCheckbox}/>Coquitlam</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Port Coquitlam"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Port Coquitlam</label><br/>
+                                      onClick={this.handleCheckbox}/>Port Coquitlam</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Anmore"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Anmore</label><br/>
+                                      onClick={this.handleCheckbox}/>Anmore</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Surrey"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Surrey</label><br/>
+                                      onClick={this.handleCheckbox}/>Surrey</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="Langley"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>Langley</label><br/>
+                                      onClick={this.handleCheckbox}/>Langley</label><br/>
                         <label><input type="checkbox" name="DesiredArea" value="New Westminster"
-                                      Ischecked={this.state.Defaultchecked} onClick={this.handleCheckbox}/>New Westminster</label><br/>
+                                      onClick={this.handleCheckbox}/>New Westminster</label><br/>
                         
                     </div>
                     <div>
@@ -211,8 +306,8 @@ class JoinUs extends React.Component  {
                         </label>
                     </div>
 
-                        <PostBlob>上传简历</PostBlob>
-
+                        {/* <PostBlob>上传简历</PostBlob> */}
+                        <input type="file" name="file" onChange={this.onChangeHandler} />
                         <div style={{width:'200px',height:'35px'}}>
                             <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
                             <Codebox />
