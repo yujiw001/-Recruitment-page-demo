@@ -26,7 +26,8 @@ class UploadButton extends Component {
       return (
         <Upload {...props}>
           <Button>
-            <Icon type="upload" /> {this.props.title}
+            <Icon type="upload"/> 
+            {this.props.title}
           </Button>
         </Upload>
       );

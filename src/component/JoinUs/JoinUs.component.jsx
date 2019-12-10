@@ -4,7 +4,6 @@ import FormInput from '../form_input/formInput.component';
 import Verificode from '../vertification/vertication.component';
 import Codebox from '../codeBox/codeBox.component';
 import { Select, Input, Form } from 'antd';
-import { Modal } from 'react-bootstrap';
 
 import axios from 'axios';
 class JoinUs extends React.Component  {
@@ -13,6 +12,7 @@ class JoinUs extends React.Component  {
         //1
         this.refreshCode=this.refreshCode.bind(this);
         this.GetDriverID=this.GetDriverID.bind(this);
+
         this.state ={
             DriverID: 0,
             Area: '',
@@ -52,6 +52,7 @@ class JoinUs extends React.Component  {
              console.log(error);
            });
     }
+    
     GetVerifiCode(){
         this.setState({
         code:this.genRandomString(4)
@@ -77,14 +78,15 @@ class JoinUs extends React.Component  {
         alert('Area name was submitted: ' + this.state.Area);
         event.preventDefault();
         var data = {
+            Country: this.state.Country,
             Area: this.state.Area,
             First_Name: this.state.First_Name,
-            Last_Name:this.state.Last_Name,
-            Mobile:this.state.Mobile,
-            Address:this.state.Address,
-            City:this.state.City,
-            PostalCode:this.state.PostalCode,
-            description:this.state.description
+            Last_Name: this.state.Last_Name,
+            Mobile: this.state.Mobile,
+            Address: this.state.Address,
+            City: this.state.City,
+            PostalCode: this.state.PostalCode,
+            description: this.state.description
         }
         var areadata = this.state.DesiredArea = {
             DriverID:this.state.DriverID,
@@ -194,30 +196,41 @@ class JoinUs extends React.Component  {
     }
 
     render() {
-        const { Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, description } = this.state;
+        const { Country, Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, Description } = this.state;
         const ownStyle={
             width: 'calc(100% - 10px)',
             height: '45px',
             margin: '15px 0',
             backgroundColor: '#ffffff'
         };
-        const {code}=this.state;
+        const { code } = this.state;
+        const { Option } = Select;
+        const options = [
+            {value: 'Los Angeles', label: 'Los Angeles'},
+            {value:'Vancouver', label: 'Vancouver'},
+            {value:'Toronto', label: 'Toronot'}
+        ];
         
         return(
             <div className='Form_input'>
+                
                 <h1>Area</h1>
                 <select
                     name='Area'
                     value={Area}
                     onChange={this.handleChange}
-                    style={{ width: '242px' }}
+                    style={{ width: '242px', 
+                             background: 'white'
+                            }}
+                    placeholder='Choose your area'
                 >
                     <option value="Los Angeles">Los Angeles</option>
                     <option value="Vancouver">Vancouver</option>
-                    <option value="Toronto">Toronto</option>
+                    <option value="Toronto">Toronto</option> 
                 </select>
 
                 <form className='JoinUs' onSubmit={this.handleSubmit}>
+
                     <span>Name</span>
                     <Input type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></Input>
                     <Input type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></Input>
@@ -227,6 +240,7 @@ class JoinUs extends React.Component  {
                     <Input type='text' name='PostalCode' value={PostalCode} onChange={this.handleChange} label='ZIP/Postal Code' required></Input>
                     <span>Phone</span>
                     <Input type='text' name='Mobile' value={Mobile} onChange={this.handleChange} label='手机' required></Input>
+
                     <div>
                         工作地点：<br/>
                         <label><input type="checkbox" name="DesiredArea" value="Burnaby"
@@ -261,6 +275,7 @@ class JoinUs extends React.Component  {
                                       onClick={this.handleCheckbox}/>New Westminster</label><br/>
                         
                     </div>
+
                     <div>
                         Transportation：<br/>
                         <label><input type="checkbox" name="Transportation" value="Car"
@@ -270,6 +285,7 @@ class JoinUs extends React.Component  {
                         <label><input type="checkbox" name="Transportation" value="Electric Motorbike"
                                       onClick={this.handleCheckbox}/>Electric Motorbike(rent)</label><br/>
                     </div>
+
                     <div>
                         工作时间：<br/>
                         <label><input type="checkbox" name="AvailableTime" value="monday_11_5"
@@ -302,7 +318,7 @@ class JoinUs extends React.Component  {
 
                     <div>
                         <label>
-                            <textarea name='description' value={description} onChange={this.handleChange}/>
+                            <textarea name='Description' value={Description} onChange={this.handleChange}/>
                         </label>
                     </div>
 
@@ -313,7 +329,7 @@ class JoinUs extends React.Component  {
                             <Codebox />
                         </div>
 
-                        <button type='submit'>SUBMIT</button>
+                    <button type='submit'>SUBMIT</button>
                 </form>
             </div>
         );
