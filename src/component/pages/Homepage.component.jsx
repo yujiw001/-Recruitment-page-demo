@@ -4,6 +4,8 @@ import Footer from '../footer/footer.component';
 import {withRouter} from 'react-router-dom';
 import Registration from '../sign-in/sign-in.component';
 import CustomButton from '../custom_button/custom_button.component';
+import JoinUs from '../JoinUs/JoinUs.component';
+import JoinUsModal from '../JoinUs/JoinUsModal.component';
 import PAForm from '../JoinUs/paform.component';
 
 import { Modal } from 'react-bootstrap';
@@ -14,39 +16,15 @@ const HomePage = () => {
         <div >
 
             <Header />
-            <div style={{'padding':'108px'}}></div>
+           
 
-            <div className='container'>
-            <div className='row'>
-                <div>
-                    <h1 style={{'text-align':'left', 'font-size':'70px'}}> 
-                        The Best 
-                        <br />
-                        Asian Food 
-                        <br />
-                        Delivery
-                    </h1>
-                    <CustomButton name='饭团外卖' address=''/>
-                </div>
-                <div style={{'padding-right':'450px'}}></div>
-                <div>
-                    <h1 style={{'text-align':'right','font-size':'70px'}}>
-                        The Best 
-                        <br />
-                        Asian Food 
-                        <br />
-                        Delivery
-                    </h1>
-                    <CustomButton name='饭团点评' address='/Scoring'/>
-                </div>
-            </div>
-            </div>
+            <JoinUs />
+            <JoinUsModal button='Join Us' title='Become a driver' />
 
-            <div style={{padding:'108px'}}></div>
-            {/* <Registration /> */}
 
-            {/* <JoinUs /> */}
+
             <PAForm />
+
             <Footer />
         </div>
     );

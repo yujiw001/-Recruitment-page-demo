@@ -1,11 +1,12 @@
 import React from 'react';
-import FormInput from '../form_input/formInput.component';
 // import PostBlob from '../postblob/postblob.component';
 import Verificode from '../vertification/vertication.component';
 import Codebox from '../codeBox/codeBox.component';
 import { Select, Input, Form } from 'antd';
-
 import axios from 'axios';
+
+import './JoinUs.component.style.css';
+
 class JoinUs extends React.Component  {
     constructor(){
         super();
@@ -231,15 +232,15 @@ class JoinUs extends React.Component  {
 
                 <form className='JoinUs' onSubmit={this.handleSubmit}>
 
-                    <span>Name</span>
-                    <Input type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></Input>
-                    <Input type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></Input>
+                    <span>Name</span><span className='required_mark'>*</span>
+                    <Input className='short_input' name='First_Name' value={First_Name} onChange={this.handleChange} size='large' required placeholder='First Name' />
+                    <Input name='Last_Name' value={Last_Name} onChange={this.handleChange} required />
                     <span>Address</span>
-                    <Input type='text' name='Address' value={Address} onChange={this.handleChange} label='Street Address' required></Input>
-                    <Input type='text' name='City' value={City} onChange={this.handleChange} label='City' required></Input>
-                    <Input type='text' name='PostalCode' value={PostalCode} onChange={this.handleChange} label='ZIP/Postal Code' required></Input>
+                    <Input name='Address' value={Address} onChange={this.handleChange} required />
+                    <Input name='City' value={City} onChange={this.handleChange} required />
+                    <Input name='PostalCode' value={PostalCode} onChange={this.handleChange} required />
                     <span>Phone</span>
-                    <Input type='text' name='Mobile' value={Mobile} onChange={this.handleChange} label='手机' required></Input>
+                    <Input name='Mobile' value={Mobile} onChange={this.handleChange} required />
 
                     <div>
                         工作地点：<br/>
