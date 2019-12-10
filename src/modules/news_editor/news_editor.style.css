@@ -14,3 +14,11 @@
     padding-left: 30px;
     padding-top: 10px;
 }
+
+.ft_backend_editor_shape {
+    width: 745px;
+    height: 476px;
+    background:rgba(255,255,255,1);
+    border-radius:4px;
+    border:0.1px solid rgba(183,188,214,1);
+}

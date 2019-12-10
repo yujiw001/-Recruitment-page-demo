@@ -3,37 +3,63 @@ import { Upload, message, Button, Icon } from 'antd';
 
 import './MyUpload.component.style.css';
 
-const props = {
-  name: 'file',
-  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-  headers: {
-    authorization: 'authorization-text',
-  },
-
-  onChange(info) {
-    if (info.file.status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-    if (info.file.status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully`);
-    } else if (info.file.status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-};
-
 class MyUpload extends Component {
   
-    render() {
-      return (
-        <Upload {...props}>
-          <Button className='ft_backend_upload_button'>
-            <Icon type="file-image" className='ft_backend_upload_icon' /> 
-            <span className='ft_backend_upload_name'>{this.props.uploadname}</span>
-          </Button>
-        </Upload>
-      );
-    }
+  state = {
+    fileList: [
+      {
+        uid: '-1',
+        name: "",
+        status: "",
+        url: "",
+      }
+    ]
+  };
+
+  handleChange = info => {
+    let fileList = [...info.fileList];
+
+    // 1. Limit the number of uploaded files
+    // Only to show two recent uploaded files, and old ones will be replaced by the new
+    fileList = fileList.slice(-1);
+
+    // 2. Read from response and show file link
+    fileList = fileList.map(file => {
+      if (file.response) {
+        // Component will show file.url as link
+        file.url = file.response.url;
+      }
+      return file;
+    });
+
+    this.setState({ fileList });
+  };
+
+  render() {
+
+    const props = {
+      accept: [".png", ".jpg", ".jpeg"],
+      action: " ",
+      onChange: this.handleChange,
+    };
+
+    return (
+      <Upload 
+        {...props} 
+        fileList={this.state.fileList} 
+        style={{display:'flex', 'align-items':'center'}}>
+        <Button className='ft_backend_upload_button'
+      >
+          <Icon type="file-image" className='ft_backend_upload_icon' /> 
+          <span className='ft_backend_upload_name'>{this.props.uploadname}</span>
+        </Button>
+        <div>
+          <span className='ft_backend_instruction'>新闻/点评：740 x 510 , 500k以内</span>
+          <span className='ft_backend_instruction'>动态：860 x 440 , 500k以内</span>
+        </div>
+      </Upload>
+    );
   }
+}
 
 export default MyUpload;

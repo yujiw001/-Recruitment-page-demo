@@ -10,12 +10,13 @@ class SignIn extends Component {
         this.state = {
             username: '',
             password: '',
-            msg: ''
+            msg: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(event) {
+        alert('username was submitted: ' + this.state.username);
         event.preventDefault()
         var data = {
             username: this.state.username,
@@ -45,6 +46,7 @@ class SignIn extends Component {
         return (
             <div className="register-form">
                 <form onSubmit={this.handleSubmit} method="POST">
+                    
                     <div className='ft_backend_SI_input_display'>
                         <Input 
                             onChange={this.handleChange} 
@@ -54,8 +56,9 @@ class SignIn extends Component {
                             name='username' 
                             validations={['required']}
                             prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            required
                         />
-                        <Input
+                        <Input.Password
                             onChange={this.handleChange} 
                             className="ft_backend_SI_input" 
                             value={this.state.password} 
@@ -63,16 +66,16 @@ class SignIn extends Component {
                             name='password' 
                             validations={['required']}
                             prefix={<Icon type="key" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            required
                         />
                     </div>
 
                     <div className="submit-section">
-                        <button 
-                            className="ft_backend_SI_button btn btn-uth-submit"
-                        >
+                        <button className="ft_backend_SI_button btn btn-uth-submit">
                             Login
                         </button>
                     </div>
+
                 </form>
             </div>
         );
