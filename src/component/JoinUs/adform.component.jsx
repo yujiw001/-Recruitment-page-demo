@@ -7,7 +7,7 @@ import  {  Select,  Input,  Form  }  from  'antd';
 import  {  Modal  }  from  'react-bootstrap';
 
 import  axios  from  'axios';
-class  PAForm  extends  React.Component    {
+class  ADForm  extends  React.Component    {
         constructor(){
                 super();
                 //1
@@ -75,7 +75,7 @@ class  PAForm  extends  React.Component    {
                 console.log(data);
                 axios({
                       method:  'post'  ,
-                      url:  'http://localhost:3000/partner/add'  ,
+                      url:  'http://localhost:3000/advertisement/add'  ,
                       data:  data
                 })
                 .then(function  (response)  {
@@ -167,4 +167,4 @@ class  PAForm  extends  React.Component    {
         );
     }
 }
-export default PAForm;
+export default ADForm;
