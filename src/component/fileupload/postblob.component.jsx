@@ -14,7 +14,7 @@ class PostBlob extends Component {
         reader.readAsDataURL(files[0]);
         reader.onload=(e) => {
             console.warn("img data" , e.target.result)
-            const url = "http://127.0.0.1:8000/api/service";
+            const url = "http://127.0.0.1:3000/";
             const formData = {file:e.target.result}
             return post (url.formData)
             .then(response => console.warn("result",response))

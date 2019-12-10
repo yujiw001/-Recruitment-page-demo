@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-import JoinUs from './joinus.component';
+import JoinUsModal from './joinus.component';
 
 function JoinUsModal(props) {
 

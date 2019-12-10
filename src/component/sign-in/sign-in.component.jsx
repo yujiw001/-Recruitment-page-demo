@@ -14,6 +14,7 @@ export default class Registration extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
+    
 
     handleSubmit(event) {
         event.preventDefault()

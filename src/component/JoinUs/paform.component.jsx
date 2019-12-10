@@ -1,6 +1,6 @@
 import React from 'react';
 import FormInput from '../form_input/formInput.component';
-import PostBlob from '../postblob/postblob.component';
+
 import Verificode from '../vertification/vertication.component';
 import Codebox from '../codeBox/codeBox.component';
 import { Select, Input, Form } from 'antd';
@@ -33,11 +33,15 @@ class PAForm extends React.Component  {
         this.GetVerifiCode();
     }
 
-    GetVerifiCode(){
-        this.setState({
-        code:this.genRandomString(4)
-       });
-    }
+  handleChange = async event => {
+    //event.target will end up being the input element itself. And we want to pull off the 'name and value'
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({
+        [name]: value
+      });
+  };
 
     genRandomString = len => {
         const text = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -47,10 +51,10 @@ class PAForm extends React.Component  {
         return rdmString;
     }
 
-    componentDidMount()
+  /*   componentDidMount()
     {
       this.GetVerifiCode();
-    }
+    } */
 
     handleSubmit = async event =>{
         alert('Area name was submitted: ' + this.state.Area);
@@ -104,7 +108,7 @@ class PAForm extends React.Component  {
     }
 
     render() {
-        const { Country, Area, First_Name, Last_Name, Mobile, Email, BName, Address, City, PostalCode, Category, Description } = this.state;
+        const { Area, First_Name, Last_Name, Mobile, Email, BName, Address, City, PostalCode, Category, Description } = this.state;
         const ownStyle={
             width: 'calc(100% - 10px)',
             height: '45px',
@@ -115,6 +119,9 @@ class PAForm extends React.Component  {
         
         return(
             <div className='Form_input'>
+
+            <form className='JoinUs' onSubmit={this.handleSubmit}>
+
                 <h1>Area</h1>
                 <select
                     name='Area'
@@ -127,7 +134,7 @@ class PAForm extends React.Component  {
                     <option value="Toronto">Toronto</option>
                 </select>
 
-                <form className='JoinUs' onSubmit={this.handleSubmit}>
+                
                     <span>Name</span>
                     <Input type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></Input>
                     <Input type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></Input>
