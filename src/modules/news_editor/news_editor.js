@@ -17,7 +17,7 @@ class NewsEditor extends Component {
         super();
         this.state = {
             user: '',
-            type: '',
+            type: '饭团新闻',
             lan_mark: '',
             title: '',
             cover: '', 
@@ -31,7 +31,7 @@ class NewsEditor extends Component {
         event.preventDefault();
         var data = {
             user: this.state.user,
-            type: this.state.title,
+            type: this.state.type,
             lan_mark: this.state.lan_mark,
             title: this.state.title,
             cover: this.state.cover,
@@ -40,7 +40,7 @@ class NewsEditor extends Component {
         console.log(data);
         axios({
            method: 'post' ,
-           url: 'http://localhost:3000/drivers/add', /* Need to be modified */
+           url: 'http://localhost:3000/news/add', /* Need to be modified */
            data: data
         })
         .then(function (response) {
@@ -134,11 +134,11 @@ class NewsEditor extends Component {
                                             <Option key='公司点评' value='公司动态'>公司动态</Option>
                                         </Select> */}
 
-                                        <Checkbox name="English" value="E" >
+                                        <Checkbox name='lan_mark' value="E" onChange={this.handleChange} >
                                             英文
                                         </Checkbox>
 
-                                        <Checkbox name="Chinese" value="C" >
+                                        <Checkbox name='lan_mark' value="C" onChange={this.handleChange} >
                                             中文
                                         </Checkbox>
                                     </div>
