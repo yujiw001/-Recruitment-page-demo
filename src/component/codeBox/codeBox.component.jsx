@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Input } from 'antd';
 
 class Codebox extends Component {
     constructor(props) {
@@ -10,11 +10,12 @@ class Codebox extends Component {
     }
     render(){
       return(
-        <input
+        <Input
           className='search'
           type= "search"
-          placeholder = '请输入验证码' 
+          placeholder = 'Input code' 
           onChange={e=>{this.setState({ searchField:e.target.value})}}
+          size='large'
         />
       )
     }

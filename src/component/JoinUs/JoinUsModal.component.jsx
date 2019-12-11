@@ -1,39 +1,52 @@
-import React, { Component, useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Modal, Button } from 'antd';
 
 import JoinUs from './JoinUs.component';
 
-function JoinUsModal(props) {
+import './JoinUsModal.component.style.css';
 
-    const [show, setShow] = useState(false);
+class JoinUsModal extends Component {
+  state = {
+    visible: false
+  };
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  showModal = () => {
+    this.setState({
+      visible: true
+    });
+  };
 
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
+
+  render() {
+    const { visible } = this.state;
     return (
-        <div>
-            <Button variant="primary" onClick={handleShow}>
-                {props.button}
-            </Button>
-
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{props.title}</Modal.Title>
-                </Modal.Header>
-                
+      <div>
+        <Button onClick={this.showModal} className='ft_driver_modal_button' style={{height:'60px', background:'rgba(9,48,65,1)', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
+          Join Us
+        </Button>
+        <Modal
+          visible={visible}
+          closable={false}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          footer={null}
+          width='597px'
+        >
+            <div className='ft_driver_body'>
+                <p className='ft_driver_modal_title'>Become a driver</p>
+                <hr style={{'padding-bottom':'10px'}} />
                 <JoinUs />
-                
-                <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <button onClick={this.handleCancel} className='ft_driver_cancle_button'>
                     Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                </Button>
-                </Modal.Footer>
-            </Modal>
-        </div>
+                </button>
+            </div>
+        </Modal>
+      </div>
     );
+  }
 }
 
 export default JoinUsModal;

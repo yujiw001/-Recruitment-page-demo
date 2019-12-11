@@ -18,7 +18,6 @@ const HomePage = () => {
             <Header />
            
 
-            <JoinUs />
             <JoinUsModal button='Join Us' title='Become a driver' />
 
 
@@ -26,6 +25,7 @@ const HomePage = () => {
             <PAForm />
 
             <Footer />
+
         </div>
     );
     
