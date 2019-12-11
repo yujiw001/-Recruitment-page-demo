@@ -3,9 +3,9 @@ import { Modal, Button } from 'antd';
 
 import PAForm from './paform.component';
 
-import './paformmodal.component.style.css';
+import './adformmodal.component.style.css';
 
-class PAFormModal extends Component {
+class ADFormModal extends Component {
   state = {
     visible: false
   };
@@ -25,7 +25,7 @@ class PAFormModal extends Component {
     return (
       <div>
         <Button onClick={this.showModal} className='ft_partner_modal_button' style={{height:'60px', background:'rgba(19,194,194,1)', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
-          Join Now
+          Contact Now
         </Button>
         <Modal
           visible={visible}
@@ -36,7 +36,7 @@ class PAFormModal extends Component {
           width='597px'
         >
             <div className='ft_partner_body'>
-                <p className='ft_partner_modal_title'>Become a Partner</p>
+                <p className='ft_partner_modal_title'>Advertisement for investment</p>
                 <hr style={{'padding-bottom':'10px'}} />
                 <PAForm />
                 <button onClick={this.handleCancel} className='ft_partner_cancle_button'>
@@ -49,4 +49,4 @@ class PAFormModal extends Component {
   }
 }
 
-export default PAFormModal;
+export default ADFormModal;

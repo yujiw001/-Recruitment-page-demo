@@ -4,11 +4,10 @@ import Footer from '../footer/footer.component';
 import {withRouter} from 'react-router-dom';
 import Registration from '../sign-in/sign-in.component';
 import CustomButton from '../custom_button/custom_button.component';
-import JoinUs from '../JoinUs/JoinUs.component';
 import JoinUsModal from '../JoinUs/JoinUsModal.component';
-import PAForm from '../JoinUs/paform.component';
+import PAFormModal from '../JoinUs/paformmodal.component';
 
-import { Modal } from 'react-bootstrap';
+import ADFormModal from '../JoinUs/adformmodal.component';
 
 
 const HomePage = () => {
@@ -22,7 +21,8 @@ const HomePage = () => {
 
 
 
-            <PAForm />
+            <PAFormModal />
+            <ADFormModal />
 
             <Footer />
 

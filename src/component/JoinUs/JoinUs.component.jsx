@@ -376,14 +376,14 @@ class JoinUs extends React.Component  {
 
                         {/* <PostBlob>上传简历</PostBlob> */}
                         {/* <input type="file" name="file" onChange={this.onChangeHandler} /> */}
-                        <div className='ft_driver_verificode' /* style={{width:'200px',height:'auto'}} */>
-                            <div style={{width:'150px', height:'auto'}}>
-                                <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
-                            </div>
-                            <div style={{width:'200px',height:'auto'}}>
-                                <Codebox />
-                            </div>
+                    <div className='ft_driver_verificode' /* style={{width:'200px',height:'auto'}} */>
+                        <div style={{width:'150px', height:'auto'}}>
+                            <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
                         </div>
+                        <div style={{width:'200px',height:'auto'}}>
+                            <Codebox />
+                        </div>
+                    </div>
                     <hr />
                     
                     <button type='submit' className='ft_driver_submit_button'>Submit</button>       

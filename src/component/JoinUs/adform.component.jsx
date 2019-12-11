@@ -4,9 +4,9 @@ import  Codebox  from  '../codeBox/codeBox.component';
 import  {  Select,  Input,  Form  }  from  'antd';
 import  axios  from  'axios';
 
-import './paform.component.style.css';
+import './adform.component.style.css';
 
-class  PAForm  extends  React.Component    {
+class  ADForm  extends  React.Component    {
         constructor(){
                 super();
                 //1
