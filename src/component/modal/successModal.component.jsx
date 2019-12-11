@@ -1,38 +1,56 @@
-import React, {useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import Check from '../../images/check.jpg';
+import React, { Component } from 'react';
+import { Modal, Button } from 'antd';
 
 import './successModal.component.style.css';
 
-const SuccessModal = () => {
-  const [show, setShow] = useState(false);
+class SuccessModal extends Component {
+  state = {
+    visible: false,
+  };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  };
 
-  return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        开始使用
-      </Button>
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
 
-      <Modal show={show} onHide={handleClose} dialogClassName="modal_size">
-        <Modal.Body>
-          <div>
-            <h2>Thank You</h2>
-            <h2>Submit Completed</h2>
-            <img src={Check} alt="broken picture" height="135px" width="135px" />
-            <p>We will Contact you within 7 working days by Email</p>
+  render() {
+    const { visible } = this.state;
+    return (
+      <div>
+        <Button onClick={this.showModal} className='s_modal_button' 
+                style={{height:'54px', background:'rgba(6,34,54,1)', 'font-size':'16px', color}}
+        >
+          Submit
+        </Button>
+        <Modal
+          visible={visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          footer={ null }
+          width='597px'
+        >
+          <p className='s_modal_title'>Thank You</p>
+          <p className='s_modal_subtitle'>Submit Completed</p>
+
+          <div className='s_modal_image'>
+            <img src={require('../../images/check.png')} style={{width:'161px', height:'161px'}}/>
           </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+
+          <p className='s_modal_content'>We will Contact you within 7 working days by Email</p>
+
+          <hr />
+          <Button className='s_modal_button' onClick={this.handleCancel}>
             Close
           </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  )
+
+        </Modal>
+      </div>
+    );
+  }
 }
 export default SuccessModal;

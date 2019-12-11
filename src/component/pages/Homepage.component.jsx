@@ -2,12 +2,9 @@ import React from 'react';
 import Header from '../header/header.component';
 import Footer from '../footer/footer.component';
 import {withRouter} from 'react-router-dom';
-import Registration from '../sign-in/sign-in.component';
-import CustomButton from '../custom_button/custom_button.component';
+import SuccessModal from '../modal/successModal.component';
 import JoinUsModal from '../JoinUs/JoinUsModal.component';
-import PAFormModal from '../JoinUs/paformmodal.component';
 
-import ADFormModal from '../JoinUs/adformmodal.component';
 
 
 const HomePage = () => {
@@ -15,14 +12,10 @@ const HomePage = () => {
         <div >
 
             <Header />
+
+            <JoinUsModal />
            
-
-            <JoinUsModal button='Join Us' title='Become a driver' />
-
-
-
-            <PAFormModal />
-            <ADFormModal />
+            <SuccessModal />
 
             <Footer />
 
