@@ -3,17 +3,18 @@ import { Upload, message, Button, Icon } from 'antd';
 
 import './MyUpload.component.style.css';
 
+function beforeUpload(file) {
+  const isLt500K = file.size / 1024 / 1024 < 0.5;
+  if (!isLt500K) {
+    message.error('Image must smaller than 500K!');
+  }
+  return isLt500K;
+};
+
 class MyUpload extends Component {
   
   state = {
-    fileList: [
-      {
-        uid: '-1',
-        name: "",
-        status: "",
-        url: "",
-      }
-    ]
+    fileList: []
   };
 
   handleChange = info => {
@@ -39,7 +40,7 @@ class MyUpload extends Component {
 
     const props = {
       accept: [".png", ".jpg", ".jpeg"],
-      action: " ",
+      action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
       onChange: this.handleChange,
     };
 
@@ -47,9 +48,10 @@ class MyUpload extends Component {
       <Upload 
         {...props} 
         fileList={this.state.fileList} 
-        style={{display:'flex', 'align-items':'center'}}>
-        <Button className='ft_backend_upload_button'
+        style={{display:'flex', 'align-items':'center'}}
+        beforeUpload={beforeUpload}
       >
+        <Button className='ft_backend_upload_button'>
           <Icon type="file-image" className='ft_backend_upload_icon' /> 
           <span className='ft_backend_upload_name'>{this.props.uploadname}</span>
         </Button>

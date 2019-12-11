@@ -16,7 +16,7 @@
 
 .ft_backend_sider_menu {
     width: 357px;
-    height: auto;
+    height: 100%;
     background: rgba(31,38,62,1);
 }
 
@@ -28,6 +28,7 @@
     line-height: 22px;
 
     padding: 0 0 19px 33px;
+    background: rgba(31,38,62,1);
 }
 
 .ft_backend_sider_footer {
