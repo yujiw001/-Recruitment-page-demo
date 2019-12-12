@@ -25,7 +25,7 @@
 .ft_backend_single_row {
     display: flex;
     align-items: center;
-    padding: 0 0 16px 0;
+    padding: 0 0 16px 105px;
 }
 .ft_backend_editor_rows {
     width: 850px;
@@ -62,6 +62,9 @@
     width: 191px;
     height: 40px;
     margin: 0 40px 0 0;
+    background: white;
+    border-radius:4px;
+    border:1px solid rgba(183,188,214,1);
 }
 .ft_backend_input {
     width: 745px;

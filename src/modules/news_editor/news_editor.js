@@ -145,13 +145,14 @@ class NewsEditor extends Component {
 
                                     <div className='ft_backend_editor_rows'>
                                         <p className='ft_backend_label'>标题：</p>
-                                        <Input name='title' value={title} onChange={this.handleChange} placeholder='标题' size='large' style={{width:'745px'}} required />
+                                        <Input name='title' value={title} onChange={this.handleChange} placeholder='标题' size='large' 
+                                               style={{width:'745px', 'border-radius':'4px', border:'1px solid rgba(183,188,214,1)'}} required />
                                     </div> 
 
                                     <div className='ft_backend_upload_display'>
                                         <div className='ft_backend_upload_button_display'>
                                             <p className='ft_backend_label' style={{'padding-right':'40px'}}>封面图：</p>
-                                            <MyUpload />
+                                            <MyUpload uploadname='添加封面图' />
                                         </div>
 
                                     </div>
