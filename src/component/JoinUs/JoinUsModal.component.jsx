@@ -24,7 +24,7 @@ class JoinUsModal extends Component {
     const { visible } = this.state;
     return (
       <div>
-        <Button onClick={this.showModal} className='ft_driver_modal_button' style={{height:'60px', background:'rgba(9,48,65,1)', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
+        <Button onClick={this.showModal} className='ft_driver_modal_button' style={{width:'170px', height:'60px', background:'rgba(9,48,65,1)', 'border-radius':'6px', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
           Join Us
         </Button>
         <Modal

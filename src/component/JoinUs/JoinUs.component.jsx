@@ -1,8 +1,7 @@
 import React from 'react';
-// import PostBlob from '../postblob/postblob.component';
 import Verificode from '../vertification/vertication.component';
 import Codebox from '../codeBox/codeBox.component';
-import { Select, Input, Checkbox } from 'antd';
+import { Input, Checkbox } from 'antd';
 import axios from 'axios';
 
 import './JoinUs.component.style.css';

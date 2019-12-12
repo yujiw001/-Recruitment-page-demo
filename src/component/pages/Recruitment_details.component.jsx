@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../header/header.component';
 import UniversalModule from '../universal_module/universal_module';
 import JobData from './position_data';
 import RequirementData from './requirement_data';
 import ResponsibilityData from './responsibility_data';
-import Formodal from '../modal/formmodal.component';
-
 import JobFormModal from '../modal/jobformmodal.component';
 
 import List from '../list/list.component';

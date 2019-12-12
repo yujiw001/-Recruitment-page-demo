@@ -4,6 +4,8 @@ import Footer from '../footer/footer.component';
 import {withRouter} from 'react-router-dom';
 import SuccessModal from '../modal/successModal.component';
 import JoinUsModal from '../JoinUs/JoinUsModal.component';
+import PAFormModal from '../JoinUs/paformmodal.component';
+import ADFormModal from '../JoinUs/adformmodal.component';
 
 
 
@@ -15,7 +17,9 @@ const HomePage = () => {
 
             <JoinUsModal />
            
-            <SuccessModal />
+            <PAFormModal />
+
+            <ADFormModal />
 
             <Footer />
 
