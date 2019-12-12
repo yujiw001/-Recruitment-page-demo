@@ -2,21 +2,37 @@ import React, { Component } from 'react';
 import NewsCard from '../card/newscard.component';
 import NewsData from '../pages/news_data';
 import NewsCollapse from '../collapse/newscollapse.component';
-
+import axios from 'axios';
 class NewsMore extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
             indexList: [],
-            totalNews: NewsData.length
+            totalNews: 11,
         };
     }
-
-    componentWillMount() {
-        this.setState({
-            indexList: this.timeSorting()
-        }) 
+    
+    componentDidMount() {
+        console.log('hdfy')
+        let self=this;
+        axios({
+            method: 'get' ,
+            url: 'http://localhost:3000/news/display' ,
+        })
+        .then(function (response) {
+            console.log(response.data[4]['type']);
+            // console.log(JSON.stringify(response.data))
+            var target=JSON.stringify(response.data)
+            self.setState({indexList:target}, ()=>{
+                console.log(self.state.indexList);
+            })
+            // console.log(self.state.indexList);
+          })
+        .catch(function (error) {
+            console.log(error);
+          });
+        
     }
 
     timeSorting() {
@@ -35,12 +51,13 @@ class NewsMore extends Component {
 
                 <div className='fh_news_cardgroup'>
                     {
-                        this.state.indexList.slice(0,9).map(({ ...otherCollectionProps }) => (
-                            <NewsCard { ...otherCollectionProps } />
-                        ))
+                        
+                        // this.state.indexList.slice(0,9).map(({ ...otherCollectionProps }) => (
+                        //     <NewsCard { ...otherCollectionProps } />
+                        // ))
                     }
                 </div>
-                <NewsCollapse { ...this.state } />
+                {/* <NewsCollapse { ...this.state } /> */}
             </div>
         )
     }
