@@ -11,6 +11,7 @@ import './news_editor.style.css';
 
 const { Content } = Layout;
 const { Option } = Select;
+var EMPTY_DELTA = {ops: []};
 
 class NewsEditor extends Component {
     constructor() {
@@ -21,7 +22,7 @@ class NewsEditor extends Component {
             lan_mark: '',
             title: '',
             cover: '', 
-            content: '',
+            content: EMPTY_DELTA,
         }
         this.handleEditorChange = this.handleEditorChange.bind(this)
     }
@@ -71,9 +72,17 @@ class NewsEditor extends Component {
         }
     };
 
-    handleEditorChange(value) {
-        this.setState({ content: value })
-      }
+    handleEditorChange( content, delta, source, editor ) {
+        this.setState({
+			content: editor.getContents(),
+			events: [
+				'text-change('+this.state.content+' -> '+content+')'
+			].concat(this.state.events)
+        });
+        /* console.log(editor.getHTML()); // rich text
+		console.log(editor.getText()); // plain text
+		console.log(editor.getLength()); */
+    };
 
     modules = {
         toolbar: [
@@ -162,7 +171,7 @@ class NewsEditor extends Component {
                                         <div className="text-editor">
                                             <ReactQuill modules={this.modules} 
                                                         formats={this.formats} 
-                                                        value={content}
+                                                        value={content || ''}
                                                         onChange={this.handleEditorChange}
                                                         className='ft_backend_editor_shape'
                                             />         
