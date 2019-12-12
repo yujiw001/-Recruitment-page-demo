@@ -23,7 +23,7 @@ class SuccessModal extends Component {
     return (
       <div>
         <Button onClick={this.showModal} className='s_modal_button' 
-                style={{height:'54px', background:'rgba(6,34,54,1)', 'font-size':'16px', color}}
+                style={{height:'54px', background:'rgba(6,34,54,1)', 'font-size':'16px'}}
         >
           Submit
         </Button>
