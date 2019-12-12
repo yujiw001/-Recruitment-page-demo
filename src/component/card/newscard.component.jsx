@@ -5,6 +5,7 @@ import './newscard.component.style.css';
 
 class NewsCard extends Component {
     render() {
+        var content=this.props.content;
         return (
             <div>
                 <Link to={`/News/details/${this.props.id}`} key={this.props.id}>
@@ -18,7 +19,8 @@ class NewsCard extends Component {
                                 {this.props.date}
                             </h2>
                             <p className="card_text" key={this.props.id}>
-                                {this.props.content}
+                                <div dangerouslySetInnerHTML = {{ __html:content }}></div>
+                                
                             </p>
                         </div>
                     </div>
