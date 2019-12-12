@@ -1,12 +1,11 @@
 import  React  from  'react';
-import  FormInput  from  '../form_input/formInput.component';
-
 import  Verificode  from  '../vertification/vertication.component';
 import  Codebox  from  '../codeBox/codeBox.component';
 import  {  Select,  Input,  Form  }  from  'antd';
-import  {  Modal  }  from  'react-bootstrap';
-
 import  axios  from  'axios';
+
+import './paform.component.style.css';
+
 class  PAForm  extends  React.Component    {
         constructor(){
                 super();
@@ -23,7 +22,7 @@ class  PAForm  extends  React.Component    {
                         City:  '',
                         PostalCode:  '',
                         Category:  '',
-                        Description:'at  least  10  words',
+                        Description:'',
                         code:[]  //this  variable  is  used  to  store  the  vertification  code
                 }
         }
@@ -121,47 +120,66 @@ class  PAForm  extends  React.Component    {
 
             <form className='JoinUs' onSubmit={this.handleSubmit}>
 
-                <h1>Area</h1>
+                <span className='fh_partner_label'>Area</span><span className='required_mark'>*</span>
+                <br/>
                 <select
+                    className='ft_partner_select'
                     name='Area'
                     value={Area}
                     onChange={this.handleChange}
-                    style={{ width: '242px' }}
+                    style={{width: '242px', 
+                            background: 'white',
+                            margin: '10px 0 35px 0'
+                            }}
                 >
+                    <option value="Great Vancouver">Great Vancouver</option>
                     <option value="Los Angeles">Los Angeles</option>
-                    <option value="Vancouver">Vancouver</option>
-                    <option value="Toronto">Toronto</option>
+                    <option value="Toronto">Toronto</option> 
                 </select>
-
+                <br />
                 
-                    <span>Name</span>
-                    <Input type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></Input>
-                    <Input type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></Input>
-                    <span>Phone</span>
-                    <Input type='text' name='Mobile' value={Mobile} onChange={this.handleChange} label='Phone' required></Input>
-                    <span>Email</span>
-                    <Input type='text' name='Email' value={Email} onChange={this.handleChange} label='Email' required></Input>
-                    <span>Business Name</span>
-                    <Input type='text' name='BName' value={BName} onChange={this.handleChange} label='Business Name' required></Input>
-                    <span>Business Address</span>
-                    <Input type='text' name='Address' value={Address} onChange={this.handleChange} label='Street Address' required></Input>
-                    <Input type='text' name='City' value={City} onChange={this.handleChange} label='City' required></Input>
-                    <Input type='text' name='PostalCode' value={PostalCode} onChange={this.handleChange} label='ZIP/Postal Code' required></Input>
-                    <span>Business Category</span>
-                    <Input type='text' name='Category' value={Category} onChange={this.handleChange} label='手机' required></Input>
+                <span className='fh_partner_label'>Name</span><span className='required_mark'>*</span><br/>
+                    <div className='ft_partner_single_row'>
+                        <Input style={{'max-width':'242px', margin: '10px 0 35px 0'}} name='First_Name' value={First_Name} onChange={this.handleChange} required placeholder='First Name' size='large'></Input>
+                        <Input style={{'max-width':'242px', margin: '10px 0 35px 0'}} name='Last_Name' value={Last_Name} onChange={this.handleChange} required placeholder='Last Name' size='large'></Input>
+                    </div>
+                
+                <span className='fh_partner_label'>Phone</span><span className='required_mark'>*</span><br/>
+                    <Input style={{'max-width':'497px', margin: '10px 0 35px 0'}} name='Mobile' value={Mobile} onChange={this.handleChange} required placeholder='Phone Number' size='large'></Input>
+                
+                <span className='fh_partner_label'>Email</span><span className='required_mark'>*</span><br/>
+                    <Input style={{'max-width':'497px', margin: '10px 0 35px 0'}} name='Email' value={Email} onChange={this.handleChange} required placeholder='Email Address' size='large'></Input>
+                
+                <span className='fh_partner_label'>Business Name</span><span className='required_mark'>*</span><br/>
+                    <Input style={{'max-width':'497px', margin: '10px 0 35px 0'}} name='BName' value={BName} onChange={this.handleChange} required placeholder='Business Name' size='large'></Input>
+
+                <span className='fh_partner_label'>Business Address</span><span className='required_mark'>*</span><br/>
+                    <Input style={{'max-width':'497px', margin: '10px 0 0 0'}} name='Address' value={Address} onChange={this.handleChange} required placeholder='Street Address' size='large'></Input>
+                    <div className='ft_partner_single_row'>
+                        <Input style={{'max-width':'242px', margin: '10px 0 35px 0'}} name='City' value={City} onChange={this.handleChange} required placeholder='City' size='large'></Input>
+                        <Input style={{'max-width':'242px', margin: '10px 0 35px 0'}} name='PostalCode' value={PostalCode} onChange={this.handleChange} required placeholder='ZIP / Postal Code' size='large'></Input>
+                    </div>
+                <span className='fh_partner_label'>Business Category</span><span className='required_mark'>*</span><br/>
+                    <Input style={{'max-width':'497px', margin: '10px 0 35px 0'}} name='Category' value={Category} onChange={this.handleChange} placeholder='Business Category' required size='large'></Input>
                     
                     <div>
-                        <label>
-                            <textarea name='Description' value={Description} onChange={this.handleChange}/>
-                        </label>
+                        <span className='fh_partner_label'>Description</span>
+                        <br />
+                        <div style={{'padding-top':'10px'}} />
+                        <textarea className='ft_partner_textarea' name='Description' value={Description} onChange={this.handleChange}/>
                     </div>
 
-                        <div style={{width:'200px',height:'35px'}}>
+                    <div className='ft_partner_verificode' /* style={{width:'200px',height:'auto'}} */>
+                        <div style={{width:'150px', height:'auto'}}>
                             <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
+                        </div>
+                        <div style={{width:'200px',height:'auto'}}>
                             <Codebox />
                         </div>
-
-                        <button type='submit'>SUBMIT</button>
+                    </div>
+                    <hr />
+                    
+                    <button type='submit' className='ft_partner_submit_button'>Submit</button>
                 </form>
             </div>
         );

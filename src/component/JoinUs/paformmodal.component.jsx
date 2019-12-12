@@ -1,39 +1,52 @@
-import React, { Component, useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Modal, Button } from 'antd';
 
 import PAForm from './paform.component';
 
-function PAFormModal(props) {
+import './paformmodal.component.style.css';
 
-    const [show, setShow] = useState(false);
+class PAFormModal extends Component {
+  state = {
+    visible: false
+  };
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  showModal = () => {
+    this.setState({
+      visible: true
+    });
+  };
+ƒ
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
 
+  render() {
+    const { visible } = this.state;
     return (
-        <div>
-            <Button variant="primary" onClick={handleShow}>
-                {props.button}
-            </Button>
-
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{props.title}</Modal.Title>
-                </Modal.Header>
-                
+      <div>
+        <Button onClick={this.showModal} className='ft_partner_modal_button' style={{height:'60px', background:'rgba(19,194,194,1)', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
+          Join Now
+        </Button>
+        <Modal
+          visible={visible}
+          closable={false}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          footer={null}
+          width='597px'
+        >
+            <div className='ft_partner_body'>
+                <p className='ft_partner_modal_title'>Become a Partner</p>
+                <hr style={{'padding-bottom':'10px'}} />
                 <PAForm />
-                
-                <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <button onClick={this.handleCancel} className='ft_partner_cancle_button'>
                     Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                </Button>
-                </Modal.Footer>
-            </Modal>
-        </div>
+                </button>
+            </div>
+        </Modal>
+      </div>
     );
+  }
 }
 
 export default PAFormModal;

@@ -1,11 +1,12 @@
 import React from 'react';
-import FormInput from '../form_input/formInput.component';
 // import PostBlob from '../postblob/postblob.component';
 import Verificode from '../vertification/vertication.component';
 import Codebox from '../codeBox/codeBox.component';
-import { Select, Input, Form } from 'antd';
-
+import { Select, Input, Checkbox } from 'antd';
 import axios from 'axios';
+
+import './JoinUs.component.style.css';
+
 class JoinUs extends React.Component  {
     constructor(){
         super();
@@ -15,7 +16,7 @@ class JoinUs extends React.Component  {
 
         this.state ={
             DriverID: 0,
-            Area: '',
+            Area: 'Great Vancouver',
             First_Name: '',
             Last_Name: '',
             Mobile:'',
@@ -27,7 +28,7 @@ class JoinUs extends React.Component  {
             AvailableTime:[],
             description:'at least 10 words',
             code:[],//this variable is used to store the vertification code
-            selectedFile : null
+            selectedFile : null,
         }
     }
 
@@ -75,10 +76,9 @@ class JoinUs extends React.Component  {
     }
     
     handleSubmit = async event =>{
-        alert('Area name was submitted: ' + this.state.Area);
+        alert('Area name was submitted: ' + this.state.DesiredArea);
         event.preventDefault();
         var data = {
-            Country: this.state.Country,
             Area: this.state.Area,
             First_Name: this.state.First_Name,
             Last_Name: this.state.Last_Name,
@@ -195,141 +195,199 @@ class JoinUs extends React.Component  {
         }
     }
 
+    handleCancel = () => {
+        this.setState({ visible: false });
+      };
+
     render() {
-        const { Country, Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, Description } = this.state;
+        const { Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, Description } = this.state;
+
         const ownStyle={
             width: 'calc(100% - 10px)',
             height: '45px',
             margin: '15px 0',
             backgroundColor: '#ffffff'
         };
+
         const { code } = this.state;
-        const { Option } = Select;
-        const options = [
-            {value: 'Los Angeles', label: 'Los Angeles'},
-            {value:'Vancouver', label: 'Vancouver'},
-            {value:'Toronto', label: 'Toronot'}
-        ];
         
         return(
             <div className='Form_input'>
-                
-                <h1>Area</h1>
-                <select
-                    name='Area'
-                    value={Area}
-                    onChange={this.handleChange}
-                    style={{ width: '242px', 
-                             background: 'white'
-                            }}
-                    placeholder='Choose your area'
-                >
-                    <option value="Los Angeles">Los Angeles</option>
-                    <option value="Vancouver">Vancouver</option>
-                    <option value="Toronto">Toronto</option> 
-                </select>
-
                 <form className='JoinUs' onSubmit={this.handleSubmit}>
 
-                    <span>Name</span>
-                    <Input type='text' name='First_Name' value={First_Name} onChange={this.handleChange} label='First Name' required></Input>
-                    <Input type='text' name='Last_Name' value={Last_Name} onChange={this.handleChange} label='Last Name' required></Input>
-                    <span>Address</span>
-                    <Input type='text' name='Address' value={Address} onChange={this.handleChange} label='Street Address' required></Input>
-                    <Input type='text' name='City' value={City} onChange={this.handleChange} label='City' required></Input>
-                    <Input type='text' name='PostalCode' value={PostalCode} onChange={this.handleChange} label='ZIP/Postal Code' required></Input>
-                    <span>Phone</span>
-                    <Input type='text' name='Mobile' value={Mobile} onChange={this.handleChange} label='手机' required></Input>
+                    <span className='fh_driver_label'>Area</span><span className='required_mark'>*</span>
+                    <br/>
+                    <select
+                        className='ft_driver_select'
+                        name='Area'
+                        value={Area}
+                        onChange={this.handleChange}
+                        style={{width: '242px', 
+                                background: 'white',
+                                margin: '10px 0 35px 0'
+                                }}
+                    >
+                        <option value="Great Vancouver">Great Vancouver</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Toronto">Toronto</option> 
+                    </select>
+
+                    <br />
+
+                    <span className='fh_driver_label'>Name</span><span className='required_mark'>*</span><br/>
+                    <div className='ft_driver_single_row'>
+                        <Input style={{'max-width':'242px', margin: '10px 0 35px 0'}} name='First_Name' value={First_Name} onChange={this.handleChange} size='large' required placeholder='First Name' />
+                        <Input style={{'max-width':'242px', margin: '10px 0 35px 0'}} name='Last_Name' value={Last_Name} onChange={this.handleChange} size='large' required placeholder='Last Name' />
+                    </div>
+
+                    <span className='fh_driver_label'>Phone</span><span className='required_mark'>*</span>
+                    <Input style={{'max-width':'497px', margin: '10px 0 35px 0'}} name='Mobile' value={Mobile} onChange={this.handleChange} size='large' required placeholder='Phone Number' />
+
+                    <span className='fh_driver_label'>Address</span><span className='required_mark'>*</span>
+                    <Input style={{'max-width':'497px', margin: '10px 0 0 0'}} name='Address' value={Address} onChange={this.handleChange} size='large' required placeholder='Street Address' />
+                    <div className='ft_driver_single_row'>
+                        <Input style={{'max-width':'242px', margin: '13px 0 35px 0'}} name='City' value={City} onChange={this.handleChange} size='large' required placeholder='City' />
+                        <Input style={{'max-width':'242px', margin: '13px 0 35px 0'}} name='PostalCode' value={PostalCode} onChange={this.handleChange} size='large' required placeholder='ZIP / Postal Code' />
+                    </div>
 
                     <div>
-                        工作地点：<br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Burnaby"
-                                      onClick={this.handleCheckbox}/>Burnaby</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="West Vancouver"
-                                      onClick={this.handleCheckbox}/>West Vancouver</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="White Rock"
-                                      onClick={this.handleCheckbox}/>White Rock</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Richmond"
-                                      onClick={this.handleCheckbox}/>Richmond</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="North Vancouver"
-                                      onClick={this.handleCheckbox}/>North Vancouver</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Delta"
-                                      onClick={this.handleCheckbox}/>Delta</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Vancouver"
-                                      onClick={this.handleCheckbox}/>Vancouver</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Port Moody"
-                                      onClick={this.handleCheckbox}/>Port Moody</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Maple Ridge"
-                                      onClick={this.handleCheckbox}/>Maple Ridge</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Coquitlam"
-                                      onClick={this.handleCheckbox}/>Coquitlam</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Port Coquitlam"
-                                      onClick={this.handleCheckbox}/>Port Coquitlam</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Anmore"
-                                      onClick={this.handleCheckbox}/>Anmore</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Surrey"
-                                      onClick={this.handleCheckbox}/>Surrey</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="Langley"
-                                      onClick={this.handleCheckbox}/>Langley</label><br/>
-                        <label><input type="checkbox" name="DesiredArea" value="New Westminster"
-                                      onClick={this.handleCheckbox}/>New Westminster</label><br/>
+                        <span className='fh_driver_label'>Desired schedule area</span><span className='required_mark'>*</span>
+                        <span className='ft_driver_instruction'>Choose at least 1</span>
                         
+                        <div className='ft_driver_area_checkbox_group'>
+                            <div className='ft_driver_single_col'>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Metro" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Metro</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Richmond" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Richmond</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Lougheed" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Lougheed</span>
+                            </Checkbox>
+                            </div>
+                            <div className='ft_driver_single_col'>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Coquitlam" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Coquitlam</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Surrey" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Surrey</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Downtown" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Downtown</span>
+                                </Checkbox>
+                            </div>
+                            <div className='ft_driver_single_col'>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="New West" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>New West</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Vancouver" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Vancouver</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Hasting" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Hasting</span>
+                                </Checkbox>
+                            </div>
+                        </div>
                     </div>
-
+                    <div style={{padding:'17.5px 0'}} />
                     <div>
-                        Transportation：<br/>
-                        <label><input type="checkbox" name="Transportation" value="Car"
-                                      onClick={this.handleCheckbox}/>Car(self-provided)</label><br/>
-                        <label><input type="checkbox" name="Transportation" value="Motorbike"
-                                      onClick={this.handleCheckbox}/>Motorbike(self-provided)</label><br/>
-                        <label><input type="checkbox" name="Transportation" value="Electric Motorbike"
-                                      onClick={this.handleCheckbox}/>Electric Motorbike(rent)</label><br/>
+                        <span className='fh_driver_label'>Transportation</span><span className='required_mark'>*</span>
+                        <span className='ft_driver_instruction'>Choose at least 1</span>
+                        <br/>
+                        <div className='ft_driver_transportation_checkbox_group'>
+                            <div className='ft_driver_single_col' style={{height:'44px'}}>
+                                <Checkbox style={{margin:0, padding:0}} name="Transportation" value="Car" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Car(self-provided)</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:'10px 0 0 0'}} name="Transportation" value="Electric Motorbike" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Electric Motorbike(rent)</span>
+                                </Checkbox>
+                            </div>
+                            <Checkbox style={{margin:0, padding:0}} name="Transportation" value="Motorbike" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Motorbike(self-provided)</span>
+                            </Checkbox>
+                            
+                        </div>
                     </div>
-
+                    <div style={{padding:'17.5px 0'}} />
                     <div>
-                        工作时间：<br/>
-                        <label><input type="checkbox" name="AvailableTime" value="monday_11_5"
-                                      onClick={this.handleCheckbox}/>周一 11am - 5pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="tuesday_11_5"
-                                      onClick={this.handleCheckbox}/>周二 11am - 5pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="wednesday_11_5"
-                                      onClick={this.handleCheckbox}/>周三 11am - 5pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="thursday_11_5"
-                                      onClick={this.handleCheckbox}/>周四 11am - 5pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="friday_11_5"
-                                      onClick={this.handleCheckbox}/>周五 11am - 5pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="saturday_11_5"
-                                      onClick={this.handleCheckbox}/>周六 11am - 5pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="sunday_11_5"
-                                      onClick={this.handleCheckbox}/>周日 11am - 5pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="monday_5_11"
-                                      onClick={this.handleCheckbox}/>周一 5am - 11pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="tuesday_5_11"
-                                      onClick={this.handleCheckbox}/>周二 5am - 11pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="wednesday_5_11"
-                                      onClick={this.handleCheckbox}/>周三 5am - 11pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="thursday_5_11"
-                                      onClick={this.handleCheckbox}/>周四 5am - 11pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="friday_5_11"
-                                      onClick={this.handleCheckbox}/>周五 5am - 11pm</label><br/>
-                        <label><input type="checkbox" name="AvailableTime" value="saturday_5_11"
-                                      onClick={this.handleCheckbox}/>周六 5am - 11pm</label><br/>
+                        <span className='fh_driver_label'>Operating hours</span><span className='required_mark'>*</span>
+                        <span className='ft_driver_instruction'>Choose at least 4</span>
+                        <br/>
+                        <div className='ft_driver_hour_checkbox_group'>
+                            <div className='ft_driver_single_col' style={{height:'134px'}}>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="monday_11_5" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Mon 11am - 5pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="tuesday_11_5" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Tue 11am - 5pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="wednesday_11_5" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Wed 11am - 5pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="thursday_11_5" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Thu 11am - 5pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="friday_11_5" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Fri 11am - 5pm</span>
+                                </Checkbox>
+                            </div>
+                            <div className='ft_driver_single_col' style={{height:'134px'}}>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="saturday_11_5" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Sat 11am - 5pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="sunday_11_5" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Sun 11am - 5pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="monday_5_11" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Mon 5am - 11pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="tuesday_5_11" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Tue 5am - 11pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="wednesday_5_11" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Wed 5am - 11pm</span>
+                                </Checkbox>
+                            </div>
+                            <div className='ft_driver_single_col' style={{height:'104px'}}>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="thursday_5_11" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Thu 5am - 11pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="friday_5_11" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Fri 5am - 11pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="saturday_11_5" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Sat 5am - 11pm</span>
+                                </Checkbox>
+                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="sunday_5_11" onClick={this.handleCheckbox}>
+                                    <span className='ft_driver_box_label'>Sun 5am - 11pm</span>
+                                </Checkbox>
+                            </div>
+                        </div>
                     </div>
-
+                    <div style={{padding:'16px 0'}} />
                     <div>
-                        <label>
-                            <textarea name='Description' value={Description} onChange={this.handleChange}/>
-                        </label>
+                        <span className='fh_driver_label'>Description</span>
+                        <br />
+                        <div style={{'padding-top':'10px'}} />
+                        <textarea className='ft_driver_textarea' name='Description' value={Description} onChange={this.handleChange}/>
                     </div>
 
                         {/* <PostBlob>上传简历</PostBlob> */}
-                        <input type="file" name="file" onChange={this.onChangeHandler} />
-                        <div style={{width:'200px',height:'35px'}}>
+                        {/* <input type="file" name="file" onChange={this.onChangeHandler} /> */}
+                    <div className='ft_driver_verificode' /* style={{width:'200px',height:'auto'}} */>
+                        <div style={{width:'150px', height:'auto'}}>
                             <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
+                        </div>
+                        <div style={{width:'200px',height:'auto'}}>
                             <Codebox />
                         </div>
-
-                    <button type='submit'>SUBMIT</button>
+                    </div>
+                    <hr />
+                    
+                    <button type='submit' className='ft_driver_submit_button'>Submit</button>       
+                    
                 </form>
             </div>
         );

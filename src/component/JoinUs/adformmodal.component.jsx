@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'antd';
 
-import JoinUs from './JoinUs.component';
+import PAForm from './paform.component';
 
-import './JoinUsModal.component.style.css';
+import './adformmodal.component.style.css';
 
-class JoinUsModal extends Component {
+class ADFormModal extends Component {
   state = {
     visible: false
   };
@@ -15,7 +15,7 @@ class JoinUsModal extends Component {
       visible: true
     });
   };
-
+ƒ
   handleCancel = () => {
     this.setState({ visible: false });
   };
@@ -24,8 +24,8 @@ class JoinUsModal extends Component {
     const { visible } = this.state;
     return (
       <div>
-        <Button onClick={this.showModal} className='ft_driver_modal_button' style={{height:'60px', background:'rgba(9,48,65,1)', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
-          Join Us
+        <Button onClick={this.showModal} className='ft_partner_modal_button' style={{height:'60px', background:'rgba(19,194,194,1)', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
+          Contact Now
         </Button>
         <Modal
           visible={visible}
@@ -35,11 +35,11 @@ class JoinUsModal extends Component {
           footer={null}
           width='597px'
         >
-            <div className='ft_driver_body'>
-                <p className='ft_driver_modal_title'>Become a driver</p>
+            <div className='ft_partner_body'>
+                <p className='ft_partner_modal_title'>Advertisement for investment</p>
                 <hr style={{'padding-bottom':'10px'}} />
-                <JoinUs />
-                <button onClick={this.handleCancel} className='ft_driver_cancle_button'>
+                <PAForm />
+                <button onClick={this.handleCancel} className='ft_partner_cancle_button'>
                     Close
                 </button>
             </div>
@@ -49,4 +49,4 @@ class JoinUsModal extends Component {
   }
 }
 
-export default JoinUsModal;
+export default ADFormModal;
