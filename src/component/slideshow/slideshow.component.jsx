@@ -40,6 +40,7 @@ class SlideShow extends Component {
 
     render() {
         const settings_1 = {
+            focusOnSelect: true,
             className: "center",
             centerMode: true,
             infinite: true,
@@ -58,6 +59,8 @@ class SlideShow extends Component {
             dots: true,
             nextArrow: null,
             prevArrow: null,
+            slidesToShow: 1,
+            fade: true,
             appendDots: dots => (
                 <div 
                 style={{
@@ -67,7 +70,7 @@ class SlideShow extends Component {
                 >
                 <ul> {dots} </ul>
                 </div>
-            ),
+            ), 
         }; 
 
         return (
@@ -78,10 +81,11 @@ class SlideShow extends Component {
                 {...settings_1}
                 >
                     {
-                        this.state.indexList.slice(0, 3).map((carousel, index) => (
-                            <Link key={index} to={`/Recruitment/news_details/${carousel.id}`}>
-                                <img key={index} src={carousel.cover} className='fh_rec_carousel_img' />
-                            </Link>
+                        this.state.indexList.slice(0,3).map((carousel, index) => (
+                            
+                        <Link>                      
+                            <img key={index} src={carousel.cover} className='fh_rec_carousel_img' />    
+                        </Link>                     
                         )
                         )
                     }
@@ -90,23 +94,24 @@ class SlideShow extends Component {
                 <Slider
                 asNavFor={this.state.nav1}
                 ref={slider => (this.slider2 = slider)}
-                slidesToShow={1}
-                fade={true}
                 {...settings_2}
                 >
                     {
-                        this.state.indexList.slice(0, 3).map((carousel, index) => (  
-                            <div>
-                                <h3 className='fh_rec_carousel_title' >
-                                    {carousel.title}
-                                </h3>
-                                <p className='fh_rec_carousel_content' key={index}>
-                                    {carousel.content}
-                                </p>
-                            </div> 
+                        this.state.indexList.slice(0,3).map((carousel, index) => (  
+
+                        <div>
+                            <h3 className='fh_rec_carousel_title' key={index}>
+                                {carousel.title}
+                            </h3>
+
+                            <p to={`/Recruitment/news_details/${carousel.id}`} className='fh_rec_carousel_content' key={index}>
+                                {carousel.content}
+                            </p>  
+                        </div>
                         )
                         )
                     }
+                    
                 </Slider>
             </div>
         )
@@ -114,3 +119,17 @@ class SlideShow extends Component {
 }
 
 export default SlideShow;
+
+/* <Link key={index} to={`/Recruitment/news_details/${carousel.id}`}>Learn More >>></Link> */
+
+/* <div>
+    <h3 className='fh_rec_carousel_title' key={index}>
+        {carousel.title}
+    </h3>
+
+    <p className='fh_rec_carousel_content' key={index}>
+        {carousel.content}
+    </p>
+
+                            
+</div> */

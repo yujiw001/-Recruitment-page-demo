@@ -1,7 +1,7 @@
 import  React  from  'react';
 import  Verificode  from  '../vertification/vertication.component';
 import  Codebox  from  '../codeBox/codeBox.component';
-import  {  Select,  Input,  Form  }  from  'antd';
+import  { Input }  from  'antd';
 import  axios  from  'axios';
 
 import './paform.component.style.css';

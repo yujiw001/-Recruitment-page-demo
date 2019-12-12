@@ -1,45 +1,31 @@
-.fh_rec_det_apply_box{
-    max-width: 500px;
+.fh_rec_form_body {
+    max-width: 497px;
     margin: auto;
 }
 
-.fh_rec_det_apply_title {
-    font-size:30px;
+.ft_rec_button {
+    width:248px;
+
     font-family:OpenSans-Semibold,OpenSans;
     font-weight:600;
-    color:rgba(51,51,51,1);
-    line-height:38px;
-
-    padding: 10px 0 0 0;
+    color:rgba(255,255,255,1);
+    line-height:22px;
 }
 
-.fh_rec_det_apply_name {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.fh_rec_det_apply_submit {
-    text-align: right;
-}
-.fh_rec_det_apply_submit_button {
+.ft_rec_cancle_button {
     width:126px;
-    height:54px !important;
-    background:rgba(6,34,54,1) !important;
-    border: none !important;
-    border-radius:5px !important;
+    height:54px;
+    background:rgba(255,255,255,1);
+    border-radius:5px;
+    border:1px solid rgba(6,34,54,1);
 
-    font-size:16px !important;
-    font-family:Roboto-Bold,Roboto !important;
-    font-weight:bold !important;
-    color:rgba(255,255,255,1) !important;
-    line-height:19px !important;
-}
-
-.fh_rec_det_apply_label {
     font-size:16px;
-    font-family:OpenSans-Semibold,OpenSans;
-    font-weight:600;
+    font-family:OpenSans-Bold,OpenSans;
+    font-weight:bold;
     color:rgba(51,51,51,1);
-    line-height:18px;
+    line-height:19px;
+
+    position: absolute;
+    bottom: 24px;
+    margin-left: 371px;
 }

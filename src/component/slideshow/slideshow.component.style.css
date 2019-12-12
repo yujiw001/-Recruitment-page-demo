@@ -1,8 +1,9 @@
 .fh_rec_carousel_img {
-    width: 859px  ;
+    width: 834px  ;
     height: 438px;
   }
-  .fh_rec_carousel_title {
+
+.fh_rec_carousel_title {
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -10,7 +11,7 @@
     -webkit-box-orient: vertical;
   
     max-width: 841px;
-    height: 72px;
+    height: 72px; 
     font-size:22px;
     font-family:OpenSans-Bold,OpenSans;
     font-weight:bold;
@@ -21,6 +22,8 @@
     margin: 0;
     padding: 44px 0 0 0;
   }
+  
+
   .fh_rec_carousel_content {
     overflow : hidden;
     text-overflow: ellipsis;
@@ -42,8 +45,7 @@
   
     .center .slick-center img {
       opacity: 1;
-      margin: 0 0 0 -25px;
-      /* transform: scale(1.08); */
+      cursor: default;
     }
     .center img{
       opacity: 0.3;

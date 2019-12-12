@@ -8,7 +8,7 @@ class NewsCard extends Component {
         return (
             <div>
                 <Link to={`/News/details/${this.props.id}`} key={this.props.id}>
-                    <div className="card" style={{"max-width": "339px", 'min-height':'404px'}}>
+                    <div className="card" style={{"width": "339px", 'min-height':'404px'}}>
                         <img key={this.props.id} src={this.props.cover} className="card_img" />
                         <div className="card_body">
                             <h1 className="card_title" key={this.props.id}>

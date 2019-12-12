@@ -30,7 +30,6 @@ class RecruitmentPage extends Component {
 
             <Viewmore />
             
-            <SuccessModal />
           </div>
 
           <Footer />
