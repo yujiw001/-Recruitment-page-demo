@@ -107,7 +107,9 @@ class NewsEditor extends Component {
     render() {
 
         const {user, type, lan_mark, title, cover, content} = this.state;
-        var test = '<strong>content</strong>';
+        /* ---------- */
+        var test = '';
+        /* ---------- */
 
         return (
             <div>
@@ -117,7 +119,9 @@ class NewsEditor extends Component {
                         <Header />
                         <Content className='ft_backend_content'>
 
+                            {/* ------------------------------------------------ */}
                             <div dangerouslySetInnerHTML = {{ __html:test }}></div>
+                            {/* ------------------------------------------------ */}
 
 
                             <form onSubmit={this.handleSubmit}>
