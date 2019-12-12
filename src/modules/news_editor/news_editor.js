@@ -22,7 +22,8 @@ class NewsEditor extends Component {
             lan_mark: '',
             title: '',
             cover: '', 
-            content: EMPTY_DELTA,
+            /* content: EMPTY_DELTA, */
+            content: '',
         }
         this.handleEditorChange = this.handleEditorChange.bind(this)
     }
@@ -72,17 +73,17 @@ class NewsEditor extends Component {
         }
     };
 
-    handleEditorChange( content, delta, source, editor ) {
+    /* handleEditorChange( content, delta, source, editor ) {
         this.setState({
 			content: editor.getContents(),
 			events: [
 				'text-change('+this.state.content+' -> '+content+')'
 			].concat(this.state.events)
         });
-        /* console.log(editor.getHTML()); // rich text
-		console.log(editor.getText()); // plain text
-		console.log(editor.getLength()); */
-    };
+    }; */
+    handleEditorChange(value) {
+        this.setState({content: value})
+    }
 
     modules = {
         toolbar: [
@@ -106,6 +107,7 @@ class NewsEditor extends Component {
     render() {
 
         const {user, type, lan_mark, title, cover, content} = this.state;
+        var test = '<strong>content</strong>';
 
         return (
             <div>
@@ -114,6 +116,10 @@ class NewsEditor extends Component {
                     <Layout className='ft_backend_background'>
                         <Header />
                         <Content className='ft_backend_content'>
+
+                            <div dangerouslySetInnerHTML = {{ __html:test }}></div>
+
+
                             <form onSubmit={this.handleSubmit}>
                                 <p className='ft_backend_title'>发布文章</p>
 
