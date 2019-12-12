@@ -12,17 +12,14 @@ function beforeUpload(file) {
 };
 
 class MyUpload extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fileList: []
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
   
-  state = {
-    fileList: [
-      {
-        uid: '-1',
-        name: "",
-        status: "",
-        url: "",
-      }
-    ]
-  };
 
   handleChange = info => {
     let fileList = [...info.fileList];
@@ -41,6 +38,10 @@ class MyUpload extends Component {
     });
 
     this.setState({ fileList });
+      if(info.fileList[0].status === 'done'){
+        this.props.Cover(this.state.fileList[0].response.url);
+      }
+    // this.props.Cover(this.state.fileList[0])
   };
 
   render() {
@@ -50,7 +51,6 @@ class MyUpload extends Component {
       action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
       onChange: this.handleChange,
     };
-
     return (
       <Upload 
         {...props} 

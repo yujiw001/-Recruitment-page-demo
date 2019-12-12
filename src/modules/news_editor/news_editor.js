@@ -25,7 +25,15 @@ class NewsEditor extends Component {
         }
         this.handleEditorChange = this.handleEditorChange.bind(this)
     }
-
+    getCover = (newscover) =>{
+        console.log(newscover);
+        this.setState({
+            cover:newscover
+        });
+        // this.setState({
+        //     // cover: newscover
+        //   });
+    }
     handleSubmit = async event =>{
         alert('Quill was submitted: ' + this.state.content);
         event.preventDefault();
@@ -151,7 +159,7 @@ class NewsEditor extends Component {
                                     <div className='ft_backend_upload_display'>
                                         <div className='ft_backend_upload_button_display'>
                                             <p className='ft_backend_label' style={{'padding-right':'40px'}}>封面图：</p>
-                                            <MyUpload uploadname='添加封面图' />
+                                            <MyUpload uploadname='添加封面图' Cover={this.getCover} />
                                         </div>
 
                                     </div>
