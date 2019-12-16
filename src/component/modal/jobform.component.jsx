@@ -1,11 +1,11 @@
-import  React  from  'react';
-import  Verificode  from  '../vertification/vertication.component';
-import  Codebox  from  '../codeBox/codeBox.component';
+import React  from  'react';
+import VerificationCode from '../verificationcode/verification/verification.component';
 import MyUpload from '../Upload/MyUpload.component';
-import  { Input }  from  'antd';
-import  axios  from  'axios';
+import { Input }  from  'antd';
+import axios  from  'axios';
 
 import './jobform.component.style.css';
+import { couldStartTrivia } from 'typescript';
 
 class  JobForm  extends  React.Component    {
     constructor(props){
@@ -137,15 +137,14 @@ class  JobForm  extends  React.Component    {
                     <div style={{'padding-top': '17px'}} />
                     <MyUpload uploadname='Add a File' />
 
-                    <div className='ft_rec_verificode' /* style={{width:'200px',height:'auto'}} */>
-                        <div style={{width:'150px', height:'auto'}}>
-                            <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
-                        </div>
-                        <div style={{width:'200px',height:'auto'}}>
-                            <Codebox />
-                        </div>
-                    </div>
+                    <div style={{'padding-top': '32px'}} />
 
+                    <span className='fh_rec_det_apply_label'>Verification Code</span><span className='required_mark'>*</span><br/>
+                    <div style={{'padding-top':'10px'}} />
+                    <VerificationCode />
+                    <div style={{'padding-top':'50px'}} />
+
+                    
                     <hr />
                         
                     <button type='submit' className='fh_rec_det_apply_submit_button'>Submit</button>

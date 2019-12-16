@@ -1,6 +1,7 @@
 import React from 'react';
 import Verificode from '../vertification/vertication.component';
 import Codebox from '../codeBox/codeBox.component';
+import VerificationCode from '../verificationcode/verification/verification.component';
 import { Input, Checkbox } from 'antd';
 import axios from 'axios';
 
@@ -375,13 +376,10 @@ class JoinUs extends React.Component  {
 
                         {/* <PostBlob>上传简历</PostBlob> */}
                         {/* <input type="file" name="file" onChange={this.onChangeHandler} /> */}
-                    <div className='ft_driver_verificode' /* style={{width:'200px',height:'auto'}} */>
-                        <div style={{width:'150px', height:'auto'}}>
-                            <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
-                        </div>
-                        <div style={{width:'200px',height:'auto'}}>
-                            <Codebox />
-                        </div>
+
+                    <div className='ft_driver_verificode'>
+                        <span className='fh_driver_label'>Verification Code</span><span className='required_mark'>*</span><br/>
+                        <VerificationCode />
                     </div>
                     <hr />
                     

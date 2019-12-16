@@ -1,7 +1,8 @@
-import  React  from  'react';
-import  Verificode  from  '../vertification/vertication.component';
-import  Codebox  from  '../codeBox/codeBox.component';
-import  { Input }  from  'antd';
+import React  from  'react';
+import Verificode  from  '../vertification/vertication.component';
+import Codebox  from  '../codeBox/codeBox.component';
+import VerificationCode from '../verificationcode/verification/verification.component';  
+import { Input }  from  'antd';
 import  axios  from  'axios';
 
 import './paform.component.style.css';
@@ -169,13 +170,9 @@ class  PAForm  extends  React.Component    {
                         <textarea className='ft_partner_textarea' name='Description' value={Description} onChange={this.handleChange}/>
                     </div>
 
-                    <div className='ft_partner_verificode' /* style={{width:'200px',height:'auto'}} */>
-                        <div style={{width:'150px', height:'auto'}}>
-                            <Verificode ownStyle={ownStyle} onGetRefresh={this.refreshCode} data={code}></Verificode>
-                        </div>
-                        <div style={{width:'200px',height:'auto'}}>
-                            <Codebox />
-                        </div>
+                    <div className='ft_partner_verificode'>
+                        <span className='fh_partner_label'>Verification Code</span><span className='required_mark'>*</span><br/>
+                        <VerificationCode />
                     </div>
                     <hr />
                     

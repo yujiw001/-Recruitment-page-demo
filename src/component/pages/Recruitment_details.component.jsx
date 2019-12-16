@@ -6,6 +6,7 @@ import JobData from './position_data';
 import RequirementData from './requirement_data';
 import ResponsibilityData from './responsibility_data';
 import JobFormModal from '../modal/jobformmodal.component';
+import EmailButton from '../emailbutton/emailbutton.compoent';
 
 import List from '../list/list.component';
 import Footer from '../footer/footer.component';
@@ -47,7 +48,7 @@ class RecruitmentDetail extends Component  {
 
                     <div className='fh_rec_det_display'>
                         <div className="description">
-                            <UniversalModule title={target_position.position} area={target_position.area} content={target_position.brief} ItemComponent={JobFormModal}/>
+                            <UniversalModule title={target_position.position} area={target_position.area} content={target_position.brief} ItemComponent={EmailButton}/>
                         </div>
 
                         <div>
