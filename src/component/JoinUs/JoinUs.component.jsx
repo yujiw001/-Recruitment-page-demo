@@ -300,9 +300,9 @@ class JoinUs extends React.Component  {
                                     <AreaCheckBox LocationName='DesiredArea' LocationValue={data} />
                                 ))
                             }
-                            <AreaCheckBox LocationName='DesiredArea' LocationValue='Shanghai'/>
+                            {/* <AreaCheckBox LocationName='DesiredArea' LocationValue='Shanghai'/> */}
                         </div>
-                        <div className='ft_driver_area_checkbox_group'>
+                        {/* <div className='ft_driver_area_checkbox_group'>
                             <div className='ft_driver_single_col'>
                                 <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Metro" onClick={this.handleCheckbox}>
                                     <span className='ft_driver_box_label'>Metro</span>
@@ -336,7 +336,7 @@ class JoinUs extends React.Component  {
                                     <span className='ft_driver_box_label'>Hasting</span>
                                 </Checkbox>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div style={{padding:'17.5px 0'}} />
                     <div>
