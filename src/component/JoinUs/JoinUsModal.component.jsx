@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'antd';
+import { Modal } from 'antd';
 
 import JoinUs from './JoinUs.component';
 
@@ -24,9 +24,10 @@ class JoinUsModal extends Component {
     const { visible } = this.state;
     return (
       <div>
-        <Button onClick={this.showModal} className='ft_driver_modal_button' style={{width:'170px', height:'60px', background:'rgba(9,48,65,1)', 'border-radius':'6px', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
-          Join Us
-        </Button>
+        <button onClick={this.showModal} className='ft_driver_modal_button'>
+          <img className='ft_driver_modal_button_icon' src={require('../../images/drive-document.png')} />
+          Apply Now
+        </button>
         <Modal
           visible={visible}
           closable={false}
