@@ -3,25 +3,29 @@ import Verificode from '../vertification/vertication.component';
 import Codebox from '../codeBox/codeBox.component';
 import { Input, Checkbox } from 'antd';
 import axios from 'axios';
-
+import AreaCheckBox from './areacheckbox.component';
 import './JoinUs.component.style.css';
-
+import GlobalArea from './areadata';
 class JoinUs extends React.Component  {
     constructor(){
         super();
         //1
         this.refreshCode=this.refreshCode.bind(this);
         this.GetDriverID=this.GetDriverID.bind(this);
-
+        this.GetTowns=this.GetTowns.bind(this);
+        this.handleSelect=this.handleSelect.bind(this);
         this.state ={
             DriverID: 0,
             Area: 'Great Vancouver',
+            Town:GlobalArea[0],
             First_Name: '',
             Last_Name: '',
             Mobile:'',
             Address: '',
             City: '',
             PostalCode:'',
+            DisplayArea:GlobalArea,
+            AreaCode:0,
             DesiredArea:[],
             Transportation:[],
             AvailableTime:[],
@@ -30,6 +34,39 @@ class JoinUs extends React.Component  {
             selectedFile : null,
         }
     }
+    
+    GetTowns= ()=> {
+        switch(this.state.Area){
+            case "Great Vancouver":
+                this.setState({Town:this.state.DisplayArea[0]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+            case "Calgary":
+                this.setState({Town:this.state.DisplayArea[1]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+            case "New York":
+                this.setState({Town:this.state.DisplayArea[2]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+            case "Toronto":
+                this.setState({Town:this.state.DisplayArea[3]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+            case "Edmonton":
+                this.setState({Town:this.state.DisplayArea[4]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+            case "Seattle":
+                this.setState({Town:this.state.DisplayArea[5]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+            case "Montreal":
+                this.setState({Town:this.state.DisplayArea[6]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+        }
+    }
+    handleSelect = async event=>{
+        this.handleChange(event);
+        this.GetTowns();
+    }
+    handleSelectChange = async event => {
+        //event.target will end up being the input element itself. And we want to pull off the 'name and value'
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+          },()=>{this.GetTowns()});
+
+    };
 
     refreshCode(){
         this.GetVerifiCode();
@@ -200,7 +237,6 @@ class JoinUs extends React.Component  {
 
     render() {
         const { Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, Description } = this.state;
-
         const ownStyle={
             width: 'calc(100% - 10px)',
             height: '45px',
@@ -212,6 +248,7 @@ class JoinUs extends React.Component  {
         
         return(
             <div className='Form_input'>
+                
                 <form className='JoinUs' onSubmit={this.handleSubmit}>
 
                     <span className='fh_driver_label'>Area</span><span className='required_mark'>*</span>
@@ -220,15 +257,20 @@ class JoinUs extends React.Component  {
                         className='ft_driver_select'
                         name='Area'
                         value={Area}
-                        onChange={this.handleChange}
+                        onChange={this.handleSelectChange}
+                        // onClick={()=>{this.handleClick;this.GetDriverID()}}
                         style={{width: '242px', 
                                 background: 'white',
                                 margin: '10px 0 35px 0'
                                 }}
                     >
                         <option value="Great Vancouver">Great Vancouver</option>
-                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Calgary">Calgary</option>
+                        <option value="New York">New York</option>
                         <option value="Toronto">Toronto</option> 
+                        <option value="Edmonton">Edmonton</option> 
+                        <option value="Seattle">Seattle</option>
+                        <option value="Montreal">Montreal</option> 
                     </select>
 
                     <br />
@@ -252,7 +294,14 @@ class JoinUs extends React.Component  {
                     <div>
                         <span className='fh_driver_label'>Desired schedule area</span><span className='required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 1</span>
-                        
+                        <div>
+                            {
+                                this.state.Town.map(data => (
+                                    <AreaCheckBox LocationName='DesiredArea' LocationValue={data} />
+                                ))
+                            }
+                            <AreaCheckBox LocationName='DesiredArea' LocationValue='Shanghai'/>
+                        </div>
                         <div className='ft_driver_area_checkbox_group'>
                             <div className='ft_driver_single_col'>
                                 <Checkbox style={{margin:0, padding:0}} name="DesiredArea" value="Metro" onClick={this.handleCheckbox}>
