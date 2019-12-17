@@ -24,9 +24,10 @@ class PAFormModal extends Component {
     const { visible } = this.state;
     return (
       <div>
-        <Button onClick={this.showModal} className='ft_partner_modal_button' style={{height:'60px', background:'rgba(19,194,194,1)', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
+        <button onClick={this.showModal} className='ft_partner_modal_button'>
+          <img className='ft_partner_modal_button_icon' src={require('../../images/drive-document.png')} />
           Join Now
-        </Button>
+        </button>
         <Modal
           visible={visible}
           closable={false}

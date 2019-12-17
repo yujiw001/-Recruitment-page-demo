@@ -5,11 +5,20 @@
 
 .ft_driver_modal_button {
     width:170px;
+    height: 60px;
+    background: rgba(9,48,65,1);
     border-radius:6px;
+    border: none !important;
+    outline: none !important;
 
+    font-size: 16px;
+    color: rgba(255,255,255,1);
     font-family:OpenSans-Bold,OpenSans;
     font-weight:bold;
     line-height:19px;
+}
+.ft_driver_modal_button_icon {
+    padding-right: 10px;
 }
 
 .ft_driver_modal_title {
@@ -33,6 +42,8 @@
     height:54px;
     background:rgba(9,48,65,1);
     border-radius:5px;
+    border: none !important;
+    outline: none !important;
 
     font-size:16px;
     font-family:OpenSans-Bold,OpenSans;

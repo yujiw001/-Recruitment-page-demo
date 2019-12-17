@@ -1,21 +1,4 @@
-.required_mark {
-    font-size:16px;
-    font-family:OpenSans-Semibold,OpenSans;
-    font-weight:600;
-    color: red;
-    line-height:18px;
-
-    text-align: left;
-    padding: 35px 0 10px 0;
-}
-
-.ft_partner_select {
-    height: 41px;
-    background:rgba(255,255,255,1);
-    border-radius:3px;
-    border:1px solid rgba(227,227,227,1);
-}
-
+/* Label */
 .fh_partner_label {
     font-size:16px;
     font-family:OpenSans-Semibold,OpenSans;
@@ -26,10 +9,23 @@
     text-align: left;
     padding: 35px 0 10px 0;
 }
+.ft_required_mark {
+    font-size:16px;
+    font-family:OpenSans-Semibold,OpenSans;
+    font-weight:600;
+    color: red;
+    line-height:18px;
 
-.ft_partner_single_row {
-    display: flex;
-    justify-content: space-between;
+    text-align: left;
+    padding: 35px 0 10px 0;
+}
+
+/* Inputs */
+.ft_partner_select {
+    height: 41px;
+    background:rgba(255,255,255,1);
+    border-radius:3px;
+    border:1px solid rgba(227,227,227,1);
 }
 
 .ft_partner_textarea {
@@ -44,11 +40,20 @@
     padding: 32px 0 50px 0;
 }
 
+/* Display */
+.ft_partner_single_row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Button */
 .ft_partner_submit_button {
     width:126px;
     height:54px;
     background:rgba(19,194,194,1);
     border-radius:5px;
+    border: none;
+    outline: none !important;
 
     font-size:16px;
     font-family:OpenSans-Bold,OpenSans;

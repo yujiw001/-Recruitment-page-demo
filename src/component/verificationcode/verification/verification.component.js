@@ -47,12 +47,12 @@ class VerificationCode extends Component {
                         required
                 />
 
-                {/* <span className='ft_verification_instruction'>
+                <span className='ft_verification_instruction'>
                     {
                         validateCode.toLowerCase() === thisInput.toLowerCase() ? 
                         'Correct' : 'Not Correct'
                     }
-                </span> */}
+                </span> 
                 </div>
                 <div>
                 <Vcode onChange={v => this.onVcodeStringChange(v)} value={this.state.code} />

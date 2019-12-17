@@ -24,9 +24,10 @@ class ADFormModal extends Component {
     const { visible } = this.state;
     return (
       <div>
-        <Button onClick={this.showModal} className='ft_partner_modal_button' style={{height:'60px', background:'rgba(19,194,194,1)', 'font-size':'16px', color:'rgba(255,255,255,1)'}}>
+        <button onClick={this.showModal} className='ft_ad_modal_button'>
+          <img className='ft_ad_modal_button_icon' src={require('../../images/drive-document.png')} />
           Contact Now
-        </Button>
+        </button>
         <Modal
           visible={visible}
           closable={false}
@@ -35,11 +36,11 @@ class ADFormModal extends Component {
           footer={null}
           width='597px'
         >
-            <div className='ft_partner_body'>
-                <p className='ft_partner_modal_title'>Advertisement for investment</p>
+            <div className='ft_ad_body'>
+                <p className='ft_ad_modal_title'>Advertisement for investment</p>
                 <hr style={{'padding-bottom':'10px'}} />
                 <PAForm />
-                <button onClick={this.handleCancel} className='ft_partner_cancle_button'>
+                <button onClick={this.handleCancel} className='ft_ad_cancle_button'>
                     Close
                 </button>
             </div>

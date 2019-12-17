@@ -64,7 +64,15 @@
     background:rgba(6,34,54,1) !important;
     border-radius:100px !important;
     border: none !important;
+    outline: none !important;
+
+    font-size:16px;
+    font-family:OpenSans-Semibold,OpenSans;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+    line-height:22px;
 }
+
 .fh_rec_det_apply_content {
     font-size:16px;
     font-family:OpenSans-Semibold,OpenSans;
@@ -127,14 +135,5 @@
 
     text-align: left;
     padding: 15px 0 32px 0;
-}
-
-.ft_rec_button {
-    width:248px;
-
-    font-family:OpenSans-Semibold,OpenSans;
-    font-weight:600;
-    color:rgba(255,255,255,1);
-    line-height:22px;
 }
 

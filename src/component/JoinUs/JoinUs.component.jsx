@@ -1,6 +1,4 @@
 import React from 'react';
-import Verificode from '../vertification/vertication.component';
-import Codebox from '../codeBox/codeBox.component';
 import VerificationCode from '../verificationcode/verification/verification.component';
 import { Input, Checkbox } from 'antd';
 import axios from 'axios';
@@ -72,11 +70,11 @@ class JoinUs extends React.Component  {
     {
       this.GetVerifiCode();
       var test= this.GetDriverID();
-      console.log("dasdsadsafadggedgwegewgewfweffwqf================================================="+test);
+      console.log(test);
     }
     
     handleSubmit = async event =>{
-        alert('Area name was submitted: ' + this.state.DesiredArea);
+        //alert('Area name was submitted: ' + this.state.DesiredArea); //test alter
         event.preventDefault();
         var data = {
             Area: this.state.Area,
@@ -215,7 +213,7 @@ class JoinUs extends React.Component  {
             <div className='Form_input'>
                 <form className='JoinUs' onSubmit={this.handleSubmit}>
 
-                    <span className='fh_driver_label'>Area</span><span className='required_mark'>*</span>
+                    <span className='ft_driver_label'>Area</span><span className='ft_required_mark'>*</span>
                     <br/>
                     <select
                         className='ft_driver_select'
@@ -234,16 +232,16 @@ class JoinUs extends React.Component  {
 
                     <br />
 
-                    <span className='fh_driver_label'>Name</span><span className='required_mark'>*</span><br/>
+                    <span className='ft_driver_label'>Name</span><span className='ft_required_mark'>*</span><br/>
                     <div className='ft_driver_single_row'>
                         <Input style={{'max-width':'242px', margin: '10px 0 35px 0'}} name='First_Name' value={First_Name} onChange={this.handleChange} size='large' required placeholder='First Name' />
                         <Input style={{'max-width':'242px', margin: '10px 0 35px 0'}} name='Last_Name' value={Last_Name} onChange={this.handleChange} size='large' required placeholder='Last Name' />
                     </div>
 
-                    <span className='fh_driver_label'>Phone</span><span className='required_mark'>*</span>
+                    <span className='ft_driver_label'>Phone</span><span className='ft_required_mark'>*</span>
                     <Input style={{'max-width':'497px', margin: '10px 0 35px 0'}} name='Mobile' value={Mobile} onChange={this.handleChange} size='large' required placeholder='Phone Number' />
 
-                    <span className='fh_driver_label'>Address</span><span className='required_mark'>*</span>
+                    <span className='ft_driver_label'>Address</span><span className='ft_required_mark'>*</span>
                     <Input style={{'max-width':'497px', margin: '10px 0 0 0'}} name='Address' value={Address} onChange={this.handleChange} size='large' required placeholder='Street Address' />
                     <div className='ft_driver_single_row'>
                         <Input style={{'max-width':'242px', margin: '13px 0 35px 0'}} name='City' value={City} onChange={this.handleChange} size='large' required placeholder='City' />
@@ -251,7 +249,7 @@ class JoinUs extends React.Component  {
                     </div>
 
                     <div>
-                        <span className='fh_driver_label'>Desired schedule area</span><span className='required_mark'>*</span>
+                        <span className='ft_driver_label'>Desired schedule area</span><span className='ft_required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 1</span>
                         
                         <div className='ft_driver_area_checkbox_group'>
@@ -292,7 +290,7 @@ class JoinUs extends React.Component  {
                     </div>
                     <div style={{padding:'17.5px 0'}} />
                     <div>
-                        <span className='fh_driver_label'>Transportation</span><span className='required_mark'>*</span>
+                        <span className='ft_driver_label'>Transportation</span><span className='ft_required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 1</span>
                         <br/>
                         <div className='ft_driver_transportation_checkbox_group'>
@@ -312,7 +310,7 @@ class JoinUs extends React.Component  {
                     </div>
                     <div style={{padding:'17.5px 0'}} />
                     <div>
-                        <span className='fh_driver_label'>Operating hours</span><span className='required_mark'>*</span>
+                        <span className='ft_driver_label'>Operating hours</span><span className='ft_required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 4</span>
                         <br/>
                         <div className='ft_driver_hour_checkbox_group'>
@@ -368,7 +366,7 @@ class JoinUs extends React.Component  {
                     </div>
                     <div style={{padding:'16px 0'}} />
                     <div>
-                        <span className='fh_driver_label'>Description</span>
+                        <span className='ft_driver_label'>Description</span>
                         <br />
                         <div style={{'padding-top':'10px'}} />
                         <textarea className='ft_driver_textarea' name='Description' value={Description} onChange={this.handleChange}/>
@@ -378,7 +376,7 @@ class JoinUs extends React.Component  {
                         {/* <input type="file" name="file" onChange={this.onChangeHandler} /> */}
 
                     <div className='ft_driver_verificode'>
-                        <span className='fh_driver_label'>Verification Code</span><span className='required_mark'>*</span><br/>
+                        <span className='ft_driver_label'>Verification Code</span><span className='ft_required_mark'>*</span><br/>
                         <VerificationCode />
                     </div>
                     <hr />
