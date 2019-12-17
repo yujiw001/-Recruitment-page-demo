@@ -162,6 +162,7 @@ class JoinUs extends React.Component  {
             console.log(error);
         })
     };
+    
     onChangeHandler = event => {
         this.setState({
             selectedFile: event.target.files[0] 

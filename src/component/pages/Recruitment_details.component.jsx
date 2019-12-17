@@ -54,7 +54,7 @@ class RecruitmentDetail extends Component  {
                         <div>
                             <div className="responsibility">
                                 <h2 className='fh_rec_det_resp_title'>Responsibility</h2>
-                                <div className='fh_rec_det_reps'>
+                                <div className=''>
                                     <List data={responsibilityData} {...responsibilityrest} />
                                 </div>
                             </div>
