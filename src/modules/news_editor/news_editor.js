@@ -4,36 +4,36 @@ import MySider from '../../component/Sider/MySider.component';
 import MyUpload from '../../component/Upload/MyUpload.component';
 import axios from 'axios';
 import ReactQuill from 'react-quill';
-import { Select, Input, Checkbox } from 'antd';
+import { Select, Input, Checkbox} from 'antd';
 import { Layout } from 'antd';
 
 import './news_editor.style.css';
 
 const { Content } = Layout;
 const { Option } = Select;
-var EMPTY_DELTA = {ops: []};
-
 class NewsEditor extends Component {
     constructor() {
         super();
         this.state = {
             user: '',
-            type: '',
+            type: '饭团新闻',
             lan_mark: '',
             title: '',
             cover: '', 
-            /* content: EMPTY_DELTA, */
             content: '',
         }
         this.handleEditorChange = this.handleEditorChange.bind(this)
+        this.getCover = this.getCover.bind(this)
     }
-
+    getCover = (newscover) => {
+        this.setState({cover: newscover})
+    }
     handleSubmit = async event =>{
         alert('Quill was submitted: ' + this.state.content);
         event.preventDefault();
         var data = {
             user: this.state.user,
-            type: this.state.title,
+            type: this.state.type,
             lan_mark: this.state.lan_mark,
             title: this.state.title,
             cover: this.state.cover,
@@ -42,7 +42,7 @@ class NewsEditor extends Component {
         console.log(data);
         axios({
            method: 'post' ,
-           url: 'http://localhost:3000/drivers/add', /* Need to be modified */
+           url: 'http://localhost:3000/news/add', /* Need to be modified */
            data: data
         })
         .then(function (response) {
@@ -73,17 +73,9 @@ class NewsEditor extends Component {
         }
     };
 
-    /* handleEditorChange( content, delta, source, editor ) {
-        this.setState({
-			content: editor.getContents(),
-			events: [
-				'text-change('+this.state.content+' -> '+content+')'
-			].concat(this.state.events)
-        });
-    }; */
     handleEditorChange(value) {
-        this.setState({content: value})
-    }
+        this.setState({ content: value })
+      }
 
     modules = {
         toolbar: [
@@ -107,9 +99,6 @@ class NewsEditor extends Component {
     render() {
 
         const {user, type, lan_mark, title, cover, content} = this.state;
-        /* ---------- */
-        var test = '';
-        /* ---------- */
 
         return (
             <div>
@@ -118,12 +107,6 @@ class NewsEditor extends Component {
                     <Layout className='ft_backend_background'>
                         <Header />
                         <Content className='ft_backend_content'>
-
-                            {/* ------------------------------------------------ */}
-                            <div dangerouslySetInnerHTML = {{ __html:test }}></div>
-                            {/* ------------------------------------------------ */}
-
-
                             <form onSubmit={this.handleSubmit}>
                                 <p className='ft_backend_title'>发布文章</p>
 
@@ -153,25 +136,24 @@ class NewsEditor extends Component {
                                             <Option key='公司点评' value='公司动态'>公司动态</Option>
                                         </Select> */}
 
-                                        <Checkbox name="English" value="E" >
+                                        <Checkbox name='lan_mark' value="E" onChange={this.handleChange} >
                                             英文
                                         </Checkbox>
 
-                                        <Checkbox name="Chinese" value="C" >
+                                        <Checkbox name='lan_mark' value="C" onChange={this.handleChange} >
                                             中文
                                         </Checkbox>
                                     </div>
 
                                     <div className='ft_backend_editor_rows'>
                                         <p className='ft_backend_label'>标题：</p>
-                                        <Input name='title' value={title} onChange={this.handleChange} placeholder='标题' size='large' 
-                                               style={{width:'745px', 'border-radius':'4px', border:'1px solid rgba(183,188,214,1)'}} required />
+                                        <Input name='title' value={title} onChange={this.handleChange} placeholder='标题' size='large' style={{width:'745px'}} required />
                                     </div> 
 
                                     <div className='ft_backend_upload_display'>
                                         <div className='ft_backend_upload_button_display'>
                                             <p className='ft_backend_label' style={{'padding-right':'40px'}}>封面图：</p>
-                                            <MyUpload uploadname='添加封面图' />
+                                            <MyUpload  uploadname='添加封面图片' Cover={this.getCover} />
                                         </div>
 
                                     </div>
@@ -181,7 +163,7 @@ class NewsEditor extends Component {
                                         <div className="text-editor">
                                             <ReactQuill modules={this.modules} 
                                                         formats={this.formats} 
-                                                        value={content || ''}
+                                                        value={content}
                                                         onChange={this.handleEditorChange}
                                                         className='ft_backend_editor_shape'
                                             />         
