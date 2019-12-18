@@ -1,7 +1,10 @@
+/* Create by Chelly P */
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+
 import Header from '../header/header.component';
 import Footer from '../footer/footer.component';
+
 import NewsData from './news_data';
 
 import '../css/Newsroom_details.component.css';
@@ -24,6 +27,7 @@ class NewsroomDetail extends Component {
         return(
             <div>
                 <Header />
+                
                 <div className='container'>
                     <div className='fh_news_det_path'>
                         <Link className='path_option' to="/">Home</Link>

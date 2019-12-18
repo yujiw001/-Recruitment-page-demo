@@ -355,7 +355,7 @@ class JoinUs extends React.Component  {
                             </Checkbox>
                         </div>
                     </div>
-                    <div style={{padding:'17.5px 0'}} />
+                    <div style={{padding:'9.5px 0'}} />
                     <div>
                         <span className='ft_driver_label'>Operating hours</span><span className='ft_required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 4</span>
@@ -405,7 +405,7 @@ class JoinUs extends React.Component  {
                             </Checkbox>
                         </div>
                     </div>
-                    <div style={{padding:'16px 0'}} />
+                    <div style={{padding:'8px 0'}} />
                     <div>
                         <span className='ft_driver_label'>Description</span>
                         <br />

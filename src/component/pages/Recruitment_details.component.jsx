@@ -53,10 +53,8 @@ class RecruitmentDetail extends Component  {
 
                         <div>
                             <div className="responsibility">
-                                <h2 className='fh_rec_det_resp_title'>Responsibility</h2>
-                                <div className=''>
-                                    <List data={responsibilityData} {...responsibilityrest} />
-                                </div>
+                                <h2 className='ft-w1140-smtext-fs16 fh_rec_det_resp_title'>Responsibility</h2>
+                                <List data={responsibilityData} {...responsibilityrest} />
                             </div>
 
                             <div className= "requirement">

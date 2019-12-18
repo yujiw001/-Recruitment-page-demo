@@ -7,20 +7,19 @@ class NewsCard extends Component {
     render() {
         var content=this.props.content;
         return (
-            <div>
+            <div className='ft_news_card_bg'>
                 <Link to={`/News/details/${this.props.id}`} key={this.props.id}>
-                    <div className="card" style={{"width": "339px", 'min-height':'404px'}}>
-                        <img key={this.props.id} src={this.props.cover} className="card_img" />
-                        <div className="card_body">
-                            <h1 className="card_title" key={this.props.id}>
+                    <div className="ft_news_card" style={{"width": "339px", 'min-height':'404px'}}>
+                        <img key={this.props.id} src={this.props.cover} className="ft_news_card_img" />
+                        <div className="ft_news_card_body">
+                            <h1 className="ft_news_card_title" key={this.props.id}>
                                 {this.props.title}
                             </h1>
-                            <h2 className='card_timestamp' key={this.props.id}>
+                            <h2 className='ft_news_card_timestamp' key={this.props.id}>
                                 {this.props.date}
                             </h2>
-                            <p className="card_text" key={this.props.id}>
+                            <p className="ft_news_card_text" key={this.props.id}>
                                 <div dangerouslySetInnerHTML = {{ __html:content }}></div>
-                                
                             </p>
                         </div>
                     </div>
