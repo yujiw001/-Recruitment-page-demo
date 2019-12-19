@@ -2,6 +2,7 @@ import React from 'react';
 
 const utils = {
     testRegex: (value, regex) => value.toString().match(regex),
+
     rules: {
       required: {
         message: 'The :attribute field is required',
