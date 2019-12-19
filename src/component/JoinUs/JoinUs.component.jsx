@@ -73,12 +73,13 @@ class JoinUs extends React.Component  {
             method: 'get' ,
             url: 'http://localhost:3000/driverid' ,
          })
-        .then(function (response) {
-             var target=JSON.stringify(response.data);
-             var ans=JSON.parse(target)["MAX(id)"];
-             console.log(ans);
+         .then(function (response) {
+            //  var target=JSON.stringify(response.data);
+            //  var ans=JSON.parse(target)["MAX(id)"];
+            var ans= response.data["MAX(id)"];
+             console.log(typeof(ans));
              
-             self.setState({DriverID:ans})
+             self.setState({DriverID:ans+1})
              return ans;
         })
         .catch(function (error) {
