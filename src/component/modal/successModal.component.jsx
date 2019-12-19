@@ -4,31 +4,20 @@ import { Modal, Button } from 'antd';
 import './successModal.component.style.css';
 
 class SuccessModal extends Component {
-  state = {
-    visible: false,
-  };
-
-  showModal = () => {
-    this.setState({
-      visible: true,
-    });
-  };
-
   handleCancel = () => {
     this.setState({ visible: false });
   };
 
   render() {
-    const { visible } = this.state;
     return (
       <div>
-        <Button onClick={this.showModal} className='s_modal_button' 
+        {/* <Button onClick={this.showModal} className='s_modal_button' 
                 style={{height:'54px', background:'rgba(6,34,54,1)', 'font-size':'16px'}}
         >
           Submit
-        </Button>
+        </Button> */}
         <Modal
-          visible={visible}
+          visible={true}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           footer={ null }

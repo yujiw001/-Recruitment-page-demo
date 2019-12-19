@@ -5,6 +5,7 @@ import axios from 'axios';
 import AreaCheckBox from './areacheckbox.component';
 import './JoinUs.component.style.css';
 import GlobalArea from './areadata';
+import SuccessModal from '../modal/successModal.component'
 class JoinUs extends React.Component  {
     constructor(){
         super();
@@ -31,8 +32,15 @@ class JoinUs extends React.Component  {
             description:'at least 10 words',
             code:[],//this variable is used to store the vertification code
             selectedFile : null,
+            modalVisible: false,
+            formVisible:true,
         }
     }
+    showModal = () => {
+        this.setState({
+          modalVisible: true,
+        });
+      };
     
     GetTowns= ()=> {
         switch(this.state.Area){
@@ -198,6 +206,7 @@ class JoinUs extends React.Component  {
         .catch(function(error){
             console.log(error);
         })
+        // alert('提交成功');
     };
     
     onChangeHandler = event => {
@@ -419,15 +428,16 @@ class JoinUs extends React.Component  {
                         {/* <PostBlob>上传简历</PostBlob> */}
                         {/* <input type="file" name="file" onChange={this.onChangeHandler} /> */}
 
-                    {/* <div className='ft_driver_verificode'>
+                    <div className='ft_driver_verificode'>
                         <span className='ft_driver_label'>Verification Code</span><span className='ft_required_mark'>*</span><br/>
                         <VerificationCode />
-                    </div> */}
+                    </div>
                     <hr />
                     
-                    <button type='submit' className='ft_driver_submit_button'>Submit</button>       
-                    
+                    <button type='submit' onClick={this.showModal} className='ft_driver_submit_button'>Submit</button>
+                    {this.state.modalVisible?<SuccessModal/>:null}       
                 </form>
+                
             </div>
         );
     }

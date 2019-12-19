@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 import JoinUsModal from '../JoinUs/JoinUsModal.component';
 import PAFormModal from '../JoinUs/paformmodal.component';
 import ADFormModal from '../JoinUs/adformmodal.component';
+import SuccessModal from '../modal/successModal.component';
 
 
 
@@ -25,7 +26,7 @@ const HomePage = () => {
             <div style={{padding:'30px 0 0 0'}} />
 
             <ADFormModal />
-
+            
             <div style={{padding:'30px 0 0 0'}} />
 
             <Footer />
