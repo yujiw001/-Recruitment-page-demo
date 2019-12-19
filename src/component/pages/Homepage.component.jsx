@@ -7,6 +7,7 @@ import PAFormModal from '../JoinUs/paformmodal.component';
 import ADFormModal from '../JoinUs/adformmodal.component';
 
 import JoinUs from '../JoinUs/JoinUs.component';
+import SuccessModal from '../modal/successModal.component';
 
 const HomePage = () => {
     return(     
@@ -28,6 +29,9 @@ const HomePage = () => {
 
             <div style={{padding:'30px 0 0 0'}} />
 
+            <SuccessModal />
+
+            <div style={{padding:'30px 0 0 0'}} />
 
             <Footer />
 

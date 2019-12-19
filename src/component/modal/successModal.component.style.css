@@ -1,11 +1,38 @@
+.s_modal_body {
+    max-width: 497px;
+    margin: auto;
+}
+
 .s_modal_button {
     width:126px;
+    height:54px;
+    background:rgba(6,34,54,1);
     border-radius:5px;
+    border: none;
+    outline: none !important;
 
+    font-size:16px;
     font-family:OpenSans-Bold,OpenSans;
     font-weight:bold;
     color:rgba(255,255,255,1);
     line-height:19px;
+}
+
+.s_modal_cancel_button {
+    width:126px;
+    height:54px;
+    background:rgba(6,34,54,1);
+    border-radius:5px;
+    border: none;
+    outline: none !important;
+
+    font-size:16px;
+    font-family:OpenSans-Bold,OpenSans;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    line-height:19px;
+
+    margin: 0 0 0 371px;
 }
 
 .s_modal_title {

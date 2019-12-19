@@ -102,7 +102,9 @@ const utils = {
     createErrorEle(message, customClass) {
       return React.createElement(
         'div',
-        { className: customClass || 'error-message' },
+        { className: customClass || 'error-message' ,
+          style: {color:'red'},
+        },
         message,
       )
     }
@@ -119,11 +121,12 @@ const utils = {
       let parts = rule.split(':')
       return parts.length > 1 ? parts[1].split(',') : []
     }
+
     isValid(value, rule, options) {
       try {
         return this.rules[rule].rule(value, options)
       }catch(e){
-        console.error(`not find your setting rule ${rule}, Please read doc in https://github.com/febobo/react-validator`)
+        console.error(`not find your setting rule ${rule}`)
       }
     }
   }

@@ -39,14 +39,15 @@ class VerificationCode extends Component {
         if (v) {
             this.setState({
             vcodestring: v,
+            inputstring: '',
+            flag: '',
+            }, 
+            ()=>{this.props.flagupdate(this.state.flag)
             });
         }
     }
 
     render() {
-        var validateCode = this.state.vcodestring;
-        var thisInput = this.state.inputstring;
-
         return (
             <div className='ft_verification'>
                 <div>

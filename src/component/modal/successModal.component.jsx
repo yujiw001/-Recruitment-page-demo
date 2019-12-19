@@ -22,11 +22,9 @@ class SuccessModal extends Component {
     const { visible } = this.state;
     return (
       <div>
-        <Button onClick={this.showModal} className='s_modal_button' 
-                style={{height:'54px', background:'rgba(6,34,54,1)', 'font-size':'16px'}}
-        >
+        <button onClick={this.showModal} className='s_modal_button' >
           Submit
-        </Button>
+        </button>
         <Modal
           visible={visible}
           onOk={this.handleOk}
@@ -34,19 +32,21 @@ class SuccessModal extends Component {
           footer={ null }
           width='597px'
         >
-          <p className='s_modal_title'>Thank You</p>
-          <p className='s_modal_subtitle'>Submit Completed</p>
+          <div className='s_modal_body'>
+            <p className='s_modal_title'>Thank You</p>
+            <p className='s_modal_subtitle'>Submit Completed</p>
 
-          <div className='s_modal_image'>
-            <img src={require('../../images/check.png')} style={{width:'161px', height:'161px'}}/>
+            <div className='s_modal_image'>
+              <img src={require('../../images/check.png')} style={{width:'161px', height:'161px'}}/>
+            </div>
+
+            <p className='s_modal_content'>We will Contact you within 7 working days by Email</p>
+
+            <hr />
+            <button className='s_modal_cancel_button' onClick={this.handleCancel}>
+              Close
+            </button>
           </div>
-
-          <p className='s_modal_content'>We will Contact you within 7 working days by Email</p>
-
-          <hr />
-          <Button className='s_modal_button' onClick={this.handleCancel}>
-            Close
-          </Button>
 
         </Modal>
       </div>
