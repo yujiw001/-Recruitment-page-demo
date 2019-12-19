@@ -12,7 +12,7 @@ class JoinUs extends React.Component  {
         this.refreshCode=this.refreshCode.bind(this);
         this.GetDriverID=this.GetDriverID.bind(this);
         this.GetTowns=this.GetTowns.bind(this);
-        this.handleSelect=this.handleSelect.bind(this);
+        this.GetAreaStageChange=this.GetAreaStageChange.bind(this);
         this.state ={
             DriverID: 0,
             Area: 'Great Vancouver',
@@ -37,25 +37,25 @@ class JoinUs extends React.Component  {
     GetTowns= ()=> {
         switch(this.state.Area){
             case "Great Vancouver":
-                this.setState({Town:this.state.DisplayArea[0]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+                this.setState({Town:this.state.DisplayArea[0]});break;
             case "Calgary":
-                this.setState({Town:this.state.DisplayArea[1]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+                this.setState({Town:this.state.DisplayArea[1]});break;
             case "New York":
-                this.setState({Town:this.state.DisplayArea[2]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+                this.setState({Town:this.state.DisplayArea[2]});break;
             case "Toronto":
-                this.setState({Town:this.state.DisplayArea[3]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+                this.setState({Town:this.state.DisplayArea[3]});break;
             case "Edmonton":
-                this.setState({Town:this.state.DisplayArea[4]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+                this.setState({Town:this.state.DisplayArea[4]});break;
             case "Seattle":
-                this.setState({Town:this.state.DisplayArea[5]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+                this.setState({Town:this.state.DisplayArea[5]});break;
             case "Montreal":
-                this.setState({Town:this.state.DisplayArea[6]},()=>console.log(this.state.Town));console.log(this.state.Town);break;
+                this.setState({Town:this.state.DisplayArea[6]});break;
         }
     }
-    handleSelect = async event=>{
-        this.handleChange(event);
-        this.GetTowns();
-    }
+    // handleSelect = async event=>{
+    //     this.handleChange(event);
+    //     this.GetTowns();
+    // }
     handleSelectChange = async event => {
         //event.target will end up being the input element itself. And we want to pull off the 'name and value'
         const target = event.target;
@@ -107,7 +107,6 @@ class JoinUs extends React.Component  {
     {
       this.GetVerifiCode();
       var test= this.GetDriverID();
-      console.log(test);
     }
     
     handleSubmit = async event =>{
@@ -213,7 +212,9 @@ class JoinUs extends React.Component  {
             [name]: value
           });
     };
-
+    GetAreaStageChange(preferredArea){
+        this.setState({DesiredArea:this.state.DesiredArea.concat(preferredArea)})
+    }
     handleCheckbox = event => {
         const{name,value} = event.target;
         if(!this.state[name].includes(value)){
@@ -229,6 +230,7 @@ class JoinUs extends React.Component  {
 
         }
     }
+    
 
     handleCancel = () => {
         this.setState({ visible: false });
@@ -296,7 +298,7 @@ class JoinUs extends React.Component  {
                         <div>
                             {
                                 this.state.Town.map(data => (
-                                    <AreaCheckBox LocationName='DesiredArea' LocationValue={data} />
+                                    <AreaCheckBox name='DesiredArea' locationValue={data} getArea={this.GetAreaStageChange} />
                                 ))
                             }
                             {/* <AreaCheckBox LocationName='DesiredArea' LocationValue='Shanghai'/> */}
@@ -424,10 +426,10 @@ class JoinUs extends React.Component  {
                         {/* <PostBlob>上传简历</PostBlob> */}
                         {/* <input type="file" name="file" onChange={this.onChangeHandler} /> */}
 
-                    <div className='ft_driver_verificode'>
+                    {/* <div className='ft_driver_verificode'>
                         <span className='ft_driver_label'>Verification Code</span><span className='ft_required_mark'>*</span><br/>
                         <VerificationCode />
-                    </div>
+                    </div> */}
                     <hr />
                     
                     <button type='submit' className='ft_driver_submit_button'>Submit</button>       
