@@ -316,9 +316,9 @@ class JoinUs extends React.Component  {
                                 ))
                             }
                         </div>
-                        {this.validator.message('DesiredArea', this.state.DesiredArea, 'min:3','',{
+                        {/* {this.validator.message('DesiredArea', this.state.DesiredArea, 'min:3','',{
                                 min: 'Please at least choose 1 desired area',
-                        })}
+                        })} */}
                     </div>
 
                     <div style={{padding:'9.5px 0'}} />
@@ -338,9 +338,9 @@ class JoinUs extends React.Component  {
                                 <span className='ft_driver_box_label'>Electric Motorbike(rent)</span>
                             </Checkbox>
                         </div>
-                        {this.validator.message('Transportation', this.state.Transportation, 'min:1','',{
+                        {/* {this.validator.message('Transportation', this.state.Transportation, 'min:1','',{
                                 min: 'At least choose 1 transportation method',
-                        })} 
+                        })}  */}
                     </div>
                     
                     <div style={{padding:'9.5px 0'}} />
@@ -393,9 +393,9 @@ class JoinUs extends React.Component  {
                                 <span className='ft_driver_box_label'>Sun 5am - 11pm</span>
                             </Checkbox>
                         </div>
-                        {this.validator.message('AvailableTime', this.state.AvailableTime, 'min:4','',{
+                        {/* {this.validator.message('AvailableTime', this.state.AvailableTime, 'min:4','',{
                                 min: 'At least choose 4 operation hours',
-                        })} 
+                        })}  */}
                     </div>
 
                     <div style={{padding:'8px 0'}} />
