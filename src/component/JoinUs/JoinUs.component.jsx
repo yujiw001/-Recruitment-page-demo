@@ -210,20 +210,20 @@ class JoinUs extends React.Component  {
     };
 
     GetAreaStageChange(preferredArea){
-        this.setState({DesiredArea:this.state.DesiredArea.concat(preferredArea)})
+        this.setState({DesiredArea:this.state.DesiredArea.concat(preferredArea)});
     }
 
     handleCheckbox = event => {
         const{name,value} = event.target;
         if(!this.state[name].includes(value)){
             this.setState({[name]:this.state[name].concat([value]) }, ()=>{
-                console.log(this.state.DesiredArea)
+                /* console.log(this.state.DesiredArea) */
             }) //语法:this.state[name]
             // console.log(this.state.DesiredArea)
         }   
         else{
             this.setState({[name]:this.state[name].filter(checkbox => (checkbox != value))} , ()=>{
-                console.log(this.state.DesiredArea)
+                /* console.log(this.state.DesiredArea) */
             })
 
         }
@@ -240,7 +240,7 @@ class JoinUs extends React.Component  {
     }
 
     render() {
-        const { Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, Description } = this.state;
+        const { Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, description } = this.state;
         
         return(
             <div className='Form_input'>
@@ -279,7 +279,7 @@ class JoinUs extends React.Component  {
                             </div>
                             <div>
                                 <Input style={{'width':'242px', margin: '10px 0 0 0'}} name='Last_Name' value={Last_Name} onChange={this.handleChange} size='large' placeholder='Last Name' />
-                                {this.validator.message('Last Name', this.state.Last_Name, 'required','',{})}
+                                {this.validator.message('Last Name', this.state.Last_Name, 'required','',{})} 
                             </div>
                         </div>
 
@@ -316,8 +316,8 @@ class JoinUs extends React.Component  {
                                 ))
                             }
                         </div>
-                        {this.validator.message('required', this.state.required, 'min:1','',{
-                                min: 'At least choose 1 desired schedule area',
+                        {this.validator.message('DesiredArea', this.state.DesiredArea, 'min:3','',{
+                                min: 'Please at least choose 1 desired area',
                         })}
                     </div>
 
@@ -338,9 +338,9 @@ class JoinUs extends React.Component  {
                                 <span className='ft_driver_box_label'>Electric Motorbike(rent)</span>
                             </Checkbox>
                         </div>
-                        {this.validator.message('required', this.state.required, 'min:1','',{
+                        {this.validator.message('Transportation', this.state.Transportation, 'min:1','',{
                                 min: 'At least choose 1 transportation method',
-                        })}
+                        })} 
                     </div>
                     
                     <div style={{padding:'9.5px 0'}} />
@@ -393,9 +393,9 @@ class JoinUs extends React.Component  {
                                 <span className='ft_driver_box_label'>Sun 5am - 11pm</span>
                             </Checkbox>
                         </div>
-                        {this.validator.message('required', this.state.required, 'min:4','',{
+                        {this.validator.message('AvailableTime', this.state.AvailableTime, 'min:4','',{
                                 min: 'At least choose 4 operation hours',
-                        })}
+                        })} 
                     </div>
 
                     <div style={{padding:'8px 0'}} />
@@ -404,7 +404,7 @@ class JoinUs extends React.Component  {
                         <span className='ft_driver_label'>Description</span>
                         <br />
                         <div style={{'padding-top':'10px'}} />
-                        <textarea className='ft_driver_textarea' name='Description' value={Description} onChange={this.handleChange}/>
+                        <textarea className='ft_driver_textarea' name='description' value={description} onChange={this.handleChange}/>
                     </div>
 
                     <div className='ft_driver_verificode'>

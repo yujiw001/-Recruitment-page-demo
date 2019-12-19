@@ -42,7 +42,7 @@ class SuccessModal extends Component {
 
             <p className='s_modal_content'>We will Contact you within 7 working days by Email</p>
 
-            <hr />
+            <hr style={{padding:'0', margin:'0'}}/>
             <button className='s_modal_cancel_button' onClick={this.handleCancel}>
               Close
             </button>

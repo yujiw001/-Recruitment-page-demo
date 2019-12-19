@@ -15,7 +15,7 @@ const utils = {
       },
       min: {
         message: 'The :attribute may not be greater than :mix characters',
-        rule: (val, options) => val.length >= options[0],
+        rule: (val, options) => val.length >= options[0],       
         messageReplace: (message, options) => message.replace(':min', options[0]),
       },
       email: {
@@ -70,6 +70,9 @@ const utils = {
       this.fields[field] = true
       let tests = testString.split('|')
       let rule, options, message
+
+      console.log(value.length)
+
       for (let i = 0; i < tests.length; i++) {
         value = this.filterEmptyValue(value)
         rule = this.getRule(tests[i])
