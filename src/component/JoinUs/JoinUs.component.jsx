@@ -198,6 +198,7 @@ class JoinUs extends React.Component  {
             console.log(error);
         })
     };
+    
     onChangeHandler = event => {
         this.setState({
             selectedFile: event.target.files[0] 
@@ -267,11 +268,11 @@ class JoinUs extends React.Component  {
                     >
                         <option value="Great Vancouver">Great Vancouver</option>
                         <option value="Calgary">Calgary</option>
-                        <option value="New York">New York</option>
+                        <option value="Montreal">Montreal</option>
                         <option value="Toronto">Toronto</option> 
                         <option value="Edmonton">Edmonton</option> 
                         <option value="Seattle">Seattle</option>
-                        <option value="Montreal">Montreal</option> 
+                        <option value="New York">New York</option>
                     </select>
 
                     <br />
@@ -295,7 +296,7 @@ class JoinUs extends React.Component  {
                     <div>
                         <span className='ft_driver_label'>Desired schedule area</span><span className='ft_required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 1</span>
-                        <div>
+                        <div className='ft_driver_area_checkbox_group'>
                             {
                                 this.state.Town.map(data => (
                                     <AreaCheckBox name='DesiredArea' locationValue={data} getArea={this.GetAreaStageChange} />
@@ -339,83 +340,74 @@ class JoinUs extends React.Component  {
                             </div>
                         </div> */}
                     </div>
-                    <div style={{padding:'17.5px 0'}} />
+                    <div style={{padding:'9.5px 0'}} />
                     <div>
                         <span className='ft_driver_label'>Transportation</span><span className='ft_required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 1</span>
                         <br/>
                         <div className='ft_driver_transportation_checkbox_group'>
-                            <div className='ft_driver_single_col' style={{height:'44px'}}>
-                                <Checkbox style={{margin:0, padding:0}} name="Transportation" value="Car" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Car(self-provided)</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:'10px 0 0 0'}} name="Transportation" value="Electric Motorbike" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Electric Motorbike(rent)</span>
-                                </Checkbox>
-                            </div>
-                            <Checkbox style={{margin:0, padding:0}} name="Transportation" value="Motorbike" onClick={this.handleCheckbox}>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}} name="Transportation" value="Car" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Car(self-provided)</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}} name="Transportation" value="Motorbike" onClick={this.handleCheckbox}>
                                 <span className='ft_driver_box_label'>Motorbike(self-provided)</span>
                             </Checkbox>
-                            
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}} name="Transportation" value="Electric Motorbike" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Electric Motorbike(rent)</span>
+                            </Checkbox>
                         </div>
                     </div>
-                    <div style={{padding:'17.5px 0'}} />
+                    <div style={{padding:'9.5px 0'}} />
                     <div>
                         <span className='ft_driver_label'>Operating hours</span><span className='ft_required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 4</span>
                         <br/>
-                        <div className='ft_driver_hour_checkbox_group'>
-                            <div className='ft_driver_single_col' style={{height:'134px'}}>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="monday_11_5" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Mon 11am - 5pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="tuesday_11_5" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Tue 11am - 5pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="wednesday_11_5" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Wed 11am - 5pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="thursday_11_5" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Thu 11am - 5pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="friday_11_5" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Fri 11am - 5pm</span>
-                                </Checkbox>
-                            </div>
-                            <div className='ft_driver_single_col' style={{height:'134px'}}>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="saturday_11_5" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Sat 11am - 5pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="sunday_11_5" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Sun 11am - 5pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="monday_5_11" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Mon 5am - 11pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="tuesday_5_11" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Tue 5am - 11pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="wednesday_5_11" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Wed 5am - 11pm</span>
-                                </Checkbox>
-                            </div>
-                            <div className='ft_driver_single_col' style={{height:'104px'}}>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="thursday_5_11" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Thu 5am - 11pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="friday_5_11" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Fri 5am - 11pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="saturday_11_5" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Sat 5am - 11pm</span>
-                                </Checkbox>
-                                <Checkbox style={{margin:0, padding:0}} name="AvailableTime" value="sunday_5_11" onClick={this.handleCheckbox}>
-                                    <span className='ft_driver_box_label'>Sun 5am - 11pm</span>
-                                </Checkbox>
-                            </div>
+                        <div className='ft_driver_hour_checkbox_group'>   
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="monday_11_5" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Mon 11am - 5pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="tuesday_11_5" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Tue 11am - 5pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="wednesday_11_5" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Wed 11am - 5pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="thursday_11_5" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Thu 11am - 5pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="friday_11_5" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Fri 11am - 5pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="saturday_11_5" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Sat 11am - 5pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="sunday_11_5" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Sun 11am - 5pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="monday_5_11" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Mon 5am - 11pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="tuesday_5_11" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Tue 5am - 11pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="wednesday_5_11" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Wed 5am - 11pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="thursday_5_11" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Thu 5am - 11pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="friday_5_11" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Fri 5am - 11pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="saturday_11_5" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Sat 5am - 11pm</span>
+                            </Checkbox>
+                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'154px'}} name="AvailableTime" value="sunday_5_11" onClick={this.handleCheckbox}>
+                                <span className='ft_driver_box_label'>Sun 5am - 11pm</span>
+                            </Checkbox>
                         </div>
                     </div>
-                    <div style={{padding:'16px 0'}} />
+                    <div style={{padding:'8px 0'}} />
                     <div>
                         <span className='ft_driver_label'>Description</span>
                         <br />

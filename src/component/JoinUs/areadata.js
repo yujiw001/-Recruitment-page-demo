@@ -1,11 +1,11 @@
 const GlobalArea = [
-    ['Burnaby','West_Vancouver','White_Rock','Richmond','North_Vancouver','Delta','Vancouver','Port_Moody','Maple_Ridge','Coquitlam','Port_Coquitlam','Anmore','Surrey','Langley','New_Westminster'],
-    ['Downtown_Calgary','Calgary_north','Calgary_south','Calgary_east','Calgary_west','UC_calgary'],
-    ['Flushing','Manhattan_Downtown','Manhattan_Midtown','Manhattan_Uptown','Brooklyn','Long_Island_City','Elmhurst'],
-    ['North_York','Scarborough','Markham','Richmond_Hill','Downtown_Toronto','Mississauga','Waterloo','Hamilton','London','Kingston','Ottawa'],
-    ['Edmonton_Downtown','Edmonton_UA_Area','Edmonton_South','Edmonton_West'],
-    ['Seattle_UW','Seattle_Downtown','Bellevue'],
-    ['Montreal_Downtown','Chinatown,Brossard','Verdun_Angrignon','CDN_NDG']
+    ['Metro','Richmond','Lougheed','Coquitlam','Downtown','Surrey','New West','Vancouver','Hasting'],
+    ['Downtown Calgary','Calgary North','Calgary South','Calgary East','Calgary West','UC Calgary'],
+    ['Flushing','Manhattan Downtown','Manhattan Midtown','Manhattan Uptown','Brooklyn','Long Island City','Elmhurst'],
+    ['North York','Scarborough','Markham','Richmond Hill','Downtown Toronto','Mississauga','Waterloo','Hamilton','London','Kingston','Ottawa'],
+    ['Edmonton Downtown','Edmonton UA Area','Edmonton South','Edmonton West'],
+    ['Seattle UW','Seattle Downtown','Bellevue'],
+    ['Montreal Downtown','Chinatown','Brossard','Verdun&Angrignon','CDN&NDG']
 ]
 
 export default GlobalArea;
