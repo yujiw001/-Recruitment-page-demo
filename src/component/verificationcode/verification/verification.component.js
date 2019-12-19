@@ -1,8 +1,10 @@
+/* Create by Chelly P on Dec 13, 2019 */
 import React, { Component } from 'react';
 import Vcode from '../vcode/vode.component';
 import { Input } from 'antd';
 
 import './verification.component.style.css';
+
 
 class VerificationCode extends Component {
 
@@ -12,28 +14,36 @@ class VerificationCode extends Component {
           inputstring: '', 
           vcodestring: '-1', 
           code: '',
+          flag: '',
         };
     }
 
     onInputStringChange(e) {
-        this.setState({
-          inputstring: e.target.value,
+        this.setState({ 
+            inputstring: e.target.value  
         });
+        if (e.target.value.toLowerCase() === this.state.vcodestring.toLowerCase()) {
+            this.setState({ flag: 'correct' }, );
+            this.props.flagupdate();
+        }
+        else {
+            this.setState({ flag: '' }, );
+        }
+        console.log(this.state.flag);
       }
     
     onVcodeStringChange(v) {
-    console.log('Trigger onChange callback', v);
-    if (v) {
-        this.setState({
-        vcodestring: v,
-        });
-    }
+        console.log('Trigger onChange callback', v);
+        if (v) {
+            this.setState({
+            vcodestring: v,
+            });
+        }
     }
 
     render() {
         var validateCode = this.state.vcodestring;
         var thisInput = this.state.inputstring;
-        var tip; 
 
         return (
             <div className='ft_verification'>
@@ -44,8 +54,8 @@ class VerificationCode extends Component {
                         maxLength={20} 
                         size='large' 
                         style={{width:'250px'}}
-                        required
                 />
+                
 
                 <span className='ft_verification_instruction'>
                     {

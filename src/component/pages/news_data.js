@@ -3,7 +3,7 @@ const NewsData = [
         'id': 1,
         'date': 'Jan 1, 2010',
         'cover': require('../../images/text.jpg'),
-        'title': 'News Title 1',
+        'title': 'Fantuan Rush is now available',
         'content': 'News news news news news news news news news. News news news news news. News news news news news.',
         'user': 'user 1'
 

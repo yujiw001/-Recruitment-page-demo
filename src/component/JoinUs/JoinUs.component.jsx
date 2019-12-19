@@ -111,6 +111,7 @@ class JoinUs extends React.Component  {
     }
     
     handleSubmit = async event =>{
+        /* if (this.state.Transportation.length < 1){alert('Please choose at least one transportation method.')} */
         //alert('Area name was submitted: ' + this.state.DesiredArea); //test alter
         event.preventDefault();
         var data = {
@@ -266,9 +267,9 @@ class JoinUs extends React.Component  {
                     >
                         <option value="Great Vancouver">Great Vancouver</option>
                         <option value="Calgary">Calgary</option>
+                        <option value="Edmonton">Edmonton</option> 
                         <option value="Montreal">Montreal</option>
                         <option value="Toronto">Toronto</option> 
-                        <option value="Edmonton">Edmonton</option> 
                         <option value="Seattle">Seattle</option>
                         <option value="New York">New York</option>
                     </select>
@@ -416,10 +417,10 @@ class JoinUs extends React.Component  {
                         {/* <PostBlob>上传简历</PostBlob> */}
                         {/* <input type="file" name="file" onChange={this.onChangeHandler} /> */}
 
-                    <div className='ft_driver_verificode'>
+                    {/* <div className='ft_driver_verificode'>
                         <span className='ft_driver_label'>Verification Code</span><span className='ft_required_mark'>*</span><br/>
                         <VerificationCode />
-                    </div>
+                    </div> */}
                     <hr />
                     
                     <button type='submit' className='ft_driver_submit_button'>Submit</button>       
