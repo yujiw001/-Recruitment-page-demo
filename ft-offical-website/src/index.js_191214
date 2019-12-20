@@ -1,0 +1,36 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+// import { Provider } from 'react-redux'
+// import { createStore } from 'redux'
+import { BrowserRouter } from 'react-router-dom';
+
+import './index.css';
+import App from './App';
+
+// const reducer = (state = {lang: 'en'}, action) => {
+//     switch (action.type){
+//       case 'EN2CN': return {lang: 'zh'};
+//       case 'CN2EN': return {lang: 'en'};
+//       default: return state;
+//     }
+// }
+// const actions = {
+//     en2cn: () => ({type: 'EN2CN'}),
+//     cn2en: () => ({type: 'CN2EN'})
+// }
+// const store = createStore(reducer);
+// store.subscribe(() =>
+//     console.log(store.getState())
+// );
+// store.dispatch(actions.en2cn())
+// store.dispatch(actions.cn2en())
+
+const LangContext = React.createContext({lang: 'en'});
+
+ReactDOM.render((
+    // <Provider store={store}>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    // </Provider> 
+    ), document.getElementById('root'));

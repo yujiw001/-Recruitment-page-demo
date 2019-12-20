@@ -1,0 +1,155 @@
+import React, { Component } from 'react';
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+
+import './DeliveryFooter.css';
+
+class Footer extends Component {
+    render() {
+        return (
+            <>  
+            <div className="fd-footer-bg">
+                <Container className="fd-footer-content">
+
+                {/* Footer group 1 */}
+                <Row noGutters="true">
+                <div className="fd-footer-group-1">
+                    <div className="fd-footer-1 fd-footer-1to4">
+                        <Nav.Link className="ft-w1140-button-fs16" href="link-1">饭团点评</Nav.Link>
+                    </div>
+                    <div className="fd-footer-2 fd-footer-1to4">
+                        <Nav.Link className="ft-w1140-button-fs16" href="/about">About Us</Nav.Link>
+                        <Nav.Link className="ft-w1140-button-fs16" href="/news">Newsroom</Nav.Link>
+                        <Nav.Link className="ft-w1140-button-fs16" href="/career">Careers</Nav.Link>
+                    </div>
+                    <div className="fd-footer-3 fd-footer-1to4">
+                        <Nav.Link className="ft-w1140-button-fs16" href="link-1">Contact Us</Nav.Link>
+                        <Nav.Link className="ft-w1140-button-fs16" href="/faq">FAQ</Nav.Link>
+                        <Nav.Link className="ft-w1140-button-fs16" href="link-1">Privacy Policy</Nav.Link>
+                    </div>
+                    <div className="fd-footer-4 fd-footer-1to4">
+                        <Nav.Link className="ft-w1140-button-fs16" href="/partner">Partner</Nav.Link>
+                        <Nav.Link className="ft-w1140-button-fs16" href="/deliver">Driver</Nav.Link>
+                    </div>
+
+                    <div className="fd-footer-5">
+                        <div className="fd-footer-5-div-1">
+                            <div className="ft-w1140-button-fs16 fd-footer-5-media">如果您有任何意见或建议，请发送邮件至</div>
+                            <div className="ft-w1140-button-fs16 fd-footer-5-email">feedback@fantuan.ca</div>
+                        </div>
+                        <div className="fd-footer-5-div-2">
+                            <Navbar className="fd-footer-5-google">
+                                <Navbar.Brand href="#googlePlay">
+                                <img src={require('../../assets/imgs/icon/GooglePlay2@2x.png')}
+                                 width="138px"
+                                 height="38px"
+                                 className="d-inline-block align-top"
+                                 alt="Google Play"/>
+                                </Navbar.Brand>
+                            </Navbar>
+                            <Navbar className="fd-footer-5-appstore">
+                                <Navbar.Brand href="#appStore">
+                                <img src={require('../../assets/imgs/icon/AppStore@2x.png')}
+                                    width="138px"
+                                    height="38px"
+                                    className="d-inline-block align-top"
+                                    alt="App Store"/>
+                                </Navbar.Brand>
+                            </Navbar>
+                        </div>
+                    </div>
+                </div>
+                </Row>
+
+                {/* Footer line */}
+                <Row noGutters="true">
+                <hr className="fd-footer-hr" />
+                </Row>
+
+                {/* Footer group 2 */}
+                <Row noGutters="true">
+                <div className="fd-footer-group-2">
+
+                    <div className="fd-footer-6">
+                        <Navbar className="fd-footer-6-delivery">
+                            <Navbar.Brand href="delivery">
+                            <img
+                                src={require('../../assets/imgs/icon/AntuanDelivery48@2x.png')}
+                                width="113px"
+                                height="28px"
+                                className="d-inline-block align-top"
+                                alt="Antuan Delivery"
+                            />
+                            </Navbar.Brand>
+                        </Navbar>
+                    </div>
+
+                    <div className="fd-footer-7">
+                        {/* <Nav.Link className="fd-footer-7-fantuan" href="link-1">© 2019 Fantuan Technologies</Nav.Link> */}
+                        {/* <Nav.Link className="fd-footer-7-fantuan">© 2019 Fantuan Technologies</Nav.Link> */}
+                        <p className="t-w1140-smtext-fs14 fd-footer-7-fantuan">© 2019 Fantuan Technologies</p>
+                    </div>
+
+                    <div className="fd-footer-8">
+                        <Navbar className="fd-footer-8-facebook">
+                            <Navbar.Brand href="#fackbook">
+                            <img
+                                src={require('../../assets/imgs/icon/Facebook3@2x.png')}
+                                width="11px"
+                                height="25px"
+                                className="d-inline-block align-top"
+                                alt="Facebook"
+                            />
+                            </Navbar.Brand>
+                        </Navbar>
+
+                        <Navbar className="fd-footer-8-youtube">
+                            <Navbar.Brand href="#youtube">
+                            <img
+                                src={require('../../assets/imgs/icon/Youtube3@2x.png')}
+                                width="25px"
+                                height="18px"
+                                className="d-inline-block align-top"
+                                alt="Youtube"
+                            />
+                            </Navbar.Brand>
+                        </Navbar>
+
+                        <Navbar className="fd-footer-8-linkedin">
+                            <Navbar.Brand href="#Linkedin">
+                            <img
+                                src={require('../../assets/imgs/icon/Linkedin7@2x.png')}
+                                width="17px"
+                                height="11px"
+                                className="d-inline-block align-top"
+                                alt="Linkedin"
+                            />
+                            </Navbar.Brand>
+                        </Navbar>
+
+                        <Navbar className="fd-footer-8-instagram">
+                            <Navbar.Brand href="#Instagram">
+                            <img
+                                src={require('../../assets/imgs/icon/Instagram3@2x.png')}
+                                width="25px"
+                                height="25px"
+                                className="d-inline-block align-top"
+                                alt="Instagram"
+                            />
+                            </Navbar.Brand>
+                        </Navbar>
+                    </div>
+                </div>
+                </Row>
+
+            </Container>
+            </div>
+        </>
+        );
+    }
+}
+
+export default Footer;

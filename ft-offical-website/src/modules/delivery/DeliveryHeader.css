@@ -1,0 +1,94 @@
+/* ================================================================= */
+/* Program: DeliveryHeader.css - the header css file of the home of  */ 
+/*          the delivery website                                     */
+/* Author : Bill Huang                                               */
+/* Date   : Oct 19 - Dec 18, 2019                                    */
+/* ================================================================= */
+
+ /* delivery header */
+ /* =============== */
+
+.fd-header-bg-home {
+    background-color: #13C2C2;
+} 
+.fd-header-bg-partner {
+    background-color: #FFFFFF;
+} 
+.fd-header-bg-deliver {
+    background-color: #FFFFFF;
+} 
+.fd-header-bg-faq {
+    background-color: #FFFFFF;
+} 
+
+.fd-header-content-home {
+    margin: 0;
+    padding: 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.fd-header-content-partner {
+    margin: 0;
+    padding: 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    /* color: black; */
+}
+.fd-header-content-deliver {
+    margin: 0;
+    padding: 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.fd-header-content-faq {
+    margin: 0;
+    padding: 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fd-header-logo {
+    flex: 1;
+}
+.fd-header-nav {
+    flex: 1;
+}
+
+/* .fd-header-language-icon {
+    background-color: black;
+    border:none;
+} */
+.fd-header-language-icon {
+    background-color: #13C2C2;
+    -webkit-mask: url('../../assets/imgs/icon/language-switch-icon@2x.png') no-repeat;
+    mask: url('../../assets/imgs/icon/language-switch-icon@2x.png') no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    /* filter:brightness(70%); */
+    /* filter:contrast(50%); */
+    /* filter: drop-shadow(705px 0 0 #ccc); */
+    /* filter:hue-rotate(70deg); */
+    /* filter:invert(100%); */
+    filter:sepia(50%);
+}
+
+.fd-header-toggle {
+    background-color:rgb(240, 233, 233);
+    opacity: 0.8;
+}

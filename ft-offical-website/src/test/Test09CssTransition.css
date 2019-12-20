@@ -1,0 +1,25 @@
+/* 入场之前动画 */
+/*.fade-active,.fade-appear.active表示第一次展示也是现实动画效果*/
+.fade-enter,.fade-active{
+    opacity: 0;
+}
+/* 入场之前到结束之前的动画 */
+.fade-enter-active,.fade-appear.active{
+    opacity: 1;
+    transition: opacity 2000ms;
+}
+/* 入场结束的动画 */
+.fade-enter-done{
+    opacity: 1;
+}
+/* 出厂动画 */
+.fade-exit{
+    opacity: 1;
+}
+.fade-exit-active{
+    opacity: 0;
+    transition: opacity 2000ms;
+}
+.fade-exit-done{
+    opacity: 0
+}

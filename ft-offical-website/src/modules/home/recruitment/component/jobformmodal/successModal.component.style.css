@@ -1,0 +1,47 @@
+.s_modal_button {
+    width:126px;
+    border-radius:5px;
+
+    font-family:OpenSans-Bold,OpenSans;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    line-height:19px;
+}
+
+.s_modal_title {
+    font-size:50px;
+    font-family:OpenSans-Bold,OpenSans;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    line-height:38px;
+
+    margin: 0;
+    padding: 60px 0 0 0;
+}
+
+.s_modal_subtitle {
+    font-size:30px;
+    font-family:OpenSans;
+    color:rgba(51,51,51,1);
+    line-height:38px;
+
+    margin: 0;
+    padding: 18px 0 125px 0;
+}
+
+.s_modal_image {
+    width: 161px;
+    height: 161px;
+    
+    margin: 0 auto;
+}
+
+.s_modal_content {
+    font-size:18px;
+    font-family:OpenSans;
+    color:rgba(51,51,51,1);
+    line-height:18px;
+
+    margin: 0;
+    padding: 78px 0 65px 0;
+}

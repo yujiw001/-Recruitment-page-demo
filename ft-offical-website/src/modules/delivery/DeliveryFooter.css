@@ -1,0 +1,172 @@
+/* ================================================================= */
+/* Program: DeliveryFooter.css - the css file of the footer of the   */ 
+/*          delivery website                                         */
+/* Author : Bill Huang                                               */
+/* Date   : Oct 19 - Dec 18, 2019                                    */
+/* ================================================================= */
+
+/* Delivery Footer */
+/* --------------- */
+
+.fd-footer-bg {
+    background-color:#062236;
+}
+.fd-footer-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+    padding-bottom: 60px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+  
+/* Process group 1 */
+/* --------------- */
+
+.fd-footer-group-1 {
+    margin: 0;
+    padding: 0;
+
+    display: -webkit-flex;
+    display: flex;  
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex-wrap: wrap;  
+    flex-wrap: wrap;  
+
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    
+    -webkit-align-items: flex-start;
+    align-items: flex-start;  
+}
+
+.fd-footer-1to4 a {
+    padding: 0;
+    padding-bottom: 10px;
+    color: #CFDCE5;
+}
+
+.fd-footer-5 {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    color: #CFDCE5;
+}
+.fd-footer-5-div-1 {
+    margin-bottom: 13px;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.fd-footer-5-div-2 {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.fd-footer-5-google,
+.fd-footer-5-appstore {
+    margin: 0;
+    padding: 0;
+    height: 43px;
+}
+/* .fd-footer-5-google:hover,
+.fd-footer-5-appstore:hover {
+    -webkit-filter: drop-shadow(1px 1px 0 #13C2C2);
+    filter: drop-shadow(1px 1px 0 #13C2C2);
+} */
+.fd-footer-links:hover {
+    color: #13C2C2;
+}
+
+/* Process line    */
+/* --------------- */
+
+.fd-footer-hr {
+    width: 100%;
+    margin-top: 36px;
+    border: 1px solid;
+    color:#283F4F;
+}
+.fd-footer-hr::before {
+    display: block;
+    text-align: center;
+}
+
+/* Process group 2 */
+/* --------------- */
+
+.fd-footer-group-2 {
+    display: -webkit-flex;
+    display: flex;  
+
+    -webkit-flex-wrap: wrap;  
+    flex-wrap: wrap;  
+
+    -webkit-justify-content: space-around;
+    justify-content: space-between;
+    
+    -webkit-align-items: flex-start;
+    align-items: flex-start;  
+
+    -webkit-align-content: space-between;
+    align-content: space-between;  
+}
+
+.fd-footer-6 {
+    margin-top: 20px;
+}
+.fd-footer-6-delivery {
+    height: 28px;
+    margin: 0;
+    padding: 0;
+}
+/* .fd-footer-6-delivery:hover {
+    -webkit-filter: drop-shadow(1px 1px 0 #13C2C2);
+    filter: drop-shadow(1px 1px 0 #13C2C2);
+} */
+
+.fd-footer-7-fantuan {
+    color: #CFDCE5;
+    margin: 0;
+    border: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.fd-footer-8{
+    margin: 0;
+    border: none;
+    padding: 0;
+    margin-top: 20px;
+    margin-right: 5px;
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-items: baseline; 
+    align-items: baseline;  
+}
+.fd-footer-8-facebook,
+.fd-footer-8-instagram,
+.fd-footer-8-linkedin,
+.fd-footer-8-youtube {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 1140px){
+    .fd-footer-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}

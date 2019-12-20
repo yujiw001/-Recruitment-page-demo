@@ -1,0 +1,90 @@
+/* ================================================================= */
+/* Program: App.css - the css file for the whole websit              */
+/* Author : Bill Huang                                               */
+/* Date   : Oct 19 - Dec 18, 2019                                    */
+/* ================================================================= */
+
+.ft-w1140-section-fs60 {
+  font-family: OpenSans-Bold, OpenSans, Arial, Verdana;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.ft-w1140-section-fs40 {
+  font-family: OpenSans-Bold, OpenSans, Arial, Verdana;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.ft-w1140-section-fs30 {
+  font-family: OpenSans-Bold, OpenSans, Arial, Verdana;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.ft-w1140-section-fs24 {
+  font-family: OpenSans-Bold, OpenSans, Arial, Verdana;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.ft-w1140-section-fs16 {
+  font-family: OpenSans, Arial, Verdana;
+  font-size: 16px;
+  color: rgba(153, 153, 153, 1);
+}
+
+.ft-w1140-text-fs18 {
+  font-family: OpenSans, Arial, Verdana;
+  font-size: 18px;
+  color: rgba(51, 51, 51, 1);
+  line-height: 32px;
+}
+
+.ft-w1140-field-fs16 {
+  font-family: OpenSans, Arial, Verdana;
+  font-size: 16px;
+  color: rgba(102, 102, 102, 1);
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.ft-w1140-text-fs16 {
+  font-family: OpenSans, Arial, Verdana;
+  font-size: 16px;
+  color: rgba(102, 102, 102, 1);
+  line-height: 22px;
+}
+
+.ft-w1140-text-fs14 {
+  font-family: OpenSans, Arial, Verdana;
+  font-size: 14px;
+}
+
+.ft-w1140-smtext-fs18 {
+  font-family: OpenSans-Semibold, OpenSans, Arial, Verdana;
+  font-size: 18px;
+  color: rgba(51, 51, 51, 1);
+}
+
+.ft-w1140-smtext-fs16 {
+  font-family: OpenSans, Arial, Verdana;
+  font-size: 16px;
+  color: rgba(51, 51, 51, 1);
+}
+
+.ft-w1140-smtext-fs14 {
+  font-family: OpenSans, Arial, Verdana;
+  font-size: 18px;
+}
+
+.ft-w1140-button-fs16 {
+  font-family: OpenSans-Semibold, OpenSans, Arial, Verdana;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 22px;
+}

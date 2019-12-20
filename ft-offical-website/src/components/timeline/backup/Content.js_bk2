@@ -1,0 +1,87 @@
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const ContainerComponent = styled.div`
+  display: flex;
+  line-height: 1.3;
+  line: 2px solid;
+  // background: ${props => (props.textcolor ? "blue" : "transparent")};
+  // color: ${props => (props.textcolor ? "white" : "palevioletred")};
+  // background: ${props => props.textcolor};
+  background: ${props => (props.changeColor ? "blue" : "yellow")};
+  
+  color: red
+  // background: yellow;
+
+  &:last-child {
+    .body-component {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+`;
+
+class Content extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+          textcolor:'red',
+          changeColor: false
+      };
+      const children  = this.props.children;
+      this.handleMouseMove = this.handleMouseMove.bind(this);
+      this.handleMouseOut = this.handleMouseOut.bind(this);
+  }
+
+  // handleMouseMove(event) {
+  //   this.setState({
+  //       textcolor:'blue',
+  //   },()=>{console.log(this.state.textcolor)});
+  // }
+
+  async handleMouseMove(event) {
+    console.log("move 1:" + this.state.textcolor);    
+    await this.setState({
+      textcolor:'blue',
+      changeColor: true
+    });
+    console.log("move 2:" + this.state.textcolor);   
+  }
+
+  // handleMouseOut(event) {
+  //   this.setState({
+  //       textcolor:'yellow'
+  //   });
+  // }
+
+  async handleMouseOut(event) {
+    console.log("out 1:" + this.state.textcolor);   
+    await setTimeout(()=>{ 
+        this.setState({
+        textcolor:'yellow',
+        changeColor: false
+    });
+  },2000);
+    console.log("out 2:" + this.state.textcolor);    
+  }
+
+  render() {
+    // var style = {
+    //     color:this.state.textcolor
+    // }
+    console.log("render:" + this.state.textcolor);
+    console.log("background:" + ContainerComponent.color);
+    console.log("changeColor:" + this.state.changeColor);
+    return (
+      <ContainerComponent className="content-component" onMouseMove={this.handleMouseMove} onMouseOut={this.handleMouseOut}>
+        { this.props.children }
+      </ContainerComponent>
+    )
+  };
+}
+
+export default Content;

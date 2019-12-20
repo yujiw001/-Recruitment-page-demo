@@ -1,0 +1,349 @@
+/* ================================================================= */
+/* Program: DeliveryDeliver.css - the css file of the deliver of the */ 
+/*          delivery website                                         */
+/* Author : Bill Huang                                               */
+/* Date   : Oct 19 - Dec 18, 2019                                    */
+/* ================================================================= */
+
+/* Flexible hours */
+/* ============== */
+
+.fd-deliver-flexible-bg {
+    background-color: #13C2C2;
+}
+.fd-deliver-flexible-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    /* background-image: url("../../assets/imgs/bg/delivery-deliver-s1.png"); */
+    background-image: url("../../assets/imgs/bg/delivery-drivertop.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+    background-size: cover;
+    height: 590px;
+    position: relative;
+    padding-top: 60px; 
+    padding-bottom: 55px;
+  }
+
+  .fd-deliver-flexible-top {
+    padding-top: 117px;
+  }
+  .fd-deliver-flexible-h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    line-height: 30px;
+}  
+.fd-deliver-flexible-p {
+    margin-top: 22px;
+    width: 35%;
+    font-size: 18px;
+    color: white;
+    /* line-height: 18px; */
+}  
+.fd-deliver-flexible-earn200 {
+  padding-bottom: 33px;
+}
+.fd-deliver-flexible-button a {
+    font-size: 16px;;
+}
+.fd-deliver-flexible-button-img{
+    margin-right: 10px;
+}
+
+@media (max-width: 750px){
+  .fd-deliver-flexible-content {
+    background-size: 60%;
+    background-position: top right;
+    height: 260px;
+    padding-bottom: 30px;
+  }
+  .fd-deliver-flexible-h1 {
+    font-size: 18px;
+    line-height: 20px;
+  }  
+  .fd-deliver-flexible-p {
+      width: 35%;
+      font-size: 10px;
+      color: white;
+      line-height: 12px;
+  }  
+  .fd-deliver-flexible-earn200 {
+    padding-bottom: 20px;
+  }
+  .fd-deliver-flexible-button a {
+      font-size: 10px;
+  }
+  .fd-deliver-flexible-button-img{
+    height: 12px;
+  }
+}
+@media (min-width: 751px) and (max-width: 992px){
+  .fd-deliver-flexible-content {
+    background-size: 70%;
+    height: 280px;
+  }
+  .fd-deliver-flexible-h1 {
+    font-size: 26px;
+    line-height: 26px;
+  }  
+  .fd-deliver-flexible-p {
+      width: 35%;
+      font-size: 14px;
+      color: white;
+      line-height: 16px;
+  }  
+  .fd-deliver-flexible-earn200 {
+    padding-bottom: 20px;
+  }
+  .fd-deliver-flexible-button a {
+      font-size: 12px;;
+  }
+}
+@media (max-width: 1140px){
+  .fd-deliver-flexible-content {
+    padding-right: 10px;  
+    padding-left: 10px;
+  }
+}
+
+/* why deliver with fantuan */
+/* ======================== */
+
+.fd-deliver-why-bg {
+    background-color: #FFFFFF;
+  }
+.fd-deliver-why-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: auto;
+}
+  
+.card-group {
+  padding-top:90px;
+  padding-bottom: 128px;
+}
+
+.fd-deliver-header {
+  font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.fd-deliver-header-text {
+    font-size: 16px;
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.fd-deliver-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.fd-deliver-text {
+  font-size: 14px;
+}
+.card {
+    border: none;
+    text-align: center;
+}
+.fd-card-img {
+    margin-bottom: 10px;
+}
+  
+  
+/* Meet the people (carousel slides) */
+/* ================================= */
+
+.fd-deliver-meet-bg {
+    background-color: #FBFAF8;
+}
+.fd-deliver-meet-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 40px; 
+    padding-bottom: 55px;
+}
+
+.fd-deliver-meet-quotation {
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+  /* color: #13C2C2; */
+}
+.fd-deliver-meet-card {
+  padding: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.fd-deliver-meet-card-body,
+.fd-deliver-meet-div1,
+.fd-deliver-meet-div2 {
+  width: 371px;
+  /* width: auto; */
+  /* width ??? */
+  display: inline-block;
+  background-color: #FBFAF8;
+}
+  
+.fd-deliver-meet-comment,
+.fd-deliver-meet-div2-title,
+.fd-deliver-meet-div2-text {
+  color: black
+}
+.fd-deliver-meet-div {
+  display: -webkit-flex;  
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-self: center;
+  /* margin-right: 20px; */
+}
+.fd-deliver-meet-h,
+.fd-deliver-meet-p {
+  text-align: center;
+}
+.fd-deliver-meet-div2 {
+  display: -webkit-flex;  
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: center;
+}
+.fd-deliver-meet-div1 {
+  width: 90px;
+  /* flex-grow: 1; */
+}
+/* .fd-deliver-meet-div2 {
+  flex-grow: 3;
+} */
+
+.fd-deliver-meet-comment {
+  height: 160px;
+  font-size: 14px;
+  text-align: left;
+}
+.fd-deliver-meet-div2-title {
+  margin:0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+.fd-deliver-meet-div2-text {
+  margin: 0;
+  font-size: 14px;
+  text-align: left;
+}
+ 
+/* ------ */
+.fd-deliver-meet-slider
+.slick-dots {
+  top: -10px;  
+  max-height:30px;
+}
+.fd-deliver-meet-slider
+.slick-dots li {
+  height: 9px;
+  width: 40px;
+  margin: 0 0 0 5px;
+  padding: 0;
+}
+.fd-deliver-meet-slider 
+.slick-dots li button {
+  background: rgba(255,255,255,1);
+  height: 9px;
+  width: 39px;
+  padding: 0px;
+}
+.fd-deliver-meet-slider
+.slick-dots li button::before {
+  content: '';
+  width: 39px;
+  height: 9px;
+  border: 1px solid rgba(187,187,187,1);
+  border-radius: 9px;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+}
+.fd-deliver-meet-slider
+.slick-dots li.slick-active button::before {
+  background:#13C2C2;
+  opacity: 1 ;
+}
+
+/* get start */
+/* ========= */
+
+.fd-deliver-get-bg {
+  background-color: #13C2C2;
+}
+.fd-deliver-get-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 30px; 
+  padding-bottom: 60px;
+}
+
+.fd-deliver-get-button a {
+  margin-right: 10px;
+  font-size: 16px;
+  background-color: #13C2C2;
+  border-color: white;
+  width: 155px;  
+}
+.fd-deliver-get-button-img{
+  margin-right: 10px;
+}
+
+.fd-deliver-get-h1,
+.fd-deliver-get-p1,
+.fd-deliver-get-p2 {
+  color: white;
+}
+.fd-deliver-get-h1 {
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.fd-deliver-get-p1,
+.fd-deliver-get-p2 {
+  margin:0;
+  padding:0;
+  font-size: 16px;
+}
+
+.fd-deliver-get-text-button {
+  display: -webkit-flex;  
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.fd-deliver-get-note {
+  flex-grow: 1;
+  text-align: left;
+}
+.fd-deliver-get-button {
+  flex-grow: 1;
+  text-align: right;
+}
+
+@media (max-width: 1140px){
+  .fd-deliver-get-content {
+    padding-right: 10px;  
+    padding-left: 10px;
+  }
+}

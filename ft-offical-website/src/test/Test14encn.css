@@ -1,0 +1,16 @@
+.ft-about-contact-bg {
+    background-color: #FFFFFF;
+  }
+  .ft-about-contact-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 90px;
+  }
+  .ft-about-contact-content::after{
+    display:block;
+    content:’’;
+    height:0;
+    clear:both;
+  }
+  

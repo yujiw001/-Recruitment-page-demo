@@ -1,0 +1,558 @@
+/* ================================================================= */
+/* Program: About.css - the css file of the about.js of the office   */
+/*          website                                                  */ 
+/* Author : Bill Huang                                               */
+/* Date   : Oct 19 - Dec 18, 2019                                    */
+/* ================================================================= */
+
+/* The Best Asian Food Delivery */
+/* ============================ */
+
+.ft-about-best-bg {
+    /* background-color: #FFFAF4; */
+    /* background-image: url("../../assets/imgs/bg/fantuan-about-best-bg.png");  20191210 */
+    background-image: url("../../assets/imgs/bg/fantuan-about-best.jpg");
+    /* background-position: right; */
+    background-repeat: norepeat;
+    /* background-size: contain; */
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    height: 100%;
+    width: 0 auto;
+
+    z-index: 1;
+  }
+  .ft-about-best-bg1 {
+    /* background-color: #FFFAF4; */
+    /* background-image: url("../../assets/imgs/bg/fantuan-about-best-bg1.png"); 20191210 */
+    background-image: url("../../assets/imgs/bg/fantuan-about-best1.jpg");
+    /* background-position: right; */
+    background-repeat: norepeat;
+    /* background-size: contain; */
+    background-size: cover;
+    height: 100%;
+    width: 0 auto;
+
+    z-index: 1;
+  }
+  .ft-about-best-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+  .ft-about-best-content::after{
+    display:block;
+    content:’’;
+    height:0;
+    clear:both;
+  }
+  
+  /* .ft-about-best-bg-img {
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 600px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: -1;
+  } */
+  
+  .ft-about-best-text-buttons{
+    z-index: 20;
+  }
+  
+  /* .blink { animation: change 12s  ease-in  infinite ; font-size: 36px; color:#f00; font-weight: bold}
+  @keyframes change {
+      0%{ text-shadow: 0 0 4px #f00}
+      50%{ text-shadow: 0 0 40px #f00}
+      100%{ text-shadow: 0 0 4px #f00}
+  } */
+  /* .blink { animation: change 12s  ease-in  infinite;}
+  @keyframes change {
+    0%{ text-shadow: 0 0 3px #f00}
+    50%{ text-shadow: 0 0 20px #f00}
+    100%{ text-shadow: 0 0 3px #f00}
+  } */
+  
+  @media (max-width: 750px){
+    .ft-about-best-content {
+      height: 332px;
+    }
+  
+    .ft-about-best-bg-img {
+      height: 100%;
+      right: 8px;
+      top: 0%;  
+      }
+  
+    .ft-about-best-thebest {
+      margin: 0;
+      padding: 0;
+      font-size: 35px;
+      font-family: sans-serif;
+      color: black;
+    }
+    .ft-about-best-af,
+    .ft-about-best-del {
+      margin: 0;
+      padding: 0;
+      font-size: 50px;
+      line-height: 45px;
+      color:black;
+    }
+    .ft-about-best-del {
+      line-height: 50px;
+    }
+  
+    .ft-about-best-buttons a {
+      margin-right: 0.5rem;
+      font-size: 0.6rem;
+    }
+    .ft-about-best-buttons-img{
+      margin: 0;
+      padding: 0;
+      margin-right: 0.5rem;
+    }
+    
+    .ft-about-best-button0 {
+      font-size: 12px;
+      width: 130px;
+      margin-left: 4px;
+      margin-bottom: 10px;
+      border-radius: 50px 50px 50px 50px;
+    }
+    .ft-about-best-button1 {
+      margin: 0;
+      padding: 0;
+      margin-left:4px;
+      width: 130px;
+      height: 30px;
+    }
+    .ft-about-best-button2 {
+      margin: 0;
+      padding: 0;
+      width: 130px;
+      height: 30px;
+      margin-left: 10px;
+    }
+  }
+  @media (min-width: 751px) and (max-width: 992px){
+    .ft-about-best-content {
+      height: 402px;
+    }
+    .ft-about-best-bg-img {
+      height: 100%;
+      right: 18px;
+      top: 1%;  
+    }
+  
+    .ft-about-best-thebest {
+      margin: 0;
+      padding: 0;
+      margin-left: 10px;
+      padding-top: 10px;
+      font-family: sans-serif;
+      font-size: 40px;
+      color: black;
+    }
+    .ft-about-best-af,
+    .ft-about-best-del {
+      margin: 10px;
+      padding: 0;
+      font-size: 55px;
+      line-height: 50px;
+      color: black;
+    }
+    .ft-about-best-del {
+      line-height: 60px;
+    }
+    .ft-about-best-buttons-img{
+      margin: 0;
+      padding: 0;
+      margin-right: 7px;
+    }    
+    .ft-about-best-button0 {
+      font-size: 12px;
+      width: 150px;
+      margin-left: 4px;
+      margin-bottom: 30px;
+      border-radius: 50px 50px 50px 50px;
+    }
+    .ft-about-best-button1 {
+      margin: 0;
+      padding: 0;
+      margin-left:4px;
+      width: 140px;
+      height: 30px;
+    }
+    .ft-about-best-button2 {
+      margin: 0;
+      padding: 0;
+      width: 140px;
+      height: 30px;
+      margin-left: 10px;
+    }
+  }
+  @media (min-width: 993px){
+    .ft-about-best-content {
+      height: 732px;
+    }
+    .ft-about-best-bg-img {
+      height: 100%;
+      right: 28px;
+      top: 0%;  
+    }
+  
+    .ft-about-best-thebest {
+      padding: 0;
+      margin: 0;
+      padding-top: 30px;
+      font-family: sans-serif;
+      font-size: 90px;
+      font-weight: lighter;
+      color:black;
+    }
+    .ft-about-best-af,
+    .ft-about-best-del {
+      margin: 0;
+      padding: 0;
+      border: none;
+      line-height: 60px;
+      font-size: 90px;
+      color: black;
+    }
+    .ft-about-best-del {
+      line-height: 110px;
+    }
+  
+    .ft-about-best-buttons-img{
+      margin: 0;
+      padding: 0;
+      margin-right: 3px;
+    }
+    
+    .ft-about-best-buttons {
+      margin-top: 10px;
+    }
+    .ft-about-best-button1,
+    .ft-about-best-button2 {
+      margin: 0;
+      padding: 0;
+      width: 182px;
+      height: 40px;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    .ft-about-best-button0 {
+      width: 182px;
+      height: 40px;
+      margin-left: 4px;
+      margin-bottom: 70px;
+      border-radius: 50px 50px 50px 50px;
+    }
+
+  }
+  @media (max-width: 1140px){
+    .ft-about-best-content {
+      padding-right: 20px;  
+      padding-left: 20px;
+    }
+  }
+  
+  
+/* about fantuan */
+/* ============= */
+.ft-about-about-bg {
+  background-color: #FFFFFF;
+}
+.ft-about-about-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 113px;
+  padding-bottom: 140px;
+}
+.ft-about-about-content::after{
+  display:block;
+  content:’’;
+  height:0;
+  clear:both;
+}
+
+@media (max-width: 1140px){
+  .ft-about-about-content {
+    padding-right: 10px;  
+    padding-left: 10px;
+  }
+}
+
+
+/* about history */
+/* ============= */
+.ft-about-history-bg {
+  background-color: #FBF9F8;
+}
+.ft-about-history-content {
+  margin: 0;
+  padding: 0;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ft-about-history-content::after{
+  display:block;
+  content:’’;
+  height:0;
+  clear:both;
+}
+
+.ft-about-history-title {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.ft-about-TimelineComponent {
+  margin: 0;
+  padding:0;
+  padding: 10px 10px 10px 10px; 
+}
+
+.ft-about-ContentComponent {
+  display: flex;
+  line-height: 1.3;
+}
+/* .ft-about-ContentComponent:last-child 
+.body-component::before {
+  display: none;
+} */
+
+.ft-about-YearComponent {
+  color: #002a3a;
+  width: 110px;
+  padding-right: 10px;
+  position: relative;
+}
+.ft-about-YearComponent::after {
+    background: #ccc;
+    border-radius: 50%;
+    content: '';
+    height: 17px;
+    width: 17px;
+    right: -6px;
+    position: absolute;
+    top: 5px;
+}
+.ft-about-YearComponentItem{
+  margin-bottom: 8px;
+  color:#333333;
+}
+
+.ft-about-BodyComponent{
+  color: #002a3a;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  position: relative;
+}
+.ft-about-BodyComponent::before {
+    background-color: #ccc;
+    content: '';
+    height: 100%;
+    left: -3px;
+    min-height: 95%;
+    position: absolute;
+    top: 10px;
+    width: 2px;
+}
+.ft-about-BodyComponentTitle{
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 0;
+  margin-left: 26px;
+  text-align: left;
+}
+
+.ft-about-DescriptionComponent{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  float: right;
+  width: 350px;
+  margin-left: 26px;
+  position: reltive;
+}
+.ft-about-DescriptionComponentText{
+  color: #666666;
+}
+.ft-about-DescriptionComponentTextOptional{
+  font-style: italic;
+  color: #818a91;
+}
+.ft-about-DescriptionComponentTextOptional::before {
+    content: '- (';
+    margin-left: 5px;
+}
+.ft-about-DescriptionComponentTextOptional::after {
+    content: ')';
+}
+
+.ft-about-ContentComponent.active 
+.ft-about-YearComponent::after{
+	background-color: #13C2C2
+}
+.ft-about-ContentComponent.active 
+.ft-about-BodyComponent::before{
+	background-color: #13C2C2
+}
+
+@media (max-width: 1140px){
+  .ft-about-history-content {
+    padding-right: 10px;  
+    padding-left: 10px;
+  }
+}
+
+/* about contact */
+/* ============= */
+.ft-about-contact-bg {
+  background-color: #FFFFFF;
+}
+.ft-about-contact-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 90px;
+}
+.ft-about-contact-content::after{
+  display:block;
+  content:’’;
+  height:0;
+  clear:both;
+}
+
+.ft-about-contact-title {
+  padding-top:30px;
+  padding-bottom: 20px;
+}
+
+.ft-about-contact-title,
+.ft-about-contact-note1,
+.ft-about-contact-note2 {
+  text-align: center;
+}
+.ft-about-contact-content
+.col .row {
+  justify-content: center;
+}
+.ft-about-contact-buttons {
+  padding-top: 30px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.ft-about-contact-but-ca {
+  width: 135px;
+  background-color: black;
+  color:#FFFFFF;
+  border: 1px solid black;
+  border-radius: 50px 3px 3px 50px;
+}
+.ft-about-contact-but-us {
+  width: 135px;
+  background-color: #FFFFFF;
+  color: black;
+  border: 1px solid black;
+  border-radius: 3px 50px 50px 3px;
+}
+.ft-about-contact-but-ca:hover,
+.ft-about-contact-but-us:hover {
+  background-color: #13C2C2;
+}
+
+.ft-home-contact-mapadr {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.ft-home-contact-map {
+  margin: 0;
+  padding: 0;
+  width: 565px;
+ }
+.ft-home-contact-map-img {
+  width: 100%;
+}
+.ft-home-contact-adr {
+  width: 565px;
+}
+
+.ft-home-contact-info {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.ft-home-contact-adr
+.slick-slider
+.slick-dots {
+  top: initial;
+  margin-left: 45px;
+}
+
+.ft-home-contact-adr
+.slick-slider
+.slick-prev {
+  /* top: initial; */
+  right: initial;
+  top: inherit;
+  bottom: -12%;
+  margin-left:27px;
+}
+.ft-home-contact-adr
+.slick-slider
+.slick-next {
+  /* top: initial; */
+  right: initial;
+  top: inherit;
+  bottom: -12%;
+  margin-left:27px;
+}
+
+.ft-home-contact-card {
+    padding: 12px 0;
+    position: relative;
+    line-height:20px;
+}
+.ft-home-contact-card:hover::before {
+    position: absolute;
+    content: '';
+    /* border-left: 1px dashed #53a2ff; */
+    border-left: 1px solid #53a2ff;
+    /* left: -25px; */
+    /* padding-left: 10px; */
+    /* transform: translate(60px,0); */
+    top: 5px;
+    height: calc(100% - 10px);
+}
+.ft-home-contact-card:hover
+.ft-home-contact-info {
+  color: #13C2C2;
+  transform: translate(10px,0);
+}
+
+.ft-home-contact-info-title {
+  padding-bottom: 7px;
+}
+
+@media (max-width: 1140px){
+  .ft-home-contact-content {
+    padding-right: 10px;  
+    padding-left: 10px;
+  }
+}

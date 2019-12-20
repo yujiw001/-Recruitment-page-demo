@@ -1,0 +1,72 @@
+import React, { Component, useState } from 'react';
+import { Collapse, Icon } from 'antd';
+// import { Carousel } from 'antd';
+// import 'antd/dist/antd.css';
+import { Spring } from'react-spring';
+
+
+import Carousel from 'react-bootstrap/Carousel';
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import CardGroup from 'react-bootstrap/CardGroup'
+import Button from 'react-bootstrap/Button'
+
+import { Transition, CSSTransition, SwitchTransition, TransitionGroup} from 'react-transition-group';
+
+
+// import Swiper from 'react-id-swiper';
+// import 'swiper/css/swiper.css';
+
+import './Test11TimeSteps.css';
+
+
+class DeliveryFAQ extends Component {
+
+render() {
+    return (
+        <>
+            <div className="ft-time-steps-bg">
+              <div className="ft-time-steps-content">
+				<ul class="nav flex-column time-steps d-none d-lg-flex">
+					<div class="indicator" style="height: 100%;"></div>
+					<li class="d-flex align-items-center active">
+						<span>1</span>
+						<h5 class="heading mb-0">与客户沟通</h5>
+					</li>                                                
+					<li class="d-flex align-items-center active">
+						<span>2</span>
+						<h5 class="heading mb-0">研究调查</h5>
+					</li>                                                
+					<li class="d-flex align-items-center active">
+						<span>3</span>
+						<h5 class="heading mb-0">头脑风暴</h5>
+					</li>                                                
+					<li class="d-flex align-items-center active">
+						<span>4</span>
+						<h5 class="heading mb-0">开始矢量设计</h5>
+					</li>                                                
+					<li class="d-flex align-items-center active">
+						<span>5</span>
+						<h5 class="heading mb-0">完成演示稿</h5>
+					</li>                                                
+					<li class="d-flex align-items-center active">
+						<span>6</span>
+						<h5 class="heading mb-0">轻微改稿</h5>
+					</li>                                                
+					<li class="d-flex align-items-center active">
+						<span>7</span>
+						<h5 class="heading mb-0">完成并交付</h5>
+					</li>
+				</ul>
+			</div>
+		</div>
+        </>
+    );
+    }
+}
+
+export default DeliveryFAQ;

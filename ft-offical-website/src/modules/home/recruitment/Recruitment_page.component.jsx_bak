@@ -1,0 +1,38 @@
+//created by Yuji Wang on 10/28/2019
+//Integrate all the required components to create the Recritment page.
+import React, { Component } from 'react';
+// import Header from '../../../component/header/header.component';
+import SlideShow from './component/slideshow/slideshow.component';
+import Jobmore from './component/jobmore.component';
+// import Footer from '../../../component/footer/footer.component';
+
+import Header from '../Header';
+import Footer from '../Footer';
+
+import JobData from '../fake_data/position_data';
+
+import './Recruitment_page.component.style.css';
+
+class RecruitmentPage extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      // the data read from the backstage database, waiting to be rendered
+      renderData: JobData,
+    };
+  }
+  render (){
+    return (
+        <div>
+          <Header />
+          <div className='container'>
+            <h1 className='ft-w1140-section-fs40 fh_rec_career'>Careers</h1>
+            <SlideShow />
+            <Jobmore />
+          </div>
+          <Footer />
+        </div>
+      );
+  }
+}
+export default RecruitmentPage;

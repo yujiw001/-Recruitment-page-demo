@@ -1,0 +1,427 @@
+/* carousel slides */
+/* =============== */
+
+/* process here!!! */
+
+.fd-test-about-bg {
+  background-color: #FBFAF8;
+}
+.fd-test-about-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 20px; 
+  padding-bottom: 35px;
+}
+
+.fd-test-about .carousel-control-prev {
+  display: none;
+}
+.fd-test-about .carousel-control-next {
+  display: none;
+}
+.carousel-indicators {
+  clear: both;
+}
+.fd-test-about .carousel-indicators {
+  clear: right;
+  left:0;
+  bottom: 0;
+  margin-left: 0%;
+}
+.fd-test-about .carousel-indicators li {
+  height: 4px;
+  background-color:  #FBFAF8;
+  border: solid 1px #13C2C2;
+}
+.fd-test-about .carousel-indicators li.active {
+  background-color: #13C2C2;
+}
+
+.fd-test-about-cards
+.card {
+  margin: 0;
+  padding: 0;
+}
+.fd-test-about-card-imgs {
+  max-width: 550px;
+  width: 100%;
+}
+.fd-test-about-card-notes
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.fd-test-about-card-notes {
+  text-align: left;
+}
+
+@media (max-width: 570px){
+  .fd-test-about .carousel-control-prev, 
+  .fd-test-about .carousel-control-next {
+    display: -ms-flexbox;
+    display: flex;
+    color: #FFE4C4;
+    opacity: 0.8;
+
+  }
+  .fd-test-about .carousel-indicators {
+    clear: right;
+    display: none;
+  }
+  
+  .fd-test-about-card-imgs {
+    margin: 0;
+    padding: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  .carousel-indicators {
+    clear: both;
+  }  
+}
+
+
+/* ----------------- */
+
+/* .fd-test-about {
+  margin: 0;
+  padding: 0;
+} */
+
+.fd-test-about-con {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.fd-test-about-card-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+/* .fd-test-about-card-caption {
+} */
+/* general */
+/* ======= */
+
+.fd-faq-general-bg {
+  background-color:white;
+}
+.fd-faq-general-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 30px; 
+  padding-bottom: 50px;
+  /* color: white; */
+}
+
+.fd-faq-accordion-body {
+  background-color: #FFFFFF;
+  opacity: 100%;
+  font-family: OpenSans-Bold, OpenSans;
+  font-weight: bold;
+  align-self: left;
+}
+
+
+.background-red {
+  background-color: red;
+}
+
+.background-blue {
+  background-color: blue;
+}
+
+
+/* test before and ::after */
+/* ======================= */
+
+.desc {
+  position: relative;
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+}
+.desc:before, .desc:after {
+      display: inline-block;
+      position: absolute;
+      content: '';
+      top: 50%;
+      margin-top: -1px;
+      width: 418px;
+      height: 1px;
+      background-color: #BDBDBD;
+      border: dashed 1px;
+    }
+.desc:before{
+      left: -30px;
+}
+.desc:after {
+      right: -30px;
+}
+
+.fd-test {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* test before and ::after desc1 & desc2 */
+/* ===================================== */
+
+.desc1,
+.desc2 {
+  position: relative;
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+}
+.desc2:before, .desc1:after {
+      display: inline-block;
+      position: absolute;
+      content: '';
+      top: 50%;
+      margin-top: -1px;
+      width: 218px;
+      height: 1px;
+      background-color: #BDBDBD;
+      border: dashed 1px;
+    }
+.desc2:before{
+      /* left: -30px; */
+      left: 30px;
+}
+.desc1:after {
+      /* right: -30px; */
+      right: 30px;
+}
+
+.fd-test {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* 4 simple steps to get started         */
+/* ===================================== */
+
+
+.cardDeckRow {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardDeckRow::before {
+  position: absolute;
+  top: calc(30% - 1px);
+  right: 0;
+  left: 0;
+  Content: ' ';
+  Background-color: grey;
+  height: 2px;
+}
+.fd-partner-4steps-img {
+  width: 6rem;
+  height: 6rem;
+  font-size: 4rem!important; /* !important is here just to override SO styles*/
+  /* color: #777;
+  border: 2px solid #777777;
+  border-radius: 50%;
+  padding: 1rem; */
+  text-align: center;
+  line-height: 6rem!important; /* !important is here just to override SO styles*/
+}
+
+
+
+.content{
+	padding: 12px 0;
+    position: relative;
+    line-height:25px;
+}
+
+.content::before {
+    position: absolute;
+    content: '';
+    border-left: 1px dashed #53a2ff;
+    left: -25px;
+    top: 5px;
+    height: calc(100% - 10px);
+}
+
+.content::after {
+  position: absolute;
+  content: '';
+  border-left: 1px dashed #53a2ff;
+  left: -35px;
+  /* right: 134px; */
+  top: 5px;
+  height: calc(100% - 10px);
+}
+
+.content::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+  right: 10px;
+  display: inline-block;   
+  border-left: 1px solid #000; 
+  border-bottom: 1px solid #000;  
+  width: 14px; 
+  height: 14px;  
+  transform: rotate(-45deg);  
+}
+
+
+
+.test {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+}
+.test:after {
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  width:;
+  height:;
+  content: "";
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #fff transparent;
+  -webkit-transition: all .25s;
+     -moz-transition: all .25s;
+      -ms-transition: all .25s;
+       -o-transition: all .25s;
+          transition: all .25s;
+}
+
+.test:before {
+  position: absolute;
+  right: 13px;
+  top: 18px;
+  width:;
+  height:;
+  content: "";
+  border-width: 8px 8px 0 8px;
+  border-style: solid;
+  border-color: #d36969 transparent;
+  -webkit-transition: transform .25s;
+     -moz-transition: transform .25s;
+      -ms-transition: transform .25s;
+       -o-transition: transform .25s;
+          transition: transform .25s;
+}
+.test.active:after{
+  top: 20px;
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.test.active:before{
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+
+#underline{
+  width: 200px;
+  height: 50px;
+  background: #ddd;
+  margin: 20px;
+  position: relative;
+}
+#underline:before,
+#underline:after{
+    content: "";/*单引号双引号都可以，但必须是英文*/
+    width: 0;
+    height: 3px; /*下划线高度*/
+    background: blue; /*下划线颜色*/
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transition: all .8s ; /*css动画效果，0.8秒完成*/
+}
+#underline:hover:before{/*动画效果是从中间向左延伸至50%的宽度*/
+  left:0%; 
+  width:50%;
+}
+#underline:hover:after{/*动画效果是从中间向右延伸至50%的宽度*/
+  left: 50%; /*这句多余，主要是为了对照*/
+  width: 50%;
+}
+
+/* -------------------------------------------- */
+.show-enter {
+    opacity: 0.01;
+  }
+.show-enter-active {
+    opacity: 1;
+    transition: all 300ms ease-out;
+}
+.show-exit {
+    opacity: 1;
+}
+.show-exit-active {
+    opacity: 0.01;
+    transition: all 300ms ease-out;
+}
+.container {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px rgb(202, 202, 202);
+}
+.todo-list {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px rgb(202, 202, 202);
+}
+.todo-list-item {
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+}
+.todo-list-item:last-of-type {
+    border-bottom: 0;
+}
+.item-text {
+    margin-left: 10px;
+}
+.cancle {
+    border: 0;
+    color: #fff;
+    background-color: #F04134;
+    border-radius: 3px;
+    box-shadow: 0 0 5px 1px rgb(202, 202, 202);
+}
+.add {
+    border: 0;
+    height: 30px;
+    line-height: 30x;
+    width: 120px;
+    margin-top: 15px;
+    font-size: 14px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px 1px rgb(202, 202, 202);
+}
+
+

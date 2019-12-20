@@ -1,0 +1,65 @@
+import React,{Component} from 'react';
+import styled from 'styled-components';
+
+const TimelineComponent = styled.div`
+  border: 1px solid #979797;    // added by Bill H.
+  background: #F6F6F6;          // added by Bill H.
+  padding: 10px 10px 10px 10px; // top right bottom left
+  width: 1140px;//1497px;
+  //width: 100%;
+  //height: 186px;
+  margin: 0 auto;
+`;
+
+class Timeline extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        bkColor:'red',
+        textColor:'red'
+      };
+    const activeIndex = this.props.activeIndex;
+    const children  = this.props.children;
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this);
+}
+
+handleMouseMove(event) {
+  this.setState({
+      bkColor:'blue',
+      textColor:'blue'
+  });
+}
+
+handleMouseOut(event) {
+  this.setState({
+      bkColor:'yellow',
+      textColor:'yellow'
+  });
+}
+
+render() {
+    var tlStyle = {
+       backgroundColor: this.state.bkColor,
+      //  color: this.state.textColor
+    };
+
+    return (
+      <div>
+      <TimelineComponent className="timeline-component" style={tlStyle} ref="ftTimeline" onMouseMove={this.handleMouseMove} onMouseOut={this.handleMouseOut}>
+        { this.props.children }
+      </TimelineComponent>
+
+      <div>
+        {React.Children.map(this.props.children, function(child){
+            return React.cloneElement(child, {className: 'child'});
+        })}
+      </div>
+
+      </div>
+    )
+  };
+}
+
+export default Timeline;

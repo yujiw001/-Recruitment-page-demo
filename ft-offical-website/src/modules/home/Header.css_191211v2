@@ -1,0 +1,102 @@
+ /* delivery header */
+ /* =============== */
+
+ .ft-header-bg-fantuan {
+    /* background-color: #FFFAF4; */
+} 
+.ft-header-bg-about {
+    /* background-color: #062236; */
+} 
+ .ft-header-bg-news {
+     background-color: #062236;
+ } 
+ .ft-header-bg-career {
+     background-color: #062236;
+ } 
+ .ft-header-bg-default {
+    background-color: #062236;
+} 
+
+.ft-header-content-fantuan {
+    margin: 0;
+    padding: 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.ft-header-content-about {
+     margin: 0;
+     padding: 0;
+     max-width: 1140px;
+     margin: 0 auto;
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     width: 100%;
+ }
+ .ft-header-content-news {
+     margin: 0;
+     padding: 0;
+     max-width: 1140px;
+     margin: 0 auto;
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     width: 100%;
+ }
+ .ft-header-content-career {
+     margin: 0;
+     padding: 0;
+     max-width: 1140px;
+     margin: 0 auto;
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     width: 100%;
+ }
+ .ft-header-content-default {
+    margin: 0;
+    padding: 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+ .ft-header-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.ft-header-nav-left {
+    flex-grow: 8;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.ft-header-nav-right {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+ .ft-header-toggle {
+     margin: 0;
+     padding: 0;
+     background-color:rgb(240, 233, 233);
+     opacity: 0.8;
+ }
+ 
+ .ft-footer-5-div-1 >
+ .ft-w1140-button-fs16 {
+     color: black;
+ }

@@ -1,0 +1,125 @@
+.ft-time-steps-bg {
+    background-color: #FFFAF4;
+    z-index: 1;
+  }
+  .ft-time-steps-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+	z-index: 3;
+	padding-top: 800px;
+	padding-bottom: 200px;
+  }
+  .ft-time-steps-content::after{
+    display:block;
+    content:’’;
+    height:0;
+    clear:both;
+  }
+
+
+/* ---- 1 ----- */
+.nav {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none
+}
+
+/* ---- 2 ----- */
+.flex-column {
+	flex-direction: column!important
+}
+
+/* ---- 3 ----- */
+.time-steps {
+	position: relative;
+	margin-top: 40px
+}
+
+.time-steps:before {
+	content: "";
+	height: 100%;
+	background-color: #ccc;
+	z-index: -1
+}
+
+.time-steps .indicator,
+.time-steps:before {
+	display: block;
+	position: absolute;
+	left: 14px;
+	top: 0;
+	width: 2px
+}
+
+.time-steps .indicator {
+	height: 0%;
+	background-color: #06f
+}
+
+.time-steps li {
+	padding-bottom: 30px;
+	position: relative;
+	padding-left: 3rem
+}
+
+.time-steps li span {
+	background-color: #ccc;
+	color: #fff;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2em;
+	font-weight: 600;
+	margin-right: 10px;
+	position: absolute;
+	left: 0;
+	top: 0
+}
+
+.time-steps li h5 {
+	line-height: 30px
+}
+
+.time-steps li:last-child {
+	padding-bottom: 0
+}
+
+.time-steps li.active span {
+	background-color: #06f
+}
+
+/* ---- 4 ----- */
+.d-none {
+	display: none!important
+}
+
+/* ---- 5 ----- */
+.d-lg-flex {
+    display: flex!important
+}
+
+/* ---- 6 ----- */
+.d-flex {
+	display: flex!important
+}
+
+/* ---- 7 ----- */
+.align-items-center {
+	align-items: center!important
+}
+
+/* ---- 8 ----- */
+h5.heading {
+	font-size: 16px
+}
+
+/* ---- 9 ----- */
+.mb-0,
+.my-0 {
+	margin-bottom: 0!important
+}

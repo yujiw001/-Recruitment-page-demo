@@ -1,0 +1,654 @@
+/* ================================================================= */
+/* Program: DeliveryHome.css - the css file of the home of the       */ 
+/*          delivery website                                         */
+/* Author : Bill Huang                                               */
+/* Date   : Oct 19 - Dec 18, 2019                                    */
+/* ================================================================= */
+
+/* The Best Asian Food Delivery */
+/* ============================ */
+
+.fd-home-best-bg {
+  background-color: #13C2C2;
+  z-index: 1;
+}
+.fd-home-best-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+  z-index: 3;
+}
+.fd-home-best-content::after{
+  display:block;
+  content:’’;
+  height:0;
+  clear:both;
+}
+.fd-home-best-bg-img {
+  position: absolute;
+  z-index: -1;
+}
+
+.fd-home-best-text-buttons{
+  z-index: 20;
+}
+
+.fd-home-best-button1 {
+  opacity: 0.8;
+}
+.fd-home-best-button1:hover {
+  opacity: 1;
+}
+.fd-home-best-button2,
+.fd-home-best-button3 {
+  opacity: 1;
+}
+.fd-home-best-button2:hover,
+.fd-home-best-button3:hover {
+  background-color: white;
+  opacity: 0.2;
+}
+
+/* .blink { animation: change 12s  ease-in  infinite ; font-size: 36px; color:#f00; font-weight: bold}
+@keyframes change {
+    0%{ text-shadow: 0 0 4px #f00}
+    50%{ text-shadow: 0 0 40px #f00}
+    100%{ text-shadow: 0 0 4px #f00}
+} */
+/* .blink { animation: change 12s  ease-in  infinite;}
+@keyframes change {
+  0%{ text-shadow: 0 0 3px #f00}
+  50%{ text-shadow: 0 0 20px #f00}
+  100%{ text-shadow: 0 0 3px #f00}
+} */
+
+@media (max-width: 375px){
+  .fd-home-best-content {
+    height: 332px;
+  }
+
+  .fd-home-best-bg-img {
+    height: 60%;
+    right: 4px;
+    top: 6%;  
+  }
+
+  .fd-home-best-thebest {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    font-family: sans-serif;
+    font-size: 30px;
+    color: white;
+  }
+  .fd-home-best-af,
+  .fd-home-best-del {
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    line-height: 30px;
+    color: white;
+  }
+  .fd-home-best-del {
+    line-height: 40px;
+  }
+
+  .fd-home-best-buttons a {
+    margin-right: 0.5rem;
+    font-size: 0.6rem;
+  }
+  .fd-home-best-buttons-img{
+    margin: 0;
+    padding: 0;
+    margin-right: 0.5rem;
+  }
+  
+  .fd-home-best-buttons {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
+
+  .fd-home-best-button1,
+  .fd-home-best-button2,
+  .fd-home-best-button3 {
+    text-align: left;
+    width: 190px;
+  }
+  .fd-home-best-button1,
+  .fd-home-best-button2 {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 376px) and (max-width: 750px){
+  .fd-home-best-content {
+    height: 332px;
+  }
+
+  .fd-home-best-bg-img {
+    height: 100%;
+    right: 8px;
+    top: 0%;  
+    }
+
+  .fd-home-best-thebest {
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    font-size: 35px;
+    font-family: sans-serif;
+    color: white;
+  }
+  .fd-home-best-af,
+  .fd-home-best-del {
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    line-height: 45px;
+    color: white;
+  }
+  .fd-home-best-del {
+    line-height: 50px;
+  }
+
+  .fd-home-best-buttons a {
+    margin-right: 0.5rem;
+    font-size: 0.6rem;
+  }
+  .fd-home-best-buttons-img{
+    margin: 0;
+    padding: 0;
+    margin-right: 0.5rem;
+  }
+  
+  .fd-home-best-buttons {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+  }
+  .fd-home-best-button1,
+  .fd-home-best-button2,
+  .fd-home-best-button3 {
+    width: 150px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-items:center;
+    text-align: left;
+  }
+  @media (max-width: 650px) {
+    .fd-home-best-thebest {
+      padding: 0;
+      font-size: 35px;
+    }
+    .fd-home-best-buttons {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .fd-home-best-button1,
+    .fd-home-best-button2,
+    .fd-home-best-button3 {
+      width: 190px;
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-items: center;
+      justify-items:center;
+      text-align: left;
+    }   
+  }
+}
+@media (min-width: 751px) and (max-width: 992px){
+  .fd-home-best-content {
+    height: 502px;
+  }
+  .fd-home-best-bg-img {
+    height: 100%;
+    right: 18px;
+    top: 1%;  
+  }
+
+  .fd-home-best-thebest {
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+    font-family: sans-serif;
+    font-size: 60px;
+    color: white;
+  }
+  .fd-home-best-af,
+  .fd-home-best-del {
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    line-height: 50px;
+    color: white;
+  }
+  .fd-home-best-del {
+    line-height: 60px;
+  }
+
+  .fd-home-best-buttons a {
+    margin-right: 5px;
+    font-size: 14px;
+  }
+  .fd-home-best-buttons-img{
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+  }
+  
+  .fd-home-best-buttons {
+    margin-top: 30px;
+  }
+
+  .fd-home-best-button1,
+  .fd-home-best-button2,
+  .fd-home-best-button3 {
+    width: 150px;
+    margin-top: 40px;
+  }
+}
+@media (min-width: 993px){
+  .fd-home-best-content {
+    height: 702px;
+  }
+
+  .fd-home-best-bg-img {
+    height: 100%;
+    height: 665px;
+    right: 20px;
+    top: 0%;  
+  }
+
+  .fd-home-best-thebest {
+    padding-top: 87.5px; /* (135-90)/2=22.5; to top: 110-22.5=87.5 */
+    font-family: sans-serif;
+    font-size: 80px;
+    font-weight: lighter;
+    color: white;
+  }
+  .fd-home-best-af {
+    line-height: 60px;
+    font-size: 90px;
+    color: white;
+  }
+  .fd-home-best-del {
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 110px;
+    font-size: 90px;
+    color: white;
+  }
+  
+  .fd-home-best-buttons {
+    margin-top: 101px;
+    margin-bottom: 146px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+  }
+  /* .fd-home-best-button1 a, */
+  /* .fd-home-best-button2 a, */
+  /* .fd-home-best-button2 a {
+    margin: 0;
+    padding: 0;
+  } */
+  .fd-home-best-button1,
+  .fd-home-best-button2,
+  .fd-home-best-button3 {
+    margin-top: 10px;
+    margin-right: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+  .fd-home-best-button2,
+  .fd-home-best-button3 {
+    width: 196px;
+    height: 60px;
+  }
+  .fd-home-best-button1 {
+    width: 209px;
+    height: 60px;
+  }
+  .fd-home-best-buttons-img {
+    margin-right: 15px; 
+    /* margin-left: 10px; ???   */
+  }
+}
+@media (max-width: 1140px){
+  .fd-home-best-content {
+    padding-right: 20px;  
+    padding-left: 20px;
+  }
+}
+
+
+/* delivery home about */
+/* =================== */
+
+.fd-home-about-bg {
+  background-color: #FBFAF8;
+}
+.fd-home-about-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  height: 588px;
+  position: relative;
+  /* padding-top: 40px; 
+  padding-bottom: 0px; */
+}
+.fd-home-about-content::after{
+  display:block;
+  content:’’;
+  height:0;
+  clear:both;
+}
+
+.fd-home-about .carousel-control-prev {
+  display: none;
+}
+.fd-home-about .carousel-control-next {
+  display: none;
+}
+.carousel-indicators {
+  clear: both;
+}
+.fd-home-about .carousel-indicators {
+  right: inherit;
+  left:0;
+  bottom: 0;
+  margin-left: 0%;
+  padding-bottom: 97px;   /* 128-117=11px; to bottom: 117 */
+}
+.fd-home-about .carousel-indicators li {
+  /* height: 9px; */
+  height: 7px;
+  width: 39px;
+  border-radius: 7px;
+  background-color: #FFFFFF;
+  border: solid 2px #BBBBBB;
+}
+.fd-home-about .carousel-indicators li.active {
+  background-color: #13C2C2;
+}
+
+.fd-home-about-con {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.fd-home-about-card-title {
+  padding-top: 116px;  /* to top 125 */
+  padding-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.fd-home-about-card-imgs {
+  max-width: 600px;
+  /* width: 100%; */
+  height: 588px;
+}
+.fd-home-about-card-caption {
+  height: 160px;
+}
+
+@media (max-width: 570px){
+  .fd-home-about .carousel-control-prev, 
+  .fd-home-about .carousel-control-next {
+    display: -ms-flexbox;
+    display: flex;
+    color: #FFE4C4;
+    opacity: 0.8;
+
+  }
+  .fd-home-about .carousel-indicators {
+    clear: right;
+    right: initial;
+    display: none;
+  }
+  .fd-home-about-card-imgs {
+    margin: 0;
+    padding: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+    max-width: 550px;
+    width: 100%;
+  }
+  .carousel-indicators {
+    right: initial;
+  }  
+}
+@media (max-width: 1140px){
+  .fd-home-about-content {
+    padding-right: 20px;  
+    padding-left: 20px;
+  }
+}
+
+
+/* our advantage */
+/* ============= */
+
+.fd-home-our-bg {
+  background-color: #FFFFFF;
+}
+.fd-home-our-content {
+  margin: 0;
+  max-width: 1140px;
+  margin: 0 auto;
+  width: auto;
+}
+
+/* to top 108px; to bottom 150px */
+.fd-home-our-content
+.card-group {
+  /* padding-top: 84px;  to top 108px; ??? */
+  padding-bottom: 40px;
+}
+.fd-home-our-content
+.card-group .card {
+  border: none;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.fd-home-our-card-header {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+}
+.fd-home-our-card-header-text {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.fd-home-our-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.fd-home-our-card-img {
+  margin-top: 78px;
+  margin-bottom: 10px;
+}
+
+
+/* download our app */
+/* ================ */
+
+.fd-home-our-app-bg {
+  /* background-color: #FFFFFF; */
+  /* background-image: url('../../assets/imgs/icon/delivery-home-ourapp@2x.png'); */
+  background-image: url('../../assets/imgs/bg/delivery-home-ourapp-bg.png');
+  background-size: cover;
+}
+.fd-home-our-app-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: auto;
+  height: 113px;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.fd-home-our-app-download {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+}
+.fd-home-our-app-download-icon {
+  margin-top: 30px;
+}
+.fd-home-our-app-divl {
+  display: inline-block;
+  margin-left: 8%;
+  margin-right: 6%;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-end;
+}
+.fd-home-our-app-divr {
+  padding-top: 90px;
+  margin-right: 8%;
+  width: 453px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+/* .fd-home-our-app-google:hover,
+.fd-home-our-app-appstore:hover {
+  -webkit-filter: drop-shadow(1px 0 0 #13C2C2);
+  filter: drop-shadow(1px 0 0 #13C2C2);
+} */
+
+@media (max-width: 750px){
+  .fd-home-our-app-divl {
+    display: none;
+  }
+  .fd-home-our-app-divr {
+    width: 353px;
+    margin-left: 10px;
+    padding-bottom: 40px;
+  }
+}
+
+
+/* With Fantuan */
+/* ============ */
+
+.fd-home-with-fantuan-bg {
+  background-color: #FBFAF8;
+}
+.fd-home-with-fantuan-content {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.fd-home-with-fantuan-cards {
+  margin: 0;
+  padding: 0;
+  padding-top: 131px;
+  padding-bottom: 120px;
+}
+.fd-home-with-fantuan-cards
+.card {
+  margin: 0;
+  padding: 0;
+  margin: 10px;
+  /* background-color: #FBFAF8; */
+  background-color: white;
+  width: 541px;
+  height: 211px;
+}
+
+.fd-home-with-fantuan-cards
+.card {
+  box-shadow: 0px 0px 1.8px 1.2px rgba(0,0,0,0.06);
+  -webkit-transition: all .2s; 
+  transition: all .2s;
+}
+.fd-home-with-fantuan-cards
+.card:hover {
+  box-shadow: 0px -3px 12px 8px rgba(0,0,0,0.05)
+}
+
+.fd-home-with-card-content {
+  display: -webkit-flex;  
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.fd-home-with-card-img {
+  width: 45px;
+  flex-grow: 1;
+  align-self: center;
+  margin-right: 10px;
+}
+.fd-home-with-card-note {
+  flex-grow: 1;
+  display: -webkit-flex;  
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.fd-home-with-card-note-title {
+  text-align: left;
+}
+.fd-home-with-card-note-text {
+  text-align: left;
+}
+.fd-home-with-card-link {
+  text-align: left;
+  position: relative;
+  top:50%;
+  transform: translateY(-50%);
+}
+.fd-home-with-card-link-img {
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.test-color{
+  color: white;
+}
+
+@media (max-width: 1140) {
+  .fd-home-with-fantuan-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

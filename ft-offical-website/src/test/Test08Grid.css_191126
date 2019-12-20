@@ -1,0 +1,104 @@
+/* carousel slides */
+/* =============== */
+
+/* process here!!! */
+
+.fd-test-about-bg {
+  background-color: #FBFAF8;
+}
+.fd-test-about-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 20px; 
+  padding-bottom: 35px;
+}
+
+.fd-test-about .carousel-control-prev {
+  display: none;
+}
+.fd-test-about .carousel-control-next {
+  display: none;
+}
+.carousel-indicators {
+  clear: both;
+}
+.fd-test-about .carousel-indicators {
+  clear: right;
+  left:0;
+  bottom: 0;
+  margin-left: 0%;
+}
+.fd-test-about .carousel-indicators li {
+  height: 4px;
+  background-color:  #FBFAF8;
+  border: solid 1px #13C2C2;
+}
+.fd-test-about .carousel-indicators li.active {
+  background-color: #13C2C2;
+}
+
+.fd-test-about-cards
+.card {
+  margin: 0;
+  padding: 0;
+}
+.fd-test-about-card-imgs {
+  max-width: 550px;
+  width: 100%;
+}
+.fd-test-about-card-notes
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.fd-test-about-card-notes {
+  text-align: left;
+}
+
+@media (max-width: 570px){
+  .fd-test-about .carousel-control-prev, 
+  .fd-test-about .carousel-control-next {
+    display: -ms-flexbox;
+    display: flex;
+    color: #FFE4C4;
+    opacity: 0.8;
+
+  }
+  .fd-test-about .carousel-indicators {
+    clear: right;
+    display: none;
+  }
+  
+  .fd-test-about-card-imgs {
+    margin: 0;
+    padding: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  .carousel-indicators {
+    clear: both;
+  }  
+}
+
+
+/* ----------------- */
+
+/* .fd-test-about {
+  margin: 0;
+  padding: 0;
+} */
+
+.fd-test-about-con {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.fd-test-about-card-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+/* .fd-test-about-card-caption {
+} */

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="56px" viewBox="0 0 64 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>store</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="45.9060119%" y1="52.5801065%" x2="42.0885924%" y2="65.0810925%" id="linearGradient-1">
+            <stop stop-color="#13C2C2" offset="0%"></stop>
+            <stop stop-color="#FF7E00" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-291.000000, -2658.000000)">
+            <g id="Group-19-Copy" transform="translate(230.000000, 2590.000000)">
+                <g id="store" transform="translate(61.000000, 68.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="65" height="56"></rect>
+                    <path d="M60.4444444,0 L3.55555556,0 L3.55555556,7 L60.4444444,7 L60.4444444,0 L60.4444444,0 Z M64,35 L64,28 L60.4444444,10.5 L3.55555556,10.5 L0,28 L0,35 L3.55555556,35 L3.55555556,56 L39.1111111,56 L39.1111111,35 L53.3333333,35 L53.3333333,56 L60.4444444,56 L60.4444444,35 L64,35 L64,35 Z M32,49 L10.6666667,49 L10.6666667,35 L32,35 L32,49 L32,49 Z" id="Shape" fill="url(#linearGradient-1)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

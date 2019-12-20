@@ -1,0 +1,38 @@
+.fh_rec_career{
+    line-height:40px;
+
+    text-align: left;
+    padding: 65px 0 30px 0;
+}
+
+.fh_rec_find {
+    color:rgba(51,51,51,1);
+    line-height:50px;
+
+    text-align: left;
+    padding: 100px 0 27px 0;
+}
+
+.fh_rec_open {
+    font-weight:500;
+    line-height:25px;
+
+    padding: 120px 0 27px 15px;
+}
+
+.fh_rec_title {
+    display: flex;
+}
+
+.fh_rec_view_more {
+    padding: 0px 0 129px 0;
+    text-align: center;
+}
+
+.fh_rec_view_more_button {
+    width:135px;
+    height:36px;
+    background:rgba(6,34,54,1) !important;
+    border-radius:18px !important;
+    border: none !important;
+}

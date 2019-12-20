@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  border: none;
+  padding: 0;
+  font-family: "Open Sans";
+  font-size: 18px;
+}
+
+#root {
+  background-color:#062236;
+}
+
+/* 段落标题 */
+.ft-w1140-section-fs40 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 段落标题 辅助文案*/
+.ft-w1140-section-fs16 {
+  font-size: 16px;
+}
+
+/* 内容文案 */
+.ft-w1140-text-fs18 {
+  font-size: 18px;
+}
+.ft-w1140-text-fs16 {
+  font-size: 16px;
+}
+.ft-w1140-text-fs14 {
+  font-size: 14px;
+}
+
+/* 小块文案 */
+.ft-w1140-smtext-fs18 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.ft-w1140-smtext-fs14 {
+  font-size: 14px;
+}
+
+/* 常规按钮或链接 */
+.ft-w1140-button-fs16 {
+  font-size: 16px;
+}
+
+@media (max-width: 375px){
+  #root {
+    margin-top: 1px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    margin-left: 1px;
+  }
+}
+@media (min-width: 376px) and (max-width: 750px){
+  #root {
+    margin-top: 1px;
+    margin-right: 2px;
+    margin-bottom: 1px;
+    margin-left: 2px;
+  }
+}
+@media (min-width: 751px) and (max-width: 992px){
+  #root {
+    margin-top: 1px;
+    margin-right: 2px;
+    margin-bottom: 1px;
+    margin-left: 2px;
+  }
+}
+/* adjust the size and position according to 1140 */
+@media (min-width: 993px){
+}

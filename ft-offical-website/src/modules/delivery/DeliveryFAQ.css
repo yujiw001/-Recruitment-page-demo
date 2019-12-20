@@ -1,0 +1,241 @@
+/* ================================================================= */
+/* Program: DeliveryFAQ.css - the css file of the FAQ of the         */ 
+/*          delivery website                                         */
+/* Author : Bill Huang                                               */
+/* Date   : Oct 19 - Dec 18, 2019                                    */
+/* ================================================================= */
+
+/* FAQ */
+/* === */
+
+.fd-faq-faq-bg {
+    background-color: #13C2C2;
+}
+.fd-faq-faq-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 60px; 
+    padding-bottom: 60px;
+    color: white;
+  }
+
+.fd-faq-faq-header {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+.fd-faq-faq-header-note {
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+@media (max-width: 1140px){
+    .fd-faq-faq-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}
+  
+
+/* general */
+/* ======= */
+
+.fd-faq-general-bg {
+    background-color:white;
+}
+.fd-faq-general-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+@media (max-width: 1140px){
+    .fd-faq-general-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}
+ 
+
+/* account */
+/* ======= */
+
+.fd-faq-account-bg {
+    background-color:#FFFFFF;
+}
+.fd-faq-account-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+}
+ 
+@media (max-width: 1140px){
+    .fd-faq-account-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}
+
+
+/* deliver */
+/* ======= */
+
+.fd-faq-deliver-bg {
+    background-color:white;
+}
+.fd-faq-deliver-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+@media (max-width: 1140px){
+    .fd-faq-deliver-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}
+ 
+
+/* refunds */
+/* ======= */
+
+.fd-faq-refunds-bg {
+    background-color:#FFFFFF;
+}
+.fd-faq-refunds-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+} 
+
+@media (max-width: 1140px){
+    .fd-faq-refunds-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}
+
+
+/* partners */
+/* ======== */
+
+.fd-faq-partners-bg {
+    background-color:#FFFFFF;
+}
+.fd-faq-partners-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+}
+
+ @media (max-width: 1140px){
+    .fd-faq-partners-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}
+
+
+/* payment */
+/* ======= */
+
+.fd-faq-payment-bg {
+    background-color:#FFFFFF;
+}
+.fd-faq-payment-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+}
+
+ @media (max-width: 1140px){
+    .fd-faq-payment-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}
+
+
+/* member */
+/* ====== */
+
+.fd-faq-member-bg {
+    background-color:#FFFFFF;
+}
+.fd-faq-member-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 110px;;
+}
+
+ @media (max-width: 1140px){
+    .fd-faq-member-content {
+      padding-right: 10px;  
+      padding-left: 10px;
+    }
+}
+
+
+/* for all */
+/* ======= */
+
+.fd-faq-header {
+    width: 1140px;
+    margin: 3px;
+    padding-top: 60px;
+    color: #333333;
+    font-size: 28px;
+}
+
+.fd-faq-collaps {
+    background-color: white;
+    border: none
+}
+.fd-faq-toggle {
+    border: none;
+    text-align: left;
+}
+
+.fd-faq-toggle {
+  box-shadow: 0px 0px 1.8px 1.2px rgba(0,0,0,0.06);
+  -webkit-transition: all .2s; 
+  transition: all .2s;
+}
+.fd-faq-toggle:hover {
+  margin-bottom: 3px;
+  box-shadow: 0px -3px 12px 8px rgba(0,0,0,0.05)
+}

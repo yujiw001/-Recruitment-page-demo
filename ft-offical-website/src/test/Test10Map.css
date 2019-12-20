@@ -1,0 +1,39 @@
+.fd-partner-4steps-img {
+    margin: 0;
+    padding: 0;
+}
+.ft-about-map-content{
+    width: 1000px;
+    height: 400px;
+    position: relative;
+}
+.ft-about-map-map1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.ft-about-map-map2 {
+    position: absolute;
+    /* width:100px; */
+    /* height:100px; */
+    left:-100px;
+    top:10px;
+}
+.ft-about-map-map3 {
+    position: absolute;
+}
+.ft-about-map-map4 {
+    position: absolute;
+}
+.ft-about-map-map5 {
+    position: absolute;
+}
+.ft-about-map-map6 {
+    position: absolute;
+}
+.ft-about-map-map7 {
+    position: absolute;
+}
+.ft-about-map-map8 {
+    position: absolute;
+}
