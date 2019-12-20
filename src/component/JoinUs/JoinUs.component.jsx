@@ -94,7 +94,7 @@ class JoinUs extends React.Component  {
             //  var target=JSON.stringify(response.data);
             //  var ans=JSON.parse(target)["MAX(id)"];
             var ans= response.data["MAX(id)"];
-             console.log(typeof(ans));
+            //  console.log(typeof(ans));
              
              self.setState({DriverID:ans+1})
              return ans;
@@ -114,14 +114,19 @@ class JoinUs extends React.Component  {
     }
     
     handleSubmit = async event =>{
-        if( this.validator.allValid() ){
+     event.preventDefault();
+     if( this.validator.allValid() ){
             this.props.getformVisibility(false)
-        } else {
-            this.validator.showMessages();
-            this.forceUpdate();
-        }
+        
+        // else {
+        //     event.stopPropagation(); 
+        //     event.preventDefault();
+        //     this.validator.showMessages();
+        //     this.forceUpdate();
+            
+        // }
 
-        event.preventDefault();
+        // event.preventDefault();
         var data = {
             Area: this.state.Area,
             First_Name: this.state.First_Name,
@@ -208,6 +213,12 @@ class JoinUs extends React.Component  {
             console.log(error);
         })
         // alert('提交成功');
+     }
+     else {
+            this.validator.showMessages();
+            this.forceUpdate();
+            
+        }
     };
     
     onChangeHandler = event => {
@@ -442,7 +453,7 @@ class JoinUs extends React.Component  {
                     </div> 
                     <hr />
                     
-                    <button type='submit' onClick={this.showModal} className='ft_driver_submit_button'>Submit</button>
+                    <button onClick={this.showModal} className='ft_driver_submit_button'>Submit</button>
                     {this.state.modalVisible?<SuccessModal getVisibility={this.GetVisibility}/>:null}       
                 </form>:null
               }

@@ -45,9 +45,9 @@ class JoinUsModal extends Component {
                 {/* <p className='ft_driver_modal_title'>Become a driver</p>
                 <hr style={{'padding-bottom':'10px'}} /> */}
                 <JoinUs getformVisibility={this.getformVisibility}/>
-                {/* <button onClick={this.handleCancel} className='ft_driver_cancle_button'>
+                <button onClick={this.handleCancel} className='ft_driver_cancle_button'>
                     Close
-                </button> */}
+                </button>
             </div>
         </Modal>
       </div>

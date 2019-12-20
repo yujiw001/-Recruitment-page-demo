@@ -71,7 +71,7 @@ const utils = {
       let tests = testString.split('|')
       let rule, options, message
 
-      console.log(value.length)
+      // console.log(value.length)
 
       for (let i = 0; i < tests.length; i++) {
         value = this.filterEmptyValue(value)
