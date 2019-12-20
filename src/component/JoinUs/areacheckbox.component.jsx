@@ -36,7 +36,7 @@ class AreaCheckBox extends Component {
         
         return(
             <div className='checkbox-container'>
-                <Checkbox style={{margin:0, padding:0}}  value={this.props.locationValue} onClick={this.handleCheckbox} >
+                <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}}  value={this.props.locationValue} onClick={this.handleCheckbox} >
                     <span className='ft_driver_box_label'>{this.props.locationValue}</span>
                 </Checkbox>
             </div>

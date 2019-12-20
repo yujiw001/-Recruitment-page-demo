@@ -7,7 +7,7 @@ import './JoinUsModal.component.style.css';
 
 class JoinUsModal extends Component {
   state = {
-    visible: false
+    visible: false,
   };
 
   showModal = () => {

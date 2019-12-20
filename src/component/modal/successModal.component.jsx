@@ -4,8 +4,11 @@ import { Modal, Button } from 'antd';
 import './successModal.component.style.css';
 
 class SuccessModal extends Component {
+  constructor(props){
+    super(props)
+  }
   handleCancel = () => {
-    this.setState({ visible: false });
+    this.props.getVisibility(false);
   };
 
   render() {
@@ -23,19 +26,21 @@ class SuccessModal extends Component {
           footer={ null }
           width='597px'
         >
-          <p className='s_modal_title'>Thank You</p>
-          <p className='s_modal_subtitle'>Submit Completed</p>
+          <div className='s_modal_body'>
+            <p className='s_modal_title'>Thank You</p>
+            <p className='s_modal_subtitle'>Submit Completed</p>
 
-          <div className='s_modal_image'>
-            <img src={require('../../images/check.png')} style={{width:'161px', height:'161px'}}/>
+            <div className='s_modal_image'>
+              <img src={require('../../images/check.png')} style={{width:'161px', height:'161px'}}/>
+            </div>
+
+            <p className='s_modal_content'>We will Contact you within 7 working days by Email</p>
+
+            <hr style={{padding:'0', margin:'0'}}/>
+            <button className='s_modal_cancel_button' onClick={this.handleCancel}>
+              Close
+            </button>
           </div>
-
-          <p className='s_modal_content'>We will Contact you within 7 working days by Email</p>
-
-          <hr />
-          <Button className='s_modal_button' onClick={this.handleCancel}>
-            Close
-          </Button>
 
         </Modal>
       </div>
