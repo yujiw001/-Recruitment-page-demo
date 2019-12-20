@@ -115,7 +115,7 @@ class JoinUs extends React.Component  {
     
     handleSubmit = async event =>{
         if( this.validator.allValid() ){
-            alert('You submitted the form and stuff!');
+            this.props.getformVisibility(false)
         } else {
             this.validator.showMessages();
             this.forceUpdate();
@@ -264,7 +264,13 @@ class JoinUs extends React.Component  {
         
         return(
             <div className='Form_input'>
-                
+                {this.state.formVisible?
+                  <div>
+                    <p className='ft_driver_modal_title'>Become a driver</p>
+                    <hr style={{'padding-bottom':'10px'}}/>
+                  </div>:null}
+             {
+               this.state.formVisible?
                 <form className='JoinUs' onSubmit={this.handleSubmit}>
 
                     <span className='ft_driver_label'>Area</span><span className='ft_required_mark'>*</span>
@@ -438,8 +444,8 @@ class JoinUs extends React.Component  {
                     
                     <button type='submit' onClick={this.showModal} className='ft_driver_submit_button'>Submit</button>
                     {this.state.modalVisible?<SuccessModal getVisibility={this.GetVisibility}/>:null}       
-                </form>
-                
+                </form>:null
+              }
             </div>
         );
     }
