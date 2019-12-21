@@ -247,7 +247,7 @@ const en_US = {
     // Delivery - Partner - Become a Deliver
     // -------------------------------------
 
-    fd_deliver_become_button: "Join now",
+    fd_deliver_become_button: "Apply now",
     fd_deliver_become_title: "Become a deliver",
     fd_deliver_become_area: "Area",
     fd_deliver_become_area_select1: "Great Vancouver",

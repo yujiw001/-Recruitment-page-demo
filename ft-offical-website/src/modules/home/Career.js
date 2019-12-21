@@ -31,7 +31,7 @@ class Career extends Component {
           <Header callerName={this.state.callerName}/>
 
           <div className="ft-career-bg">
-            <div className='container'>
+            <div className='ft_career_container'>
               <h1 className='ft-w1140-section-fs40 fh_rec_career'>Careers</h1>
               <SlideShow />
               <Jobmore />

@@ -10,6 +10,11 @@
     background-color: #FFFFFF;
 }
 
+.ft_career_container {
+    max-width: 1140px;
+    margin: auto;
+}
+
 .fh_rec_career{
     line-height:40px;
 

@@ -10,7 +10,9 @@ class NewsCard extends Component {
             <div className='ft_news_card_bg'>
                 <Link to={`/News/details/${this.props.id}`} key={this.props.id}>
                     <div className="ft_news_card" style={{"width": "339px", 'min-height':'404px'}}>
-                        <img key={this.props.id} src={this.props.cover} className="ft_news_card_img" />
+                        <div className='ft_news_card_img_div'>
+                            <img key={this.props.id} src={this.props.cover} className="ft_news_card_img" />
+                        </div>
                         <div className="ft_news_card_body">
                             <h1 className="ft_news_card_title" key={this.props.id}>
                                 {this.props.title}

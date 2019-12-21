@@ -83,7 +83,7 @@ class SlideShow extends Component {
                     {
                         this.state.indexList.slice(0, 3).map((carousel, index) => (
                             // <Link key={index} to={`/Recruitment/news_details/${carousel.id}`}>
-                            <Link>
+                            <Link className='fh_rec_carousel_img_div'>
                                 <img key={index} src={carousel.cover} className='fh_rec_carousel_img' />
                             </Link>
                         )

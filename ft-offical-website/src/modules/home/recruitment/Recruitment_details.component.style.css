@@ -3,6 +3,11 @@
     background-color: #FFFFFF;
 }
 
+.ft_career_container {
+    max-width: 1140px;
+    margin: auto;
+}
+
 .fh_rec_det_path {
     font-size:16px;
     font-family:OpenSans-Semibold,OpenSans;
@@ -93,7 +98,7 @@
 
     text-align: left;
     margin:0;
-    padding: 0 0 20px 0;
+    padding: 0 0 15px 0;
 }
 
 .requirement {

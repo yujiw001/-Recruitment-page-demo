@@ -264,7 +264,7 @@ class JoinUs extends React.Component  {
 
     render() {
         const { Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, description } = this.state;
-        
+        const checked = false /* 每次re-render的时候，这个值会被付给checkbox的checked属性，完成重置；setState in handleSelctChange */
         return(
             <div className='Form_input'>
                 {this.state.formVisible?
@@ -342,6 +342,7 @@ class JoinUs extends React.Component  {
                             {
                                 this.state.Town.map(data => (
                                     <AreaCheckBox name='DesiredArea' locationValue={data} getArea={this.GetAreaStageChange} />
+                                   /*  <AreaCheckBox name='DesiredArea' locationValue={data} getArea={this.GetAreaStageChange} click={checked}/> */
                                 ))
                             }
                             </div>

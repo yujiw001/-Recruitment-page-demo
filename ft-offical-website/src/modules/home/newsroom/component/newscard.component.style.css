@@ -15,11 +15,13 @@
     box-shadow: 0 0 8px rgba(0,0,0,0.08);
 }
 
-.ft_news_card_img {
-    margin: auto;
-    width: 100%;
+.ft_news_card_img_div {
+    width: auto;
     height: 194px;
     overflow: hidden;
+}
+.ft_news_card_img {
+    width: 339px;
 }
 
 .ft_news_card_body {

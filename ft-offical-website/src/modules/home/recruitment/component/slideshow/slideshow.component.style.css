@@ -1,6 +1,11 @@
-.fh_rec_carousel_img {
-  width: 834px  ;
+.fh_rec_carousel_img_div {
+  width: 859px ;
   height: 438px;
+  overflow: hidden;
+}
+.fh_rec_carousel_img {
+  width: 859px;
+  min-height: 438px;
 }
 
 .fh_rec_carousel_title {
