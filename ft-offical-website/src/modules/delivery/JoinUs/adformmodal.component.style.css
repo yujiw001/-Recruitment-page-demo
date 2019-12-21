@@ -18,7 +18,9 @@
     line-height:19px;
 }
 .ft_ad_modal_button_icon {
-    padding-right: 10px;
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
 }
 
 .ft_ad_modal_title {

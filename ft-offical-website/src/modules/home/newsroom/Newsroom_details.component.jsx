@@ -2,9 +2,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-// import Header from '../../../component/header/header.component';
-// import Footer from '../../../component/footer/footer.component';
-
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -26,6 +23,7 @@ class NewsroomDetail extends Component {
         console.log(this.props);
         const { newsdata } = this.state;
         const target_news = newsdata.find( data => data.id == this.state.current_id );
+        var content = target_news.content;
 
         return(
             <div>
@@ -47,7 +45,7 @@ class NewsroomDetail extends Component {
                         By {target_news.user}    |    {target_news.date}
                     </pre>
                     <hr className='fh_news_det_divider' />
-                    <p className='ft-w1140-text-fs18 fh_news_det_content'>{target_news.content}</p> 
+                    <p className='ft-w1140-text-fs18 fh_news_det_content' dangerouslySetInnerHTML = {{ __html:content }}></p>
                 </div>
                 </div>
                 <Footer />

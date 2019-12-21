@@ -30,7 +30,9 @@
     margin: 0;
 }
 .ft_partner_modal_button_icon {
-    padding-right: 10px;
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
 }
 
 .ft_partner_cancle_button {

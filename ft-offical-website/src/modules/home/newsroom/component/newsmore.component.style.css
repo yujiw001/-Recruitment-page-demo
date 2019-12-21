@@ -1,0 +1,12 @@
+.fh_news {
+    max-width: 1140px;
+    margin: auto;
+}
+
+
+.fh_news_group {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -25,9 +25,7 @@ class Newsroom extends Component {
         return (
             <div>
                 <Header />
-                <div className='container'>
-                    <NewsMore />
-                </div>
+                <NewsMore />
                 <Footer />
             </div>
         )

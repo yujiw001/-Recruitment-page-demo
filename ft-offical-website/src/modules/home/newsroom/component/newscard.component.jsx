@@ -18,9 +18,7 @@ class NewsCard extends Component {
                             <h2 className='ft_news_card_timestamp' key={this.props.id}>
                                 {this.props.date}
                             </h2>
-                            <p className="ft_news_card_text" key={this.props.id}>
-                                <div dangerouslySetInnerHTML = {{ __html:content }}></div>
-                            </p>
+                            <p className='ft_news_card_text' dangerouslySetInnerHTML = {{ __html:content }}></p>
                         </div>
                     </div>
                     <div style={{padding:'45px 0'}} />

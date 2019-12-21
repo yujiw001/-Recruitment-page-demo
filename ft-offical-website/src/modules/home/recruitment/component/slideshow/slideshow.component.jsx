@@ -40,6 +40,7 @@ class SlideShow extends Component {
 
     render() {
         const settings_1 = {
+            focusOnSelect: true,
             className: "center",
             centerMode: true,
             infinite: true,
@@ -58,6 +59,8 @@ class SlideShow extends Component {
             dots: true,
             nextArrow: null,
             prevArrow: null,
+            slidesToShow: 1,
+            fade: true,
             appendDots: dots => (
                 <div 
                 style={{
@@ -80,7 +83,7 @@ class SlideShow extends Component {
                     {
                         this.state.indexList.slice(0, 3).map((carousel, index) => (
                             // <Link key={index} to={`/Recruitment/news_details/${carousel.id}`}>
-                            <Link key={index} to={`/career/news_details/${carousel.id}`}>
+                            <Link>
                                 <img key={index} src={carousel.cover} className='fh_rec_carousel_img' />
                             </Link>
                         )
@@ -91,8 +94,6 @@ class SlideShow extends Component {
                 <Slider className="ft-career-slider2"
                 asNavFor={this.state.nav1}
                 ref={slider => (this.slider2 = slider)}
-                slidesToShow={1}
-                fade={true}
                 {...settings_2}
                 >
                     {

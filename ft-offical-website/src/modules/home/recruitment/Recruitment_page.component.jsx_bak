@@ -1,10 +1,8 @@
 //created by Yuji Wang on 10/28/2019
 //Integrate all the required components to create the Recritment page.
 import React, { Component } from 'react';
-// import Header from '../../../component/header/header.component';
 import SlideShow from './component/slideshow/slideshow.component';
 import Jobmore from './component/jobmore.component';
-// import Footer from '../../../component/footer/footer.component';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -28,6 +26,7 @@ class RecruitmentPage extends Component {
           <div className='container'>
             <h1 className='ft-w1140-section-fs40 fh_rec_career'>Careers</h1>
             <SlideShow />
+            
             <Jobmore />
           </div>
           <Footer />

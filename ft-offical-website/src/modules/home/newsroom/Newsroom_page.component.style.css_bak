@@ -1,4 +1,8 @@
 .fh_news_title {
+    font-size:40px;
+    font-family:OpenSans-Bold,OpenSans;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
     line-height:40px;
 
     text-align: left;
@@ -6,18 +10,15 @@
     padding: 63px 0 15px 0;
 }
 .fh_news_title_contact {
+    font-size:16px;
+    font-family:OpenSans;
     font-weight:400;
+    color:rgba(153,153,153,1);
     line-height:22px;
 
     text-align: left;
     margin: 0;
     padding: 0 0 65px 0;
-}
-
-.fh_news_cardgroup {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .fh_news_view_more {
@@ -33,6 +34,12 @@
     background:rgba(6,34,54,1) !important;
     border-radius:18px !important;
     border: none !important;
+
+    font-size:16px;
+    font-family:OpenSans-Semibold,OpenSans;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+    line-height:22px;
 }
 
 .fh_news_view_more_decoration_line {

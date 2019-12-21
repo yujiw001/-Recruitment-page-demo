@@ -1,7 +1,8 @@
 .fh_rec_carousel_img {
-  width: 859px  ;
+  width: 834px  ;
   height: 438px;
 }
+
 .fh_rec_carousel_title {
   overflow : hidden;
   text-overflow: ellipsis;
@@ -21,6 +22,7 @@
   margin: 0;
   padding: 44px 0 0 0;
 }
+
 .fh_rec_carousel_content {
   overflow : hidden;
   text-overflow: ellipsis;
@@ -42,8 +44,7 @@
 
   .center .slick-center img {
     opacity: 1;
-    margin: 0 0 0 -25px;
-    /* transform: scale(1.08); */
+    cursor: default;
   }
   .center img{
     opacity: 0.3;

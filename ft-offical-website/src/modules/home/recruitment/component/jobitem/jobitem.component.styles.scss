@@ -6,9 +6,7 @@
     align-items: center;
     padding: 15px 0 12px 30px;
     .pos_hot{
-        min-width: 20%;
         display: flex;
-        justify-content: space-between;
     }
     .position {
         width: 100%;
@@ -25,7 +23,7 @@
         height:19px;
         background:rgba(248,128,26,1);
         border-radius:2px;
-        margin: 3px 0 0 0px;
+        margin: 3px 0 0 20px;
 
         font-size:11px;
         font-family:OpenSans-Bold,OpenSans;

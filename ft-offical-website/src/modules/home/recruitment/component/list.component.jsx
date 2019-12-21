@@ -1,12 +1,5 @@
 import React from 'react';
 
-// const List = (props) => (
-//     <ul>
-//          {props.data.map(listData =>
-//              (<li key={listData.id}>{listData.brief}</li>))}
-//     </ul>
-// )
-
 const List = (props) => (
         <div>
             <ul>

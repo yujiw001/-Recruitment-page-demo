@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'antd';
-import { FormattedMessage} from 'react-intl';
+import { Modal } from 'antd';
+import { FormattedMessage } from 'react-intl';
 
-import PAForm from './paform.component';
+import ADForm from './adform.component';
 
 import './adformmodal.component.style.css';
 
 class ADFormModal extends Component {
-  state = {
-    visible: false
-  };
+  constructor(props) {
+    super(props)
+      this.state = {
+        visible: false,
+      };
+  }
+
+  getformVisibility = (visibility) => {
+    this.setState({visible:visibility})
+  }
 
   showModal = () => {
     this.setState({
       visible: true
     });
   };
-ƒ
+
   handleCancel = () => {
     this.setState({ visible: false });
   };
@@ -32,15 +39,12 @@ class ADFormModal extends Component {
         <Modal
           visible={visible}
           closable={false}
-          onOk={this.handleOk}
           onCancel={this.handleCancel}
           footer={null}
           width='597px'
         >
             <div className='ft_ad_body'>
-                <p className='ft_ad_modal_title'><FormattedMessage id="fd_partner_become_advert_title"/></p>
-                <hr style={{'padding-bottom':'10px'}} />
-                <PAForm />
+                <ADForm getformVisibility={this.getformVisibility}/>
                 <button onClick={this.handleCancel} className='ft_ad_cancle_button'>
                     <FormattedMessage id="fd_partner_become_advert_close"/>
                 </button>

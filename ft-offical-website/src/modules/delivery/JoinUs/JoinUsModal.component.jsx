@@ -7,9 +7,16 @@ import JoinUs from './JoinUs.component';
 import './JoinUsModal.component.style.css';
 
 class JoinUsModal extends Component {
-  state = {
-    visible: false
-  };
+  constructor(props){
+    super(props)
+      this.state = {
+        visible: false,
+      };
+    }
+
+    getformVisibility = (visibility) => {
+      this.setState({visible:visibility})
+    }
 
   showModal = () => {
     this.setState({
@@ -32,15 +39,12 @@ class JoinUsModal extends Component {
         <Modal
           visible={visible}
           closable={false}
-          onOk={this.handleOk}
           onCancel={this.handleCancel}
           footer={null}
           width='597px'
         >
             <div className='ft_driver_body'>
-                <p className='ft_driver_modal_title'><FormattedMessage id="fd_deliver_become_title"/></p>
-                <hr style={{'padding-bottom':'10px'}} />
-                <JoinUs />
+                <JoinUs getformVisibility={this.getformVisibility}/>
                 <button onClick={this.handleCancel} className='ft_driver_cancle_button'>
                   <FormattedMessage id="fd_deliver_become_close"/>
                 </button>
