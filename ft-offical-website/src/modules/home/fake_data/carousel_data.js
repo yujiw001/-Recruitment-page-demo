@@ -11,7 +11,7 @@ const CarouselData = [
         'id': 2,
         'date': 'Mar 23, 2019',
         'cover': require('../../../assets/imgs/2.jpg'),
-        'title': 'Dianping style from Fantuan',
+        'title': 'Review style from Fantuan',
         'content': 'Fantuan Dianping is now available in our app and Wechat public account. Using Dianping, find more discount when eating inside restaurants. Leaving your comments, help others choose a better option.',
         'user': 'Chelly'
     },

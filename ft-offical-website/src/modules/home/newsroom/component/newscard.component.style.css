@@ -22,6 +22,7 @@
 }
 .ft_news_card_img {
     width: 339px;
+    min-height: 194px;
 }
 
 .ft_news_card_body {

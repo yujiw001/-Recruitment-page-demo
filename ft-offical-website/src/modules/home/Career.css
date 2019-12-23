@@ -13,6 +13,7 @@
 .ft_career_container {
     max-width: 1140px;
     margin: auto;
+    padding-bottom: 129px;
 }
 
 .fh_rec_career{
@@ -42,7 +43,6 @@
 }
 
 .fh_rec_view_more {
-    padding: 0px 0 129px 0;
     text-align: center;
 }
 

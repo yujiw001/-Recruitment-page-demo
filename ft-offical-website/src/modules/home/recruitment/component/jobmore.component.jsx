@@ -12,7 +12,8 @@ export default class Jobmore extends Component{
             indexList:[], //当前渲染的页面数据
             // totalData:props.renderData,//我的数据
             totalData:JobData,
-            totalPositions:JobData.length
+            totalPositions:JobData.length,
+            ViewMore: true,
         };
     }
 
@@ -21,6 +22,11 @@ export default class Jobmore extends Component{
         this.setState({
             indexList:this.noticeSorting()
         })
+        if (this.state.totalPositions < 6) {
+            this.setState({
+                ViewMore: false,
+            })
+        }
     }
     //思路：首先用find把有加急标签的元素给挑出来，然后用filter把这些元素去除掉后进行时间排序，然后再把挑出来的元素append到数列头部？？
     //可以用传统loop来完成上述操作吗？？？
@@ -67,7 +73,12 @@ export default class Jobmore extends Component{
                         <JobItem  {...otherCollectionProps} />
                     ))
                 }
-                <PositionCollapse {...this.state} />
+                {
+                    this.state.ViewMore?
+                    <div>
+                        <PositionCollapse {...this.state} />
+                    </div>:null
+                }
                 
             </div>
         )

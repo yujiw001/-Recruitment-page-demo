@@ -11,6 +11,12 @@ p {
   background-color: white;
 }
 
+.ft_detail_container {
+  max-width: 1140px;
+  margin: auto;
+  padding-bottom: 114px;
+}
+
 .fh_news_det_path {
   font-size:16px;
   font-family:OpenSans-Semibold,OpenSans;

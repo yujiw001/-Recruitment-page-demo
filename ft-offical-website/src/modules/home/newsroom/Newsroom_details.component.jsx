@@ -29,7 +29,7 @@ class NewsroomDetail extends Component {
             <div>
                 <Header />
                 <div className='ft-news-container-bg'>
-                <div className='container'>
+                <div className='ft_detail_container'>
                     <div className='fh_news_det_path'>
                         <Link className='path_option' to="/">Home</Link>
                         <span className='path_arrow'>></span>
@@ -45,7 +45,7 @@ class NewsroomDetail extends Component {
                         By {target_news.user}    |    {target_news.date}
                     </pre>
                     <hr className='fh_news_det_divider' />
-                    <p className='ft-w1140-text-fs18 fh_news_det_content' dangerouslySetInnerHTML = {{ __html:content }}></p>
+                    <p className='fh_news_det_content' dangerouslySetInnerHTML = {{ __html:content }}></p>
                 </div>
                 </div>
                 <Footer />

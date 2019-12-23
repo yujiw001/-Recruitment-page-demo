@@ -3,9 +3,14 @@ import {Link} from 'react-router-dom';
 
 import './newscard.component.style.css';
 
+function delHtmlTag(str){
+    return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+} 
+
 class NewsCard extends Component {
     render() {
-        var content=this.props.content;
+        var content=delHtmlTag(this.props.content);
+
         return (
             <div className='ft_news_card_bg'>
                 <Link to={`/News/details/${this.props.id}`} key={this.props.id}>
@@ -20,7 +25,9 @@ class NewsCard extends Component {
                             <h2 className='ft_news_card_timestamp' key={this.props.id}>
                                 {this.props.date}
                             </h2>
-                            <p className='ft_news_card_text' dangerouslySetInnerHTML = {{ __html:content }}></p>
+                            <p className='ft_news_card_text'> 
+                                {content} 
+                            </p>
                         </div>
                     </div>
                     <div style={{padding:'45px 0'}} />

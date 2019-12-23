@@ -15,6 +15,7 @@ class NewsMore extends Component {
         this.state = {
             indexList: [],
             totalNews: NewsData.length,
+            ViewMore: true,
         };
     }
 
@@ -61,6 +62,11 @@ class NewsMore extends Component {
         this.setState({
             indexList: this.timeSorting()
         }) 
+        if (this.state.totalNews < 9) {
+            this.setState({
+                ViewMore: false
+            })
+        }
     }
 
     timeSorting() {
@@ -82,15 +88,16 @@ class NewsMore extends Component {
                 <div className='fh_news_group'>
                     {
                         this.state.indexList.slice(0,9).map(({ ...otherCollectionProps }) => (
-                            <div>
-                                <NewsCard { ...otherCollectionProps } />
-                            </div>
+                            <NewsCard { ...otherCollectionProps } />
                         ))
                     }
                 </div>
-                <div className='fh_news'>
-                <NewsCollapse { ...this.state } />
-                </div>
+                {
+                    this.state.ViewMore?
+                    <div className='fh_news'>
+                        <NewsCollapse { ...this.state } />
+                    </div>:null
+                }
             </div>
         )
     }
