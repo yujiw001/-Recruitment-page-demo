@@ -4,7 +4,7 @@ const JobData=[
         "area": "Burnaby, BC",
         "position": "Marketing Coordinator",
         "initialRegistration":"December 5 2019",
-        "brief": "Full-time",
+        "brief": "This is a full-time position.",
         "expedited": false
     },
     {
