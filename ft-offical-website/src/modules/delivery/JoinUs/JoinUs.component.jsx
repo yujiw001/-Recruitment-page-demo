@@ -363,7 +363,7 @@ class JoinUs extends React.Component  {
                             >
                                 {
                                     this.state.Town.map(data => (
-                                        <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}}  value={data} onClick={this.handleCheckbox} /* checked={checked}*/ >
+                                        <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}}  value={data} /* onClick={this.handleCheckbox} */ /* checked={checked}*/ >
                                             <span className='ft_driver_box_label'>{data}</span>
                                         </Checkbox>
                                     ))
