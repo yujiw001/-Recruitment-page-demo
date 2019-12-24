@@ -358,7 +358,7 @@ class JoinUs extends React.Component  {
                         <span className='ft_driver_instruction'>Choose at least 1</span>
                         <br/>
                         <div className='ft_driver_transportation_checkbox_group'>
-                            <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}} name="Transportation" value="Car" onClick={this.handleCheckbox}>
+                            <Checkbox type='checkbox' style={{margin:0, padding:'0 0 16px 0'}} name="Transportation" value="Car" onClick={this.handleCheckbox}>
                                 <span className='ft_driver_box_label'><FormattedMessage id="fd_deliver_become_trans_name1"/></span>
                             </Checkbox>
                             <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}} name="Transportation" value="Motorbike" onClick={this.handleCheckbox}>

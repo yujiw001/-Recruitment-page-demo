@@ -12,7 +12,7 @@
     margin: 0 30px 0 30px;
 }
 .ft_news_card:hover {
-    box-shadow: 0 0 8px rgba(0,0,0,0.08);
+    box-shadow: 0 0 16px rgba(0,0,0,0.08);
 }
 
 .ft_news_card_img_div {
