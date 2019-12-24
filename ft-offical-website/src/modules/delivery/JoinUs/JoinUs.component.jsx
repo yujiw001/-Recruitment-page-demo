@@ -3,13 +3,15 @@ import VerificationCode from '../verificationcode/verification/verification.comp
 import AreaCheckBox from './areacheckbox.component';
 import ReactValidator from './react-validator';
 import SuccessModal from '../../home/recruitment/component/successModal/successModal.component';
-import { Input, Checkbox } from 'antd';
+import { Input, Checkbox, Row, Col } from 'antd';
 import axios from 'axios';
 
 import './JoinUs.component.style.css';
 
 import GlobalArea from './areadata';
 import { FormattedMessage} from 'react-intl';
+
+const CheckboxGroup = Checkbox.Group;
 
 class JoinUs extends React.Component  {
     constructor(){
@@ -41,6 +43,13 @@ class JoinUs extends React.Component  {
             formVisible:true,
             flag: '',
         }
+    }
+    DealwithCheckbox =() =>{
+        this.resetcheckbox();
+        this.handleSelectChange();
+    }
+    resetcheckbox = () =>{
+
     }
     showModal = () => {
         if( this.validator.allValid() ){
@@ -75,11 +84,12 @@ class JoinUs extends React.Component  {
         const value = target.value;
         const name = target.name;
         this.setState(
-            {[name]: value},
+            {[name]: value}, 
             ()=>{this.GetTowns()},
           );
 
     };
+
 
     GetDriverID(){
         var self=this;
@@ -256,11 +266,17 @@ class JoinUs extends React.Component  {
         this.setState({ visible: false });
       };
 
-      updateflag (val) {
+    updateflag (val) {
         this.setState({
             flag: val,
         })
     }
+
+    onChange = DesiredArea => {
+        this.setState({
+            DesiredArea,
+        });
+      };
 
     render() {
         const { Area, First_Name, Last_Name, Address, City, PostalCode, Mobile, description } = this.state;
@@ -339,12 +355,13 @@ class JoinUs extends React.Component  {
                         <span className='ft_driver_label'><FormattedMessage id="fd_deliver_become_schedule_title"/></span><span className='ft_required_mark'>*</span>
                         <span className='ft_driver_instruction'>Choose at least 1</span>
                         <div className='ft_driver_area_checkbox_group'>
-                            {
-                                this.state.Town.map(data => (
-                                    <AreaCheckBox name='DesiredArea' locationValue={data} getArea={this.GetAreaStageChange} />
-                                   /*  <AreaCheckBox name='DesiredArea' locationValue={data} getArea={this.GetAreaStageChange} click={checked}/> */
-                                ))
-                            }
+                            <CheckboxGroup
+                                style={{'max-width':'463px', margin:'auto','display':'flex', 'justify-content': 'space-between', 'flex-wrap': 'wrap'}}
+                                options={this.state.Town}
+                                value={this.state.DesiredArea}
+                                onChange={this.onChange}
+                            >
+                            </CheckboxGroup>
                             </div>
                         {this.validator.message('DesiredArea', this.state.DesiredArea, 'min:1','',{
                                 min: 'Please at least choose 1 desired area',
