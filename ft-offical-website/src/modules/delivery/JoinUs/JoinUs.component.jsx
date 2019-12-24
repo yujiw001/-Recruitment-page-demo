@@ -357,11 +357,23 @@ class JoinUs extends React.Component  {
                         <div className='ft_driver_area_checkbox_group'>
                             <CheckboxGroup
                                 style={{'max-width':'463px', margin:'auto','display':'flex', 'justify-content': 'space-between', 'flex-wrap': 'wrap'}}
-                                options={this.state.Town}
+                                /* options={this.state.Town} */
                                 value={this.state.DesiredArea}
                                 onChange={this.onChange}
                             >
+                                {
+                                    this.state.Town.map(data => (
+                                        <Checkbox style={{margin:0, padding:'0 0 16px 0', width:'200px'}}  value={data} onClick={this.handleCheckbox} /* checked={checked}*/ >
+                                            <span className='ft_driver_box_label'>{data}</span>
+                                        </Checkbox>
+                                    ))
+                                }
                             </CheckboxGroup>
+
+                            
+
+
+
                             </div>
                         {this.validator.message('DesiredArea', this.state.DesiredArea, 'min:1','',{
                                 min: 'Please at least choose 1 desired area',
